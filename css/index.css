@@ -1,0 +1,57 @@
+body{
+    margin:0;
+}
+#main{
+    height:300px;
+    /* margin-bottom:  */
+}
+#main .main_image{
+    background-image:url("../image/pinkmoon.jpg");
+    background-size: cover;
+    background-position: left,top;
+    height: 380px; 
+    text-align: center;   
+}
+.snsIcons{
+    position: relative;
+    left:380px;
+    top:20px;
+}
+.icon{
+    display: inline-block;
+    margin:0 2px 0 2px;
+}
+#main .logo{
+    display: inline-block;
+    line-height: normal;
+    vertical-align: middle;
+    padding:12px;
+    margin:0;
+}
+#main .logo h2{
+    margin: 0;
+    color: white;
+    font-size: 20px;
+}
+
+.menubar{
+    display: flex;
+    flex-direction: row;
+    margin:0 0 0 5px;
+    padding:0;
+    list-style-type:none;
+}
+.menubar li{
+    margin-left: 7px;
+    margin-right: 7px;
+}
+.menubar a{
+    text-decoration-line: none;
+    text-align: center;
+    font-size:10px;
+    color:white;
+}
+.menubar a:hover{
+    color:#e3248d;
+}
+
