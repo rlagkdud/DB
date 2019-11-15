@@ -2,7 +2,7 @@ body{
     margin:0;
 }
 #main{
-    height:300px;
+    height:380px;
     /* margin-bottom:  */
 }
 #main .main_image{
@@ -53,5 +53,97 @@ body{
 }
 .menubar a:hover{
     color:#e3248d;
+}
+
+.genre {
+    height: 600px;
+    /* width: 100%; */
+    background-color: white;
+    /* display: inline-block; */
+    /* text-align: center; */
+    position: relative;
+}
+.selectGenre{
+    /* display:inline-block; */
+    /* margin:0 auto; */
+
+    /* text-align: center; */
+    height: 350px;
+    width: 350px;
+    /* float: left; */
+    background:white;
+    position: absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    margin:auto;
+}
+#first{
+    background-image:url("../image/redvelvet.jpg");
+    float:left;
+    height:173px;
+    width:173px;
+    margin:0 2px 2px 0;
+}
+#second{
+    background-image:url("../image/redvelvet1.jpg");
+    float:left;
+    height:173px;
+    width:173px;
+    margin:0 0 2px 2px;
+}
+#third{
+    background-image:url("../image/redvelvet2.jpg");
+    float:left;
+    height:173px;
+    width:173px;
+    margin:2px 2px 0 0;
+}
+#fourth{
+    background-image:url("../image/redvelvet3.jpg");
+    background-position: left;
+    float:left;
+    height:173px;
+    width:173px;
+    margin:2px 0 0 2px;
+}
+.moreBtn Button{
+    height: 20px;
+    width:80px;
+    background-color: #f83b71;
+    position: absolute;
+    bottom:30px;
+    left:50%;
+    margin-left: -40px;
+    margin-top: auto;
+    text-align: center;
+    border-style: none;
+}
+
+.info{
+    background: #f83b71;
+    height:450px;
+    /* width:100%; */
+    display: block;
+    text-align: center;
+}
+.infoword{
+    padding:20px;
+}
+.infoword h4{
+    margin:3px 0;
+}
+.infoword p{
+    margin:3px 0;
+}
+.snack{
+}
+.snack .popcon{
+    display: inline-block;
+    margin:30px 10px 30px 10px;
+    height:200px;
+    width:200px;
+
 }
 
