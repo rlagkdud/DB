@@ -17,3 +17,22 @@ html,body{
     height: 100%; 
     text-align: center;   
 }
+
+.smallTitle{
+    color: #808088 ;
+    padding-top:20px;
+}
+.region{
+    border:solid;
+    width:110px;
+    height: 20px;
+    overflow: hidden;
+    font-size: small;
+    text-align: center;
+    color: #808088;
+    margin-left: 200px;
+    margin-bottom: 2.3rem;
+}
+.region:hover{
+    color: white;
+}
