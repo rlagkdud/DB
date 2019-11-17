@@ -1,0 +1,19 @@
+html,body{
+    height: 100%;
+    margin:0;
+}
+
+
+
+#branch{
+    height: 100%;
+}
+
+
+#branch .branch_image{
+    background-color: #F4C2C2;
+    background-size: cover;
+    background-position: left,top;
+    height: 100%; 
+    text-align: center;   
+}
