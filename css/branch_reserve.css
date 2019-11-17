@@ -30,9 +30,32 @@ html,body{
     font-size: small;
     text-align: center;
     color: #808088;
-    margin-left: 200px;
+    /*margin-left: 200px;*/
     margin-bottom: 2.3rem;
 }
 .region:hover{
     color: white;
+}
+.make_choice{
+    padding-left:25% ;
+}
+.choice .scroll{
+    height: 400px;
+    overflow: auto;
+    width:100%;
+}
+.choice{
+    float: left;
+    margin:10px;
+}
+.store{
+    width:80px;
+}
+
+.ex p{
+    float: left;
+    border: solid;
+    font-size: small;
+    margin-left: 20px;
+    width:7rem;
 }
