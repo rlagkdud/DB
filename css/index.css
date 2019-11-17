@@ -147,3 +147,15 @@ body{
 
 }
 
+.ranking{
+    width:160px;
+    height:240px;
+    border:solid;
+}
+.scroll{
+    margin:auto;
+    width:30%;
+    height:auto;
+    white-space: nowrap;
+    overflow-x: scroll;
+}
