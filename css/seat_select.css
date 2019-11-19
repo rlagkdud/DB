@@ -1,0 +1,96 @@
+.reserve_checkContainer{
+    background:white;
+    height:470px;
+    width:800px;
+    display: block;
+    margin:0 auto;
+    padding:0;
+}
+.reserve{
+    width:500px;
+    height:350px;
+    background-color:yellow;
+    margin:0 20px 0 40px;
+    padding:0;
+}
+
+.reserve_checkContainer h1{
+    color:black;
+    margin:0;
+    padding:15px;
+}
+.line{
+    width:720px;
+    border-bottom:0.5px;
+    text-align: left;
+    border-bottom: none;
+    margin-top:0;
+    color:black;
+}
+.reserve_checkContainer p{
+    padding-left: 20px;
+    margin-top:0;
+}
+.movie_playtime{
+    position: relative;
+   margin-left:20px; 
+}
+.movie_playtime Button{
+    height: 25px;
+    width:80px;
+    background-color: #f83b71;
+    text-align: center;
+    border-style: none;
+}
+.movie_memnum{
+    padding:15px;
+    width:470px;
+    height:20px;
+    display:inline-block;
+    padding-left: 20px;
+}
+.movie_memnum h3{
+    display:inline;
+}
+.movie_memnum p{
+    display:inline;
+}
+.movie_memnum select{
+    display:inline;
+}
+.reserve_check{
+    display: flex;
+}
+.check{
+    background-color: aqua;
+    /* border-style:solid; */
+    /* border-left: 1px;
+    border-left: black; */
+    border-left: 0.5px solid rgb(109, 103, 103);
+    height:350px;
+    width:180px;
+    margin:5px;
+}
+.seat_map{
+    width: 500px;
+    background: rgb(139, 147, 153);
+    height:250px;
+}
+.screen{
+    margin-top:15px;
+    height:20px;
+    width: 100%;
+    background:rgb(82, 81, 81);
+    display: inline-block;
+    text-align: center;
+}
+.screen p i{
+    margin:0;
+    font-size: 10px;
+} 
+.screen p {
+    padding:0;
+} 
+.check h3{
+    margin-top:0;
+}
