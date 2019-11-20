@@ -34,9 +34,9 @@ body{
     color: white;
     font-size: 20px;
 }
-.menubarNav{
+/* .menubarNav{
 
-}
+} */
 .menubar{
     margin:0 0 0 5px;
     padding:0;
@@ -127,7 +127,6 @@ body{
 .info{
     background: #F4C2C2;
     height:450px;
-    /* width:100%; */
     display: block;
     text-align: center;
 }
@@ -140,8 +139,8 @@ body{
 .infoword p{
     margin:3px 0;
 }
-.snack{
-}
+/* .snack{
+} */
 .snack .popcon{
     display: inline-block;
     margin:30px 10px 30px 10px;
