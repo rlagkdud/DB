@@ -1,69 +1,153 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>A-07 moviepage</title>
-        <meta charset="utf-8">
-        <link rel = "stylesheet" href="../css/index.css">
-    </head>
-    <body>
-        <div id = 'main'>
-            <div class = "main_image">
-                <div class = 'snsIcons'>
-                    <a href='' target='_blank'><img class = 'icon' src='../image/facebook.png' height="15px" ></a>
-                    <a href='' target='_blank'><img class = 'icon' src='../image/instagram.png' height="15px" ></a>
-                    <a href='' target='_blank'><img class = 'icon' src='../image/twitter.png' height="15px" ></a>
-                </div> 
-                <div class = "logo">
-                    <h2>BLACK PINK</h2>
-                </div>
-                <nav class='menubarNav'>
-                    <ul class = 'menubar'>
-                        <li><a href=''>메인</a></li>
-                        <li><a href=''>영화 예매</a></li>
-                        <li><a href='branch_reserve.html'>지점별 예매</a></li>
-                        <li><a href=''>고객센터</a></li>
-                        <li><a href='login.html'>로그인</a></li>
-                        <li><a href='join.html'>회원가입</a></li>
-                    </ul>
-                </nav>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>A-07 moviepage</title>
+    <link rel = "stylesheet" href="../css/main.css">
+  </head>
 
-                <div class="scroll">
-                    <img class="ranking" href="" />
-                    <img class="ranking" href="" />
-                    <img class="ranking" href="" />
-                    <img class="ranking" href="" />
-                    
-                </div>
-
-            </div>
-            <div class='genre'>
-                <div class ='selectGenre'>
-                        <div id = 'first'></div>
-                        <div id = 'second'></div>
-                        <div id = 'third'></div>
-                        <div id = 'fourth'></div>
-                </div>
-                <div class ='moreBtn'>
-                        <button type="button" onclick="location.href='' ">MORE</button>
-                </div>
-            </div>
-            <div class = 'info'>
-                <div class ='infoword'>
-                    <h4>About</h4>
-                    <p>Hanyang Uni Devision of Comuter Science</p>
-                    <p>2019 DATABASE A-07 Team Project Website</p>
-                </div>
-                <div class="snack">
-                        <img class = 'popcon' src='../image/redvelvet.jpg'>
-                        <img class = 'popcon' src='../image/redvelvet1.jpg'>
-                        <img class = 'popcon' src='../image/redvelvet2.jpg'>
-                        <img class = 'popcon' src='../image/redvelvet3.jpg'>
-                    </div>
-                    <div class = 'check'>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="프리 픽">프리 픽</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
-                    </div>
-            </div>
-
+  <body>
+    <div class="main">
+      <div class="main_image">
+        <div class="snsIcons">
+          <a href='' target='_blank'><img class = 'icon' src='../image/facebook.png' height="15px" ></a>
+          <a href='' target='_blank'><img class = 'icon' src='../image/instagram.png' height="15px" ></a>
+          <a href='' target='_blank'><img class = 'icon' src='../image/twitter.png' height="15px" ></a>
         </div>
-        </body>
-</html>
+        <div class="logo">
+          <h1>T I C</h1>
+          <div class="thisiscinema">
+            <img src="../image/this_is_cinema.png" height="50px">
+          </div>
+        </div>
+        <nav class='menubarNav'>
+            <ul class = 'menubar'>
+                <li><a href='index.html'>메인</a></li>
+                <li><a href=''>영화예매</a></li>
+                <li><a href='login.html'>로그인</a></li>
+                <li><a href='join.html'>회원가입</a></li>
+                <li><a href=''>마이페이지</a></li>
+            </ul>
+        </nav>
+      </div>
+    </div>
 
+    <ul class="slides">
+      <input type="radio" name="radio-btn" id="img-1" checked />
+      <li class="slide-container">
+        <div class="slide">
+          <img src="../image/slide1.jpg" />
+        </div>
+        <div class="nav">
+          <label for="img-6" class="prev">&#x2039;</label>
+          <label for="img-2" class="next">&#x203a;</label>
+        </div>
+      </li>
+
+      <input type="radio" name="radio-btn" id="img-2" />
+      <li class="slide-container">
+        <div class="slide">
+          <img src="../image/slide2.jpg" />
+        </div>
+        <div class="nav">
+          <label for="img-1" class="prev">&#x2039;</label>
+          <label for="img-3" class="next">&#x203a;</label>
+        </div>
+      </li>
+
+      <input type="radio" name="radio-btn" id="img-3" />
+      <li class="slide-container">
+        <div class="slide">
+          <img src="../image/slide3.jpg" />
+        </div>
+        <div class="nav">
+          <label for="img-2" class="prev">&#x2039;</label>
+          <label for="img-4" class="next">&#x203a;</label>
+        </div>
+      </li>
+
+      <input type="radio" name="radio-btn" id="img-4" />
+      <li class="slide-container">
+        <div class="slide">
+          <img src="../image/slide4.jpg" />
+        </div>
+        <div class="nav">
+          <label for="img-3" class="prev">&#x2039;</label>
+          <label for="img-5" class="next">&#x203a;</label>
+        </div>
+      </li>
+
+      <input type="radio" name="radio-btn" id="img-5" />
+      <li class="slide-container">
+        <div class="slide">
+          <img src="../image/slide5.jpg" />
+        </div>
+        <div class="nav">
+          <label for="img-4" class="prev">&#x2039;</label>
+          <label for="img-6" class="next">&#x203a;</label>
+        </div>
+      </li>
+
+      <input type="radio" name="radio-btn" id="img-6" />
+      <li class="slide-container">
+        <div class="slide">
+          <img src="../image/slide6.jpg" />
+        </div>
+        <div class="nav">
+          <label for="img-5" class="prev">&#x2039;</label>
+          <label for="img-1" class="next">&#x203a;</label>
+        </div>
+      </li>
+      <li class="nav-dots">
+        <label for="img-1" class="nav-dot" id="img-dot-1"></label>
+        <label for="img-2" class="nav-dot" id="img-dot-2"></label>
+        <label for="img-3" class="nav-dot" id="img-dot-3"></label>
+        <label for="img-4" class="nav-dot" id="img-dot-4"></label>
+        <label for="img-5" class="nav-dot" id="img-dot-5"></label>
+        <label for="img-6" class="nav-dot" id="img-dot-6"></label>
+      </li>
+  </ul>
+
+    <div class="movie_list">
+
+      <div class="movie1">
+        <img src="../image/blackmoney.jpeg" alt="">
+      </div>
+      <div class="movie2">
+        <img src="../image/blackmoney.jpeg" alt="">
+      </div>
+      <div class="movie3">
+        <img src="../image/blackmoney.jpeg" alt="">
+      </div>
+      <div class="movie4">
+        <img src="../image/blackmoney.jpeg" alt="">
+      </div>
+      <div class="movie5">
+        <img src="../image/blackmoney.jpeg" alt="">
+      </div>
+
+    </div>
+    <div class="genre">
+      <div class="genre_title">
+        <h1>GENRE</h1>
+      </div>
+      <div class="genre_wrap">
+        <div class="genre_img">
+          <img src="../image/genre1.jpeg" height="350px" alt="">
+          <img src="../image/genre2.jpeg" height="350px" alt=""><br/>
+          <img src="../image/genre3.jpeg" height="350px" alt="">
+          <img src="../image/genre4.jpeg" height="350px" alt=""><br/>
+        </div>
+        <button type="button" onclick="window.location.href'' "> MORE </button>
+      </div>
+    </div>
+    <div class="banner">
+      <img src="../image/frozen.jpg" alt="">
+    </div>
+    <div class="membership">
+    </div>
+    <div class="footer">
+    </div>
+
+  </body>
+</html>
