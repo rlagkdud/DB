@@ -102,7 +102,7 @@ const Seat_reserve_css = () => {
         margin-top:0;
     }
     .seatA{
-        margin:50px 0 0 0px;
+        margin: 50px 0 0 0px;
         width:100%;
         text-align:center;
         display: inline-block;
@@ -139,7 +139,11 @@ const Seat_reserve_css = () => {
         outline: none;
         box-shadow: none;
         vertical-align: middle;
-        background: url("../image/seat1.png")no-repeat;
+        background: url("seat1.png") no-repeat;
+        margin: 3px 3px 3px 4px;
+    }
+    .seat_map input[value='3'], input[value='12']{
+        margin: 3px 15px 3px 4px;
     }
 
     input[type='checkbox']:checked {
@@ -148,7 +152,8 @@ const Seat_reserve_css = () => {
         -o-appearance: none;
         box-shadow: none;
         /* background-color: aqua; */
-        background: url("../image/seat1_checked.png") no-repeat;
+        background: url("seat1_checked.png") no-repeat;
+        
     }
     .check_poster{
         float:left;
@@ -240,11 +245,8 @@ const Seat_reserve_css = () => {
         padding:0;
         vertical-align: middle;
     }
-    .thirdTwelve{
-        margin-right:15px;
-    }
     .totalprice{
-        margin:10px 0 10px 120px;
+        margin: 10px 0 10px 120px;
     }
 
 
