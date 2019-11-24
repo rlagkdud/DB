@@ -138,12 +138,13 @@ body{
   font-size: 14px;
   font-weight: 700;
   height: 28px;
+  width: 136px;
   padding: 0 8px;
   background-color: #343B40;
   color: #E6BEBE;
 }
 
-.login-card button {
+.membership_button {
   text-align: center;
   margin-top: 15px;
   font-size: 14px;
@@ -163,4 +164,9 @@ body{
 .back{
   background-color:  #FBEFF8;
   height: 400px;
+}
+.whiteback {
+  margin: 0 auto 10px;
+  background-color: white;
+  width: 1000px;
 }
