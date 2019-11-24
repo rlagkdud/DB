@@ -7,35 +7,44 @@
 
     </head>
     <body>
-        <div id = 'main'>
-            <div class = "main_image">
-                <div class = 'snsIcons'>
-                    <a href='' target='_blank'><img class = 'icon' src='../image/facebook.png' height="15px" ></a>
-                    <a href='' target='_blank'><img class = 'icon' src='../image/instagram.png' height="15px" ></a>
-                    <a href='' target='_blank'><img class = 'icon' src='../image/twitter.png' height="15px" ></a>s
-                </div>
-                <div class = "logo">
-                    <h2>BLACK PINK</h2>
-                </div>
-                <nav class='menubarNav'>
-                    <ul class = 'menubar'>
-                        <li><a href='index.html'>메인</a></li>
-                        <li><a href=''>영화 예매</a></li>
-                        <li><a href='branch_reserve.html'>지점별 예매</a></li>
-                        <li><a href=''>고객센터</a></li>
-                        <li><a href='login.html'>로그인</a></li>
-                        <li><a href='join.html'>회원가입</a></li>
-                    </ul>
-                </nav>
+      <div class="main">
+        <div class="main_image">
+          <div class="snsIcons">
+            <a href='' target='_blank'><img class = 'icon' src='../image/facebook.png' height="15px" ></a>
+            <a href='' target='_blank'><img class = 'icon' src='../image/instagram.png' height="15px" ></a>
+            <a href='' target='_blank'><img class = 'icon' src='../image/twitter.png' height="15px" ></a>
+          </div>
+          <div class="logo">
+            <h1>T I C</h1>
+            <div class="thisiscinema">
+              <img src="../image/this_is_cinema.png" height="50px">
             </div>
-            <div class="login-card">
-              <h1>로그인</h1>
-              <form action="" method="post">
-                <p class="username"><input type="text" name="user_id" placeholder="아이디" required></p>
-                <p class="pwd"><input type="password" name="user_pwd" placeholder="비밀번호" required></p>
-                <input class="login" type="submit" value="Login">
-              </form>
-            </div>
+          </div>
+          <nav class='menubarNav'>
+              <ul class = 'menubar'>
+                  <li><a href='index.html'>메인</a></li>
+                  <li><a href=''>영화예매</a></li>
+                  <li><a href='login.html'>로그인</a></li>
+                  <li><a href='join.html'>회원가입</a></li>
+                  <li><a href=''>마이페이지</a></li>
+              </ul>
+          </nav>
         </div>
-        </body>
+      </div>
+
+      <div class="back">
+        <div class="login-card">
+          <h1>로그인</h1>
+          <form action="" method="post">
+            <p class="username"><input type="text" name="user_id" placeholder="아이디" required></p>
+            <p class="pwd"><input type="password" name="user_pwd" placeholder="비밀번호" required></p>
+            <input class="login" type="submit" value="Login">
+            <input class="sign_in" type="submit" value="Sign In">
+          </form>
+          <img src="../image/login_or.png" width="100%" alt="">
+          <button type="button" onclick="window.location.href'' "> 비회원 예매하기 </button>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>
