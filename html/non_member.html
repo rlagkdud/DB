@@ -3,7 +3,7 @@
     <head>
         <title>A-07 moviepage</title>
         <meta charset="utf-8">
-        <link rel = "stylesheet" href="../css/join.css">
+        <link rel = "stylesheet" href="../css/non_member.css">
     </head>
     <body>
       <div class="main">
@@ -32,13 +32,12 @@
       </div>
       <div class="back">
         <div class="whiteback">
-          <div class="signin-card">
-            <h1>회원가입</h1>
+          <div class="non_signin-card">
+            <h1>비회원 로그인</h1>
             <form action="" method="post">
               <p class="name"><input type="text" name="user_name" placeholder="이름" required></p>
-              <p class="username"><input type="text" name="user_id" placeholder="아이디" required></p>
-              <p class="pwd"><input type="password" name="user_pwd" placeholder="비밀번호" required></p>
               <p class="ph"><input type="text" name="user_ph" placeholder="연락처" required></p>
+              <p class="pwd"><input type="password" name="user_pwd" placeholder="비밀번호(4자리)" required></p>
               <p class="birth"><input type="text" name="user_birth" placeholder="생년월일(YYMMDD)" required></p>
               <img src="../image/bar.png" width="100%" alt="">
               <input class="sign_in" type="submit" value="Sign In">
@@ -46,6 +45,5 @@
           </div>
         </div>
       </div>
-    </div>
   </body>
 </html>
