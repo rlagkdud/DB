@@ -14,14 +14,14 @@ const Header=() =>{
                         <a href='' target='_blank'><img class = 'icon' src='twitter.png' height="15px" /></a>
                     </div>
                     <div class="logo">
-                        <h1>T I C</h1>
+                            <img class="mainLogo" src="mainLogo.png"/>
                         <div class="thisiscinema">
                             <img src="this_is_cinema.png" height="50px"/>
                         </div>
                     </div>
                     <nav class='menubarNav'>
                         <ul class = 'menubar'>
-                            <li><Link href='/Index'>메인</Link></li>
+                            <li><Link href='/index'>메인</Link></li>
                             <li><Link href='/reservation'>영화예매</Link></li>
                             <li><Link href='/Login'>로그인</Link></li>
                             <li><Link href='/Join'>회원가입</Link></li>

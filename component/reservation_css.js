@@ -1,6 +1,10 @@
 const Index_css = () => {
     return(
         <style global jsx>{`
+        .body_reservation{
+        margin:0;
+        background: #F4C2C2;
+        }
         .reserveContainer{
             height: auto;
             overflow:hidden;
@@ -101,7 +105,6 @@ const Index_css = () => {
             /*border:dotted;*/
             overflow:hidden;
             margin:0;
-            float:left;
             padding-top:0;
 
         }
@@ -123,8 +126,8 @@ const Index_css = () => {
 
         }
         .date p:hover{
-            border:solid #808088;
-            background-color:#808088;
+            border:solid #f83b71;
+            background-color:#f83b71;
             color:white
         }
         .point{

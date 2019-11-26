@@ -3,7 +3,8 @@ import Seat_reserve_css from '../component/seat_reserve_css'
 
 const Seat_reserve=()=>{
     return(
-        <div>
+        <div class="body_seat">
+            <div>
             <Seat_reserve_css/>
             <Header/>
             <div class='reserve_checkContainer'>
@@ -212,6 +213,7 @@ const Seat_reserve=()=>{
                 </div>     
             </div>
             <div class='empty'></div>
+        </div>
         </div>
     )
 }

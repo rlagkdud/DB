@@ -299,10 +299,11 @@ const reservation = () => {
     
     
 
-    return(        
-        <div>
+    return(
+        <div> 
             <Index_css/>
-            <Header />
+            <Header />       
+            <div class="body_reservation">
             <div class="reserveContainer">
                 <h1 class="bigTitle">예매</h1>
                 <div class="date">
@@ -310,18 +311,12 @@ const reservation = () => {
                     <div class="point">
                         <p>11/28</p>
                         <p>11/29</p>
-                        <p>11/29</p>
+                        <p>11/30</p>
+                        <p>12/1</p>
+                        <p>12/2</p>
                     </div>
                 </div>
-                <div class="date">
-                    <h3>시간</h3>
-                    <div class="point">
-                        <p>11:00</p>
-                        <p>12:00</p>
-                        <p>15:00</p>
-                        <p>19:00</p>
-                    </div>
-                </div>
+                
                 <br/>
                 <div class="make_choice"> 
                     <div class="choice">
@@ -351,7 +346,7 @@ const reservation = () => {
             </div>
             <div class="below"></div>
         </div> 
-    
+        </div>
         
     )
 }

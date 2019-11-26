@@ -1,10 +1,8 @@
 const Header_css = () =>{
     return(
         <style global jsx>{`
-        
-        .body{
+        body{
             margin: 0;
-            padding:0;
         }
         .main {
           background-image: url(pinkmoon.jpg);
@@ -55,6 +53,10 @@ const Header_css = () =>{
           color:white;
         }
         .menubar a:hover{ color:#e3248d; }
+        .mainLogo{
+          height:110px;
+          width:120px;
+        }
 
 
 
