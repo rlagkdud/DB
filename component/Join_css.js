@@ -119,8 +119,8 @@ const Join_css=()=>{
           background-color: #343B40;
           color: #E6BEBE;
         }
-        .singin-back{
-          background-color:  #F2F2F2;
+        .signin-back{
+          background-color:#FBEFF2;
           height: 500px;
           text-align: center;
         }
@@ -128,7 +128,7 @@ const Join_css=()=>{
           margin: 0 auto 10px;
           background-color: white;
           height: 500px;
-          width: 1000px;
+          width: 700px;
         }
 
         

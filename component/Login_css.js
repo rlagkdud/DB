@@ -12,6 +12,7 @@ const Login_css=()=>{
           margin: 0 auto 10px;
           border-radius: 2px;
           overflow: hidden;
+          text-align:center;
         }
         
         .login-card h1 {
@@ -82,7 +83,7 @@ const Login_css=()=>{
           font-size: 14px;
           font-weight: 700;
           height: 28px;
-          /* padding: 0 8px; */
+          padding: 0 8px;
           background-color: #343B40;
           color: #E6BEBE;
         }
@@ -113,16 +114,27 @@ const Login_css=()=>{
           position: relative;
           float: left;
         }
+        .non_member {
+          background-color: #F2F2F2;
+          width: 100%;
+          height: 28px;
+          font-size: 14px;
+          font-weight: 700;
+          color: #343B40;
+          margin-top: 10px;
+        }
         
         
         .back{
           background-color:  #FBEFF8;
           height: 400px;
+          text-align:center;
         }
         .whiteback {
           margin: 0 auto 10px;
           background-color: white;
-          width: 1000px;
+          width: 700px;
+          height:400px;
         }
 
         `}</style>
