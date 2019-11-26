@@ -32,17 +32,17 @@
       </div>
       <div class="back">
         <div class="whiteback">
-          <div class="login-card">
-            <h1>로그인</h1>
+          <div class="signin-card">
+            <h1>회원가입</h1>
             <form action="" method="post">
+              <p class="name"><input type="text" name="user_name" placeholder="이름" required></p>
               <p class="username"><input type="text" name="user_id" placeholder="아이디" required></p>
               <p class="pwd"><input type="password" name="user_pwd" placeholder="비밀번호" required></p>
-              <input class="login" type="submit" value="Login">
-              <!-- <input class="sign_in" type="submit" value="Sign In"> -->
-              <button class="sign_in" type="button" onclick="window.location.href'' "> Sign In </button>
+              <p class="ph"><input type="text" name="user_ph" placeholder="연락처" required></p>
+              <p class="birth"><input type="text" name="user_birth" placeholder="생년월일(YYMMDD)" required></p>
+              <img src="../image/bar.png" width="100%" alt="">
+              <input class="sign_in" type="submit" value="Sign In">
             </form>
-            <img src="../image/login_or.png" width="100%" alt="">
-            <button class="non_member" type="button" onclick="window.location.href'' "> 비회원 예매하기 </button>
           </div>
         </div>
       </div>
