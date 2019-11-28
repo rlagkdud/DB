@@ -1,11 +1,20 @@
 
 import {useState} from 'react'
+import styled from '@emotion/styled'
 import Header from './Header'
-import Index_css from '../component/reservation_css'
+import Reservation_css from '../component/reservation_css'
 import Link from 'next/link'
+import example, { DateAnchor } from '../component/expample'
+
+const NavOption = ({number,onClick,content,children})=>(
+    <DateAnchor onClick={() => onClick(number)} isCurrent={number === content}>
+        {children}
+    </DateAnchor>
+)
 
 const reservation = () => {
-    // [movie, setMovie] = useState(false)
+
+    const [content, setContent] = useState(-1)
     
     
 
@@ -301,7 +310,7 @@ const reservation = () => {
 
     return(
         <div> 
-            <Index_css/>
+            <Reservation_css/>
             <Header />       
             <div class="body_reservation">
             <div class="reserveContainer">
@@ -309,13 +318,32 @@ const reservation = () => {
                 <div class="date">
                     <h3>날짜</h3>
                     <div class="point">
-                        <p>11/28</p>
-                        <p>11/29</p>
-                        <p>11/30</p>
-                        <p>12/1</p>
-                        <p>12/2</p>
+                        <NavOption onClick={setContent} number={0} content={content}>11/28</NavOption>
+                        <NavOption onClick={setContent} number={1} content={content}>11/29</NavOption>
+                        <NavOption onClick={setContent} number={2} content={content}>11/30</NavOption>
+                        <NavOption onClick={setContent} number={3} content={content}>12/1</NavOption>
+                        <NavOption onClick={setContent} number={4} content={content}>12/2</NavOption>
+                        <NavOption onClick={setContent} number={5} content={content}>12/3</NavOption>
+                        <NavOption onClick={setContent} number={6} content={content}>12/4</NavOption>
+                        <NavOption onClick={setContent} number={7} content={content}>12/5</NavOption>
+                        <NavOption onClick={setContent} number={8} content={content}>12/6</NavOption>
+                        <NavOption onClick={setContent} number={9} content={content}>12/7</NavOption>
+                        <NavOption onClick={setContent} number={10} content={content}>12/8</NavOption>
+                        <NavOption onClick={setContent} number={11} content={content}>12/9</NavOption>
+                        <NavOption onClick={setContent} number={12} content={content}>12/10</NavOption>
+                        <NavOption onClick={setContent} number={13} content={content}>12/11</NavOption>
+                        <NavOption onClick={setContent} number={14} content={content}>12/12</NavOption>
+                        <NavOption onClick={setContent} number={15} content={content}>12/13</NavOption>
+                        <NavOption onClick={setContent} number={16} content={content}>12/14</NavOption>
+                        <NavOption onClick={setContent} number={17} content={content}>12/15</NavOption>
+                        <NavOption onClick={setContent} number={18} content={content}>12/16</NavOption>
+                        <NavOption onClick={setContent} number={19} content={content}>12/17</NavOption>
+                        <NavOption onClick={setContent} number={20} content={content}>12/18</NavOption>
+                        <NavOption onClick={setContent} number={21} content={content}>12/19</NavOption>
+
                     </div>
                 </div>
+                <hr class="hr" />
                 
                 <br/>
                 <div class="make_choice"> 

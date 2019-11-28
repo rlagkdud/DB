@@ -1,4 +1,4 @@
-const Index_css = () => {
+const Reservation_css = () => {
     return(
         <style global jsx>{`
         .body_reservation{
@@ -65,6 +65,12 @@ const Index_css = () => {
             display: inline-block;
             margin-bottom:7px;
             margin-top:7px;
+        }
+
+        .hr{
+            width:98%;
+            margin-top:20px;
+            margin-bottom:0;
 
         }
         .store{
@@ -101,7 +107,7 @@ const Index_css = () => {
             color:white
         }
         .date{
-            width:40%;
+            width:100%;
             /*border:dotted;*/
             overflow:hidden;
             margin:0;
@@ -128,10 +134,18 @@ const Index_css = () => {
         .date p:hover{
             border:solid #f83b71;
             background-color:#f83b71;
-            color:white
-        }
+            color:white;
+        }      
+    
         .point{
             margin-left:20px;
+            margin-right:20px;
+            overflow-x:scroll;
+            width: 95%;
+            display: flex;
+        }
+        .point::-webkit-scrollbar{
+            display: none;
         }
         .next{
             width:100%;
@@ -159,4 +173,4 @@ const Index_css = () => {
         `}</style>
     )
 }
-export default Index_css
+export default Reservation_css
