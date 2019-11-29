@@ -169,7 +169,11 @@ body{
   color: #E6BEBE;
 }
 .back{
+<<<<<<< HEAD
   background-color:  #FBEFF2;
+=======
+  background-color:  #F2F2F2;
+>>>>>>> seat_branch
   height: 500px;
   text-align: center;
 }
@@ -177,5 +181,9 @@ body{
   margin: 0 auto 10px;
   background-color: white;
   height: 500px;
+<<<<<<< HEAD
   width: 700px;
+=======
+  width: 1000px;
+>>>>>>> seat_branch
 }

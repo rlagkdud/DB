@@ -1,0 +1,114 @@
+body{
+    margin: 0;
+  }
+  .main {
+    background-image: url(../image/pinkmoon.jpg);
+    background-color: white;
+    background-size: cover;
+    background-position: top;
+    height: 350px;
+    text-align: center;
+  }
+  .snsIcons{
+    float: right;
+    margin-top:10px;
+    margin-right: 20px;
+  }
+  .icon{
+    display: inline-block;
+    margin:0 2px 0 2px;
+  }
+  .main .logo{
+    display: inline-block;
+    line-height: normal;
+    text-align: center;
+    margin:60px -60px 50px 0;
+  }
+  .main .logo h1 {
+    margin-top: 0;
+    font-size: 4em;
+    color: #EFD5D5;
+  }
+  .menubarNav{
+  
+  }
+  .menubar{
+    margin:0 0 0 5px;
+    padding:0;
+    list-style-type:none;
+  }
+  .menubar li{
+    display:inline;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+  .menubar a{
+    display:inline-block;
+    text-decoration-line: none;
+    text-align: center;
+    font-size:20px;
+    color:white;
+  }
+  .menubar a:hover{ color:#e3248d; }
+  .upperMypage{
+    height:230px;
+    margin:0 250px;
+}
+/*--------------------------------------*/
+.upperMypage p{
+    padding-left:20px;
+    display: inline-block;
+}
+.upperMypage h5{
+    display: inline-block;
+}
+.nameMypage{
+    position: relative;
+    width: 100%;
+    display: inline-block;
+    text-align: left;
+    border-bottom: 1px solid black;
+}
+.nameMypage p b{
+    display: inline-block;
+}
+.myRank{
+    display: inline-block;
+    float:right;
+    height: 50px;
+    width: 50px;
+    margin:10px 5px;
+}
+.preperGenre{
+    border-bottom: 1px solid black;
+}
+.preperGenre button{
+    border-style: none;
+    background: white;
+    float: right;
+    margin:30px 5px 0 0 ;
+}
+.downMypageCol {
+    background:#EFD5D5;
+}
+.downMypage{
+    height: 300px;
+    text-align: left;
+    margin:0 250px;
+}
+.downMypage p{
+    display: inline-block;
+    padding:5px 0;
+}
+.sawMovie{
+    text-align: center;
+}
+.sawMovie .sawPoster{
+    width:150px;
+    height: 200px;
+    margin:0 10px;
+}
+.whiteCol{
+    background: white;
+    height:40px;
+}
