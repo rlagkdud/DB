@@ -4,31 +4,44 @@ import styled from '@emotion/styled'
 import Header from './Header'
 import Reservation_css from '../component/reservation_css'
 import Link from 'next/link'
-import example, { DateAnchor } from '../component/expample'
+import{ DateAnchor,RegionAnchor } from '../component/example'
 
-const NavOption = ({number,onClick,content,children})=>(
-    <DateAnchor onClick={() => onClick(number)} isCurrent={number === content}>
+const DateOption = ({number,onClick,content,children})=>(
+    <DateAnchor onClick={() => onClick(number)} isDate={number === content}>
         {children}
     </DateAnchor>
 )
+const RegionOption = ({number,onClick,choose_region,children})=>(
+    <RegionAnchor onClick={() => onClick(number)} isRegion={number === choose_region}>
+        {children}
+    </RegionAnchor>
+)
+const ExOption = ({number,onClick,choose_ex,children})=>(
+    <ExAnchor onClick={() => onClick(number)} isEx={number === choose_ex}>
+        {children}
+    </ExAnchor>
+)
+
+
 
 const reservation = () => {
 
     const [content, setContent] = useState(-1)
-    
-    
-
     const [region, setRegion] =useState(0)
+    const [choose_region,setChooseRegion]=useState(0)
+
+
+    
     
     const seoul = (
         
         <div class="scroll">
                 <div class="ex">
-                    <p  class="store">가산디지털</p>
+                    <p class="store">가산디지털</p>
                     <p class="store">가양</p>
                 </div>
                 <div class="ex">
-                    <p class="store">강동</p> 
+                    <p class="store">강동</p>
                     <p class="store">건대입구</p>
                 </div>
                 <div class="ex">
@@ -305,8 +318,7 @@ const reservation = () => {
     )
 
     const region_list=[seoul, gyeonggi, daejeon, gwangju, daegu, busan, gangwon, jeju]
-    
-    
+   
 
     return(
         <div> 
@@ -318,28 +330,28 @@ const reservation = () => {
                 <div class="date">
                     <h3>날짜</h3>
                     <div class="point">
-                        <NavOption onClick={setContent} number={0} content={content}>11/28</NavOption>
-                        <NavOption onClick={setContent} number={1} content={content}>11/29</NavOption>
-                        <NavOption onClick={setContent} number={2} content={content}>11/30</NavOption>
-                        <NavOption onClick={setContent} number={3} content={content}>12/1</NavOption>
-                        <NavOption onClick={setContent} number={4} content={content}>12/2</NavOption>
-                        <NavOption onClick={setContent} number={5} content={content}>12/3</NavOption>
-                        <NavOption onClick={setContent} number={6} content={content}>12/4</NavOption>
-                        <NavOption onClick={setContent} number={7} content={content}>12/5</NavOption>
-                        <NavOption onClick={setContent} number={8} content={content}>12/6</NavOption>
-                        <NavOption onClick={setContent} number={9} content={content}>12/7</NavOption>
-                        <NavOption onClick={setContent} number={10} content={content}>12/8</NavOption>
-                        <NavOption onClick={setContent} number={11} content={content}>12/9</NavOption>
-                        <NavOption onClick={setContent} number={12} content={content}>12/10</NavOption>
-                        <NavOption onClick={setContent} number={13} content={content}>12/11</NavOption>
-                        <NavOption onClick={setContent} number={14} content={content}>12/12</NavOption>
-                        <NavOption onClick={setContent} number={15} content={content}>12/13</NavOption>
-                        <NavOption onClick={setContent} number={16} content={content}>12/14</NavOption>
-                        <NavOption onClick={setContent} number={17} content={content}>12/15</NavOption>
-                        <NavOption onClick={setContent} number={18} content={content}>12/16</NavOption>
-                        <NavOption onClick={setContent} number={19} content={content}>12/17</NavOption>
-                        <NavOption onClick={setContent} number={20} content={content}>12/18</NavOption>
-                        <NavOption onClick={setContent} number={21} content={content}>12/19</NavOption>
+                        <DateOption onClick={setContent} number={0} content={content}>11/28</DateOption>
+                        <DateOption onClick={setContent} number={1} content={content}>11/29</DateOption>
+                        <DateOption onClick={setContent} number={2} content={content}>11/30</DateOption>
+                        <DateOption onClick={setContent} number={3} content={content}>12/1</DateOption>
+                        <DateOption onClick={setContent} number={4} content={content}>12/2</DateOption>
+                        <DateOption onClick={setContent} number={5} content={content}>12/3</DateOption>
+                        <DateOption onClick={setContent} number={6} content={content}>12/4</DateOption>
+                        <DateOption onClick={setContent} number={7} content={content}>12/5</DateOption>
+                        <DateOption onClick={setContent} number={8} content={content}>12/6</DateOption>
+                        <DateOption onClick={setContent} number={9} content={content}>12/7</DateOption>
+                        <DateOption onClick={setContent} number={10} content={content}>12/8</DateOption>
+                        <DateOption onClick={setContent} number={11} content={content}>12/9</DateOption>
+                        <DateOption onClick={setContent} number={12} content={content}>12/10</DateOption>
+                        <DateOption onClick={setContent} number={13} content={content}>12/11</DateOption>
+                        <DateOption onClick={setContent} number={14} content={content}>12/12</DateOption>
+                        <DateOption onClick={setContent} number={15} content={content}>12/13</DateOption>
+                        <DateOption onClick={setContent} number={16} content={content}>12/14</DateOption>
+                        <DateOption onClick={setContent} number={17} content={content}>12/15</DateOption>
+                        <DateOption onClick={setContent} number={18} content={content}>12/16</DateOption>
+                        <DateOption onClick={setContent} number={19} content={content}>12/17</DateOption>
+                        <DateOption onClick={setContent} number={20} content={content}>12/18</DateOption>
+                        <DateOption onClick={setContent} number={21} content={content}>12/19</DateOption>
 
                     </div>
                 </div>
@@ -348,14 +360,14 @@ const reservation = () => {
                 <br/>
                 <div class="make_choice"> 
                     <div class="choice">
-                        <p onClick={()=> setRegion(0)} class="region">서울</p>
-                        <p onClick={()=> setRegion(1)} class="region">경기/인천</p>
-                        <p onClick={()=> setRegion(2)} class="region">충청/대전</p>
-                        <p onClick={()=> setRegion(3)} class="region">전라/광주</p>
-                        <p onClick={()=> setRegion(4)} class="region">경북/대구</p>
-                        <p onClick={()=> setRegion(5)} class="region">경남/부산/울산</p>
-                        <p onClick={()=> setRegion(6)} class="region">강원</p>
-                        <p onClick={()=> setRegion(7)} class="region">제주</p>
+                        <RegionOption onClick={setChooseRegion} number={0} choose_region={choose_region}> <div onClick={()=> setRegion(0)}>서울</div></RegionOption>
+                        <RegionOption onClick={setChooseRegion} number={1} choose_region={choose_region}> <div onClick={()=> setRegion(1)}>경기/인천</div></RegionOption>
+                        <RegionOption onClick={setChooseRegion} number={2} choose_region={choose_region}> <div onClick={()=> setRegion(2)}>충청/대전</div></RegionOption>
+                        <RegionOption onClick={setChooseRegion} number={3} choose_region={choose_region}> <div onClick={()=> setRegion(3)}>전라/광주</div></RegionOption>
+                        <RegionOption onClick={setChooseRegion} number={4} choose_region={choose_region}> <div onClick={()=> setRegion(4)}>경북/대구</div></RegionOption>
+                        <RegionOption onClick={setChooseRegion} number={5} choose_region={choose_region}> <div onClick={()=> setRegion(5)}>경남/부산/울산</div></RegionOption>
+                        <RegionOption onClick={setChooseRegion} number={6} choose_region={choose_region}> <div onClick={()=> setRegion(6)}>강원</div></RegionOption>
+                        <RegionOption onClick={setChooseRegion} number={7} choose_region={choose_region}> <div onClick={()=> setRegion(7)}>제주</div></RegionOption>
                     </div>
                     <div class="choice">
                         {region_list[region]}

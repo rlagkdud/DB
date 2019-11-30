@@ -51,8 +51,8 @@ const Reservation_css = () => {
 
         }
         .region:hover{
-            border:solid #808088;
-            background-color:#808088;
+            border:solid #f83b71;
+            background-color:#f83b71;
             color:white
         }
         }

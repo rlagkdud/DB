@@ -1,5 +1,6 @@
 import Header from './Header'
 import Seat_reserve_css from '../component/seat_reserve_css'
+import Link from 'next/link'
 
 const Seat_reserve=()=>{
     return(
@@ -207,7 +208,7 @@ const Seat_reserve=()=>{
                         </div>
                         <div class='buy_btn'>
                             <button class = 'btn1' type="button" onclick="location.href='' ">취소</button>
-                            <button class = 'btn2' type="button" onclick="location.href='' ">결제</button>
+                            <Link href="/PriceCheck"><button class = 'btn2' type="button" onclick="location.href='' ">결제</button></Link>
                         </div>
                     </div>
                 </div>     

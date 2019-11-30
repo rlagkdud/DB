@@ -25,7 +25,7 @@ const Header=() =>{
                             <li><Link href='/reservation'>영화예매</Link></li>
                             <li><Link href='/Login'>로그인</Link></li>
                             <li><Link href='/Join'>회원가입</Link></li>
-                            <li><a href=''>마이페이지</a></li>
+                            <li><a href='/Mypage'>마이페이지</a></li>
                         </ul>
                     </nav>
                 </div>
