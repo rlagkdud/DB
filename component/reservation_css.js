@@ -166,6 +166,13 @@ const Reservation_css = () => {
         .cancel{
             background-color:white;
         }
+        .pink{
+            color:#f83b71;
+            text-align:center;
+        }
+        .blue{
+            color:blue;
+        }
 
 
 

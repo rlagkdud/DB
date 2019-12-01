@@ -30,8 +30,40 @@ export const RegionAnchor = styled.div`
 
     &:hover{
         border:solid #f83b71;
-        background-color:#f83b71;
-        color:white
     }
     color:${(props)=>(props.isRegion ? "#f83b71" : "")}; 
 `
+export const BranchAnchor = styled.div`
+
+    width:80px;
+    text-align: center;
+    color: #808088;
+    float: left;
+    border: solid;
+    font-size: small;
+    margin-left: 20px;
+    width:7rem;
+    margin-bottom:2.3em;
+
+    &:hover{
+        border:solid #f83b71;
+    }
+    color:${(props)=>(props.isBranch ? "#f83b71" : "")}; 
+`
+
+export const MovieAnchor = styled.div`
+
+    border:solid;
+    text-align: center;
+    color: #808088;
+    font-size:small;
+    margin-bottom:2rem;
+    padding-left:4px;
+    padding-right:4px;
+
+    &:hover{
+        border:solid #f83b71;
+    }
+    color:${(props)=>(props.isMovie ? "#f83b71" : "")}; 
+`
+
