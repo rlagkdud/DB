@@ -2,11 +2,15 @@ import {useState} from 'react'
 import Header from './Header'
 import Index_css from '../component/Index_css'
 import Link from 'next/link'
+import Head from 'next/head'
 const Index=()=>{
     const [slide,setSlide]=useState(true)
 
     return(
         <div>
+            <Head>
+                <title>TIC</title>
+            </Head>
             <Header/>
             <Index_css/>
             <div class="body_index">

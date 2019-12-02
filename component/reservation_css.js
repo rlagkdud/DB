@@ -1,7 +1,7 @@
 const Reservation_css = () => {
     return(
         <style global jsx>{`
-        .body_reservation{
+        body{
         margin:0;
         background: #F4C2C2;
         }

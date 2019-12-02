@@ -1,9 +1,14 @@
 import Header from './Header'
 import Non_member_css from '../component/Non_member_css'
-
+import Head from 'next/head'
 const Non_member=()=>{
     return(
         <div>
+            <Head>
+                <title>
+                    TIC-비회원예매
+                </title>
+            </Head>
             <Header/>
             <Non_member_css/>
             <div class="non-back">

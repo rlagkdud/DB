@@ -120,8 +120,8 @@ const Join_css=()=>{
           color: #E6BEBE;
         }
         .signin-back{
-          background-color:#FBEFF2;
-          height: 500px;
+          background-color: #F4C2C2;
+          height: 100%;
           text-align: center;
         }
         .signin-whiteback {

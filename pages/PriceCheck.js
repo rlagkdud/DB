@@ -1,9 +1,15 @@
 import PriceCheck_css from '../component/PriceCheck_css'
 import Header from './Header'
+import Head from 'next/head'
 
 const PriceCheck=()=>{
     return(
         <div>
+            <Head>
+                <title>
+                    TIC-결제확인
+                </title>
+            </Head>
             <PriceCheck_css/>
             <Header/>
 

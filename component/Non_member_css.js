@@ -100,8 +100,8 @@ const Non_member_css =()=>{
           color: #E6BEBE;
         }
         .non-back{
-          background-color:  #F2F2F2;
-          height: 500px;
+          background-color:   #F4C2C2;
+          height: 100%;
           text-align: center;
         }
         .non-whiteback {

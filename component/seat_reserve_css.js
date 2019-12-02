@@ -1,7 +1,7 @@
 const Seat_reserve_css = () => {
     return(
         <style global jsx>{`
-        .body_seat{
+        body{
         margin:0;
         background: #F4C2C2;
         
@@ -234,6 +234,7 @@ const Seat_reserve_css = () => {
         .empty{
             background: #f07598;
             height: 70px;
+            width:100%;
 
         }
         .img_checkBox{

@@ -67,3 +67,15 @@ export const MovieAnchor = styled.div`
     color:${(props)=>(props.isMovie ? "#f83b71" : "")}; 
 `
 
+export const TimeAnchor= styled.button`
+    height: 25px;
+    width:80px;
+    background-color: white;
+    text-align: center;
+    border-style: solid; 
+    &:hover{
+        border:solid #f83b71;
+    }
+    color:${(props)=>(props.isTime ? "white" : "")};
+`
+

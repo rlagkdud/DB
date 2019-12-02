@@ -3,6 +3,7 @@ const Login_css=()=>{
         <style global jsx>{`
         .body_login{
         margin:0;
+        background-color: #F4C2C2;
         }
 
         .login-card {
@@ -126,8 +127,8 @@ const Login_css=()=>{
         
         
         .back{
-          background-color:  #FBEFF8;
-          height: 400px;
+          background-color:   #F4C2C2;
+          height:100%;
           text-align:center;
         }
         .whiteback {

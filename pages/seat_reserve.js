@@ -1,11 +1,28 @@
 import Header from './Header'
 import Seat_reserve_css from '../component/seat_reserve_css'
 import Link from 'next/link'
+import Head from 'next/head'
+import {TimeAnchor} from '../component/example'
+import {useState} from 'react'
+
+const TimeOption = ({number,onClick,choose_time,children})=>(
+    <TimeAnchor onClick={() => onClick(number)} isTime={number === choose_time}>
+        {children}
+    </TimeAnchor>
+)
 
 const Seat_reserve=()=>{
+
+    const[choose_time,setChooseTime]=useState(0)
+
     return(
         <div class="body_seat">
             <div>
+            <Head>
+                <title>
+                    TIC-좌석선택
+                </title>
+            </Head>
             <Seat_reserve_css/>
             <Header/>
             <div class='reserve_checkContainer'>
@@ -15,11 +32,11 @@ const Seat_reserve=()=>{
                     <div class='reserve'>
                         <h2>상영시간</h2>
                         <div class = 'movie_playtime'>
-                                <button type="button" onclick="location.href='' ">10:30</button>
-                                <button type="button" onclick="location.href='' ">11:30</button>
-                                <button type="button" onclick="location.href='' ">12:30</button>
-                                <button type="button" onclick="location.href='' ">1:30</button>
-                                <button type="button" onclick="location.href='' ">2:30</button>
+                                <TimeOption onClick={setChooseTime} number ={0} choose_time ={choose_time}>10:30</TimeOption>
+                                <TimeOption onClick={setChooseTime} number ={1} choose_time ={choose_time}>11:30</TimeOption>
+                                <TimeOption onClick={setChooseTime} number ={2} choose_time ={choose_time}>12:30</TimeOption>
+                                <TimeOption onClick={setChooseTime} number ={3} choose_time ={choose_time}>1:30</TimeOption>
+                                <TimeOption onClick={setChooseTime} number ={4} choose_time ={choose_time}>2:30</TimeOption>
                         </div>
                         <div class="movie_memnum">
                             <h3>인원/좌석</h3>
@@ -180,16 +197,16 @@ const Seat_reserve=()=>{
                             </div>
                         </div>
                         <div class='img_checkBox'>
-                                <img src='../image/seat1.png'/>
+                                <img src='seat1.png'/>
                                 <p>선택 가능</p>
-                                <img src='../image/seat1.png'/>
+                                <img src='seat1.png'/>
                                 <p>선택 가능</p>
 
                         </div>
                     </div>
                     <div class='check'>
                         <h3>예매 정보</h3>
-                        <img class = 'check_poster' src='../image/redvelvet.jpg'/>
+                        <img class = 'check_poster' src='redvelvet.jpg'/>
                         <div class='check_name'>
                             <h5>레드벨벳</h5>
                             <h5>3D</h5>

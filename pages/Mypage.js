@@ -1,10 +1,16 @@
 import Header from './Header'
 import Mypage_css from '../component/Mypage_css'
 import Link from 'next/link'
+import Head from 'next/head'
 
 const Mypage = ()=>{
     return(
         <div>
+            <Head>
+                <title>
+                    TIC-마이페이지
+                </title>
+            </Head>
             <Mypage_css/>
             <Header/>
 

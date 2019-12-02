@@ -2,9 +2,13 @@ import {useState} from 'react'
 import Header from './Header'
 import Login_css from '../component/Login_css'
 import Link from 'next/link'
+import Head from 'next/head'
 const Login=()=>{
     return(
         <div>
+            <Head>
+                <title>TIC-로그인</title>
+            </Head>
             <Login_css/>
             <Header/>
             <div class="body_login">

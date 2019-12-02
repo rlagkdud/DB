@@ -1,8 +1,12 @@
 import Join_css from '../component/Join_css'
 import Header from './Header'
+import Head from 'next/Head'
 const Join=()=>{
     return(
-        <div>            
+        <div>
+        <Head>
+            <title>TIC-회원가입</title>
+        </Head>            
             <Header/>
             <Join_css/>
             <div>
