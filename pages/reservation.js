@@ -39,13 +39,20 @@ const reservation = () => {
 
     const [content, setContent] = useState(-1)
     const [region, setRegion] =useState(0)
-    const [choose_region,setChooseRegion]=useState(0)
+    const [choose_region,setChooseRegion]=useState('서울')
     const [choose_branch,setChooseBranch]=useState(0)
     const [choose_movie,setChooseMovie]=useState(0)
     const [choose_time,setChooseTime]=useState(0)
     const [check, setCheck]=useState(false)
-    const [back, setBack]=useState(false)
-    
+    function checkHandler(){
+        if(check==false){
+            setContent(-1)
+            setChooseRegion(0)
+            setChooseBranch(0)
+            setChooseMovie(0)
+            setChooseTime(0)
+        }
+    }
 
 
     
@@ -394,7 +401,7 @@ const reservation = () => {
                 </div>
                 <div class="next">
                         <button class="confirm" onClick={()=>setCheck(true)}>확인</button>
-                    <button class="cancel" onClick={()=>setCheck(false)}>취소</button> 
+                    <button class="cancel" onClick={()=>checkHandler()}>취소</button> 
 
                     
                 </div>                  
