@@ -144,7 +144,7 @@ const Index=()=>{
                           <a href="#"></a>
                         </figure><br/>
                         </div>
-                        <button type="button" onclick="window.location.href'' "> MORE </button>
+                        <Link href="\Mypage"><button type="button"> MORE </button></Link>
                     </div>
                 </div>
                 <div class="banner">
