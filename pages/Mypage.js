@@ -1,9 +1,19 @@
 import Header from "./Header";
+import { useState, useEffect } from 'react';
 import Mypage_css from "../component/Mypage_css";
 import Link from "next/link";
 import Head from "next/head";
 
 const Mypage = () => {
+
+    const [userName, setName] = useState('');
+
+    useEffect(() =>{
+
+        setName(localStorage.getItem('usrID'));
+    }, [])
+
+
     return (
         <div>
             <Head>
@@ -16,7 +26,7 @@ const Mypage = () => {
                 <div class="nameMypage">
                     <img class="myRank" src="/redvelvet2.jpg" />
                     <p>
-                        <b>김서영</b> 님 환영합니다!
+                        <b>{userName}</b> 님 환영합니다!
                     </p>
                 </div>
                 <div class="preperGenre">

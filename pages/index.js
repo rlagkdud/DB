@@ -4,20 +4,11 @@ import Header from "./Header";
 import Index_css from "../component/Index_css";
 import Link from "next/link";
 import Head from "next/head";
-import { loadGetInitialProps } from "next/dist/next-server/lib/utils";
 import axios from 'axios';
 
 const index = ({ name }) => {
 
     const [slide, setSlide] = useState(true);
-    const [userName, setName] = useState(''); 
-
-    function logout() {
-
-        setName(localStorage.getItem('data'));
-        console.log(userName);
-
-    }
 
     return (
         <div>
@@ -27,10 +18,6 @@ const index = ({ name }) => {
             <Header />
             <Index_css />
             <div class="body_index">
-                <button class="sign_in" type="button" onClick={logout}>
-                    {" "}
-                    Sign In{" "}
-                </button>
                 <ul class="slides">
                     <input
                         type="radio"
