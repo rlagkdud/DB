@@ -137,7 +137,7 @@ const Login_css=()=>{
           margin: 0 auto 10px;
           background-color: white;
           width: 700px;
-          height:400px;
+          height:100%;
         }
 
         `}</style>

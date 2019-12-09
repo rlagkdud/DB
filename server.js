@@ -67,6 +67,8 @@ app.prepare().then(() => {
 
         result_d = result;
 
+        console.log(result_d);
+
         if (result_d.length === 0) {
             console.log("haha reject1");
             connection.release();
@@ -75,12 +77,20 @@ app.prepare().then(() => {
             app.render(req, res, page, {});
         } else {
             
+<<<<<<< HEAD
             db_pwd = result[0].user_pw;
+=======
+            db_pwd = result_d[0].user_pw;
+>>>>>>> 2a70cd880a1754bd54144028e5b0d17ea75a7929
             console.log("!" + db_pwd);
 
             if (db_pwd === pw) {
                 connection.release();
+<<<<<<< HEAD
                 const params = { bool: true, userID: req.body.userID, vip: result[0].vip};
+=======
+                const params = { bool: true, userID: result_d[0].user_name };
+>>>>>>> 2a70cd880a1754bd54144028e5b0d17ea75a7929
                 res.send(params);
                 app.render(req, res, page);
             } else {

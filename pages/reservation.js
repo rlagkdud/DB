@@ -573,7 +573,7 @@ const Reservation = () => {
                         <div class="movie_memnum">
                             <h3>인원/좌석</h3>
                             <p>성인</p>
-                            <select name="adult_num" onChange={(e)=>setAdult(e.target.value)}>
+                            <select name="adult_num" value={adult} onChange={(e)=>setAdult(e.target.value)}>
                                     <option value={0} selected="selected">0명</option>
                                     <option value={1}>1명</option>
                                     <option value={2}>2명</option>
@@ -581,7 +581,7 @@ const Reservation = () => {
                                     <option value={4}>4명</option>
                             </select>
                             <p>청소년</p>
-                            <select name="kid_num" onChange={(e)=>setTeen(e.target.value)}>
+                            <select name="kid_num" value={teen} onChange={(e)=>setTeen(e.target.value)}>
                                     <option value={0} selected="selected">0명</option>
                                     <option value={1}>1명</option>
                                     <option value={2}>2명</option>
@@ -589,7 +589,7 @@ const Reservation = () => {
                                     <option value={4}>4명</option>
                             </select>
                             <p>시니어</p>
-                            <select name="senior_num" onChange={(e)=>setSenior(e.target.value)}>
+                            <select name="senior_num" value={senior} onChange={(e)=>setSenior(e.target.value)}>
                                     <option value={0} selected="selected">0명</option>
                                     <option value={1}>1명</option>
                                     <option value={2}>2명</option>
