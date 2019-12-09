@@ -14,7 +14,7 @@ const mysql = require("mysql2/promise");
 const pool = mysql.createPool({
     host: "localhost",
     user: "root",
-    password: "Cho641164!",
+    password: "111111",
     database: "movie"
 });
 
@@ -94,6 +94,26 @@ app.prepare().then(() => {
                 app.render(req, res, page);
             }
         }
+    });
+
+    server.post('/n_login', async (req, res) => {
+        console.log(req.body);
+        var name = req.body.userName;
+        var pn = req.body.userPN;
+        var bd = req.body.userBD;
+        
+        var db_pwd;
+        var query = "INSERT INTO n_customer (phone_num, user_name, birth_d) VALUES(?, ?, ?)"
+    
+        var page = "/Non_member";
+
+        const connection = await pool.getConnection(async conn => conn);
+        await connection.query(query, [pn, name, bd]);
+
+        connection.release();
+        const params = { bool: true, userName: name, userPN: pn};
+        res.send(params);
+        app.render(req, res, page);
     });
 
     server.post('/join_process', async (req, res) => {
@@ -204,6 +224,26 @@ app.prepare().then(() => {
 
         query = "INSERT INTO ticketing_info (movie_genre, user_id, count, total_discount, total_price, movie_id, branch_id) VALUES(?, ?, ?, ?, ?, ?, ?)"
         await connection.query(query, [genre, userID, count, discount, total_price, movie_id, branch])
+
+        connection.release();
+        const params = { bool: true };
+        res.send(params);
+        app.render(req, res, page);
+    })
+
+    server.post('/n_order', async (req, res) => {
+        console.log('비회원 예매 진입 part2')
+        var movie_id = req.body.movie_id;
+        var total_price = req.body.total_price;
+        var branch = req.body.branch;
+        var count = req.body.count;
+        var userPN = req.body.userPN;
+
+        var page = "/PriceCheck"
+        const connection = await pool.getConnection(async conn => conn)
+
+        query = "INSERT INTO n_ticketing_info (count, total_price, movie_id, branch_id, phone_num) VALUES(?, ?, ?, ?, ?)"
+        await connection.query(query, [count, total_price, movie_id, branch, userPN])
 
         connection.release();
         const params = { bool: true };

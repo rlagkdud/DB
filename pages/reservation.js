@@ -74,6 +74,9 @@ const Reservation = () => {
     const [senior, setSenior] = useState(0);
     const [poster,setPoster] = useState('');
 
+    var member = true;
+    member = localStorage.getItem('member')
+
     var korean_name = '';
     function rename() {
         if (choose_movie === 'frozen2') {

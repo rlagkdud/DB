@@ -9,13 +9,10 @@ const Header = () => {
     const router = useRouter();
     const [userData, getData] = useState(null);
     const [logStat, getStat] = useState(false);
+    var member = false;
 
     useEffect(() => {
-
-            console.log(router.pathname);
-            console.log(localStorage.getItem('usrID'));
             getData(localStorage.getItem('usrID'));
-            console.log(userData);
 
             if(localStorage.getItem('usrID') !== null) {
                 getStat(true);
@@ -25,6 +22,9 @@ const Header = () => {
                 getStat(false);
                 console.log(logStat);
                 localStorage.clear();
+            }
+            if(localStorage.getItem('member') !== null) {
+                member = localStorage.getItem('member');
             }
         
         const handleRouteChange = url => {
@@ -45,12 +45,13 @@ const Header = () => {
     
     function getMethodM (e) {
         const val = e.target.name;
-        if (logStat) {
-            router.push({ pathname: val });
-        }
-        else {
+        if (!logStat) {
             alert('로그인이 필요한 서비스 입니다');
             router.push('/Login');
+        } else if (member === false) {
+            alert('비회원으로는 이용할 수 없는 서비스 입니다');
+        } else {
+            router.push({ pathname: val });
         }
     }
 

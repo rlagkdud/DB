@@ -34,6 +34,8 @@ const Login = () => {
             if(check){
                 alert('환영합니다! '+ res.data.userID +'님!');
                 localStorage.setItem('usrID', res.data.userID);
+                localStorage.setItem('vip', res.data.vip);
+                localStorage.setItem('member', true);
                 console.log(localStorage.getItem('usrID'));
                 router.push({pathname: '/Mypage' });
             }

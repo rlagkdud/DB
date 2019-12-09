@@ -20,7 +20,12 @@ const PriceCheck=()=>{
     localStorage.removeItem('seat')
     var price = localStorage.getItem('price')
     localStorage.removeItem('price')
-    var vip = localStorage.getItem('vip')
+    var vip = ''
+    var member = localStorage.getItem('member')
+    if (member === true) {
+        vip = localStorage.getItem('vip')
+    
+    }
     var eng_title = localStorage.getItem('eng_title')
     localStorage.removeItem('eng_title')
     console.log(eng_title)
@@ -38,34 +43,61 @@ const PriceCheck=()=>{
         else if (vip === 'Gold') {
             per = 0.2;
         }
+        else {
+            per = 0.0;
+        }
         discount = price * per;
         last_price = price - discount;
     }
     get_rank();
     
     function order_complete() {
-        console.log("i'm in!")
-        Axios({
-            method: 'POST',
-            url: '/order',
-            data:{
-                movie_id: localStorage.getItem('movie_id'),
-                discount: discount,
-                total_price: last_price,
-                branch: branch,
-                count: localStorage.getItem('count'),
-                userID : localStorage.getItem('usrID')
-            }
-        }).then( (res) => {
-            const check = res.data.bool;
-            if(check){
-                alert('예매가 완료되었습니다');
-                router.push({pathname: '/' });
-            }
-            else{
-                alert('뭔가... 뭔가가 잘못됨');
-            }
-        });
+        if (member === true) {
+            Axios({
+                method: 'POST',
+                url: '/order',
+                data:{
+                    movie_id: localStorage.getItem('movie_id'),
+                    discount: discount,
+                    total_price: last_price,
+                    branch: branch,
+                    count: localStorage.getItem('count'),
+                    userID : localStorage.getItem('usrID')
+                }
+            }).then( (res) => {
+                const check = res.data.bool;
+                if(check){
+                    alert('예매가 완료되었습니다');
+                    router.push({pathname: '/' });
+                }
+                else{
+                    alert('뭔가... 뭔가가 잘못됨');
+                }
+            });
+        }
+        else {
+            console.log('비회원예매 진입 part1')
+            Axios({
+                method: 'POST',
+                url: '/n_order',
+                data:{
+                    movie_id: localStorage.getItem('movie_id'),
+                    branch: branch,
+                    total_price: last_price,
+                    count: localStorage.getItem('count'),
+                    userPN: localStorage.getItem('pn')
+                }
+            }).then( (res) => {
+                const check = res.data.bool;
+                if (check) {
+                    alert('비회원 예매가 완료되었습니다');
+                    router.push({pathname: '/' });
+                }
+                else{
+                    alert('뭔가... 뭔가가 잘못됨');
+                }
+            })
+        }
     }
 
 
