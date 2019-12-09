@@ -1,5 +1,5 @@
 
-import {useState} from 'react'
+import {useState,useEffect} from 'react'
 import Header from './Header'
 import { useRouter } from 'next/router'
 import Reservation_css from '../component/reservation_css'
@@ -8,6 +8,8 @@ import Link from 'next/link'
 import Head from 'next/head'
 import Axios from 'axios'
 import{ DateAnchor,RegionAnchor,BranchAnchor,MovieAnchor,TimeAnchor } from '../component/example'
+
+
 
 //오늘 날짜 ~ 2일뒤까지
 var today = new Date()
@@ -56,6 +58,10 @@ const Reservation = () => {
     const [choose_time,setChooseTime]=useState(0)
     const [check, setCheck]=useState(false)
     const [seat, setSeat] = useState([])
+    const [adult, setAdult] = useState(0);
+    const [teen, setTeen] = useState(0);
+    const [senior, setSenior] = useState(0);
+
 
     function checkHandler(){
         if(check==false){
@@ -68,7 +74,10 @@ const Reservation = () => {
     }
     function checkHandler2(){    
         setChooseTime(0)
-        setSeat([])        
+        setSeat([])
+        setAdult(0)
+        setTeen(0)
+        setSenior(0)        
     }
 
     function get_branch() {
@@ -84,7 +93,7 @@ const Reservation = () => {
             console.log(res.data.times);
         });
     }
-    
+
     function get_reservation() {
         var seats = [];
         for (var i=0; i<seat.length; i++) {
@@ -112,6 +121,57 @@ const Reservation = () => {
             router.push({pathname: '/PriceCheck' });
         });
     }
+
+
+
+    useEffect(()=>{
+        if(check === false){
+            var confirms = document.getElementsByClassName("confirm");
+            if(content != 0 && choose_region!==0 && choose_branch !==0 && choose_movie !=0 ){
+                confirms[0].disabled = false;
+            }
+            else{
+                confirms[0].disabled=true;
+            }
+        }
+        else{
+            var seats = document.getElementsByName("seat");
+            for(var i = 0; i<seats.length; i++){
+                if(seats[i].checked){
+                    seats[i].disabled=true;
+                }
+            }
+            if(seat.length==0){
+                for(var i = 0; i<seats.length; i++ ){
+                    seats[i].disabled=false;
+                    seats[i].checked=false;
+                }
+            }
+
+            if(seat.length/4 == (adult*1+teen*1+senior*1)){
+                for(var i = 0; i<seats.length; i++){
+                    seats[i].disabled=true;
+                }
+             }else {
+                for(var i = 0; i<seats.length;i++){
+                    seats[i].disabled= false;
+                }
+            }
+            var pays = document.getElementsByClassName("btn2");
+            if(choose_time != 0 && seat != []){
+                pays[0].disabled=false
+            }
+            else{
+                pays[0].disabled=true
+            }
+        }
+    })
+    
+
+
+
+
+    
     
     const seoul = (
         
@@ -410,6 +470,38 @@ const Reservation = () => {
                     <DateOption onClick={setContent} number={load_date[0]} content={content}>{load_date[0]}</DateOption>
                         <DateOption onClick={setContent} number={load_date[1]} content={content}>{load_date[1]}</DateOption>
                         <DateOption onClick={setContent} number={load_date[2]} content={content}>{load_date[2]}</DateOption>
+                        {/* <DateOption onClick={setContent} number={'12/10'} content={content}>12/10</DateOption>
+                        <DateOption onClick={setContent} number={'12/11'} content={content}>12/11</DateOption>
+                        <DateOption onClick={setContent} number={'12/12'} content={content}>12/12</DateOption>
+                        <DateOption onClick={setContent} number={'12/13'} content={content}>12/13</DateOption>
+                        <DateOption onClick={setContent} number={'12/14'} content={content}>12/14</DateOption>
+                        <DateOption onClick={setContent} number={'12/15'} content={content}>12/15</DateOption>
+                        <DateOption onClick={setContent} number={'12/16'} content={content}>12/16</DateOption>
+                        <DateOption onClick={setContent} number={'12/17'} content={content}>12/17</DateOption>
+                        <DateOption onClick={setContent} number={'12/18'} content={content}>12/18</DateOption>
+                        <DateOption onClick={setContent} number={'12/19'} content={content}>12/19</DateOption>
+                        <DateOption onClick={setContent} number={'12/20'} content={content}>12/20</DateOption>
+                        <DateOption onClick={setContent} number={'12/21'} content={content}>12/21</DateOption>
+                        <DateOption onClick={setContent} number={'12/22'} content={content}>12/22</DateOption>
+                        <DateOption onClick={setContent} number={'12/23'} content={content}>12/23</DateOption>
+                        <DateOption onClick={setContent} number={'12/24'} content={content}>12/24</DateOption>
+                        <DateOption onClick={setContent} number={'12/25'} content={content}>12/25</DateOption>
+                        <DateOption onClick={setContent} number={'12/26'} content={content}>12/26</DateOption>
+                        <DateOption onClick={setContent} number={'12/27'} content={content}>12/27</DateOption>
+                        <DateOption onClick={setContent} number={'12/28'} content={content}>12/28</DateOption>
+                        <DateOption onClick={setContent} number={'12/29'} content={content}>12/29</DateOption>
+                        <DateOption onClick={setContent} number={'12/30'} content={content}>12/30</DateOption>
+                        <DateOption onClick={setContent} number={'12/31'} content={content}>12/31</DateOption>
+                        <DateOption onClick={setContent} number={'1/1'} content={content}>1/1</DateOption>
+                        <DateOption onClick={setContent} number={'1/2'} content={content}>1/2</DateOption>
+                        <DateOption onClick={setContent} number={'1/3'} content={content}>1/3</DateOption>
+                        <DateOption onClick={setContent} number={'1/4'} content={content}>1/4</DateOption>
+                        <DateOption onClick={setContent} number={'1/5'} content={content}>1/5</DateOption>
+                        <DateOption onClick={setContent} number={'1/6'} content={content}>1/6</DateOption> */}
+
+
+
+
                     </div>
                 </div>
                 <hr class="hr" />
@@ -435,7 +527,7 @@ const Reservation = () => {
 
                 </div>
                 <div class="next">
-                    <button class="confirm" onClick={get_branch}><div onClick={()=>setCheck(true)}>확인</div></button>
+                        <button class="confirm" onClick={()=>setCheck(true)}>확인</button>
                     <button class="cancel" onClick={()=>checkHandler()}>취소</button> 
 
                     
@@ -455,38 +547,40 @@ const Reservation = () => {
                     <div class='reserve'>
                         <h2>상영시간</h2>
                         <div class = 'movie_playtime'>
-                        <TimeOption onClick={setChooseTime} number ={'10:00'} choose_time ={choose_time}>10:00</TimeOption>
-                                <TimeOption onClick={setChooseTime} number ={'12:00'} choose_time ={choose_time}>12:00</TimeOption>
-                                <TimeOption onClick={setChooseTime} number ={'13:00'} choose_time ={choose_time}>13:00</TimeOption>
-                                <TimeOption onClick={setChooseTime} number ={'14:00'} choose_time ={choose_time}>14:00</TimeOption>
-                                <TimeOption onClick={setChooseTime} number ={'16:00'} choose_time ={choose_time}>16:00</TimeOption>
+                                <TimeOption onClick={setChooseTime} number ={'10:30'} choose_time ={choose_time}>10:30</TimeOption>
+                                <TimeOption onClick={setChooseTime} number ={'11:30'} choose_time ={choose_time}>11:30</TimeOption>
+                                <TimeOption onClick={setChooseTime} number ={'12:30'} choose_time ={choose_time}>12:30</TimeOption>
+                                <TimeOption onClick={setChooseTime} number ={'1:30'} choose_time ={choose_time}>1:30</TimeOption>
+                                <TimeOption onClick={setChooseTime} number ={'2:30'} choose_time ={choose_time}>2:30</TimeOption>
                         </div>
                         <div class="movie_memnum">
                             <h3>인원/좌석</h3>
                             <p>성인</p>
-                            <select name="adult_num">
-                                    <option value="0명" selected="selected">0명</option>
-                                    <option value="1명">1명</option>
-                                    <option value="2명">2명</option>
-                                    <option value="3명">3명</option>
-                                    <option value="4명">4명</option>
-                            </select>
-                            <p>청소년</p>
-                            <select name="kid_num">
-                                    <option value="0명" selected="selected">0명</option>
-                                    <option value="1명">1명</option>
-                                    <option value="2명">2명</option>
-                                    <option value="3명">3명</option>
-                                    <option value="4명">4명</option>
-                            </select>
-                            <p>시니어</p>
-                            <select onClick={(e)=>set} name="senior_num">
+                            <select name="adult_num" onChange={(e)=>setAdult(e.target.value)}>
                                     <option value={0} selected="selected">0명</option>
                                     <option value={1}>1명</option>
                                     <option value={2}>2명</option>
                                     <option value={3}>3명</option>
                                     <option value={4}>4명</option>
                             </select>
+                            <p>청소년</p>
+                            <select name="kid_num" onChange={(e)=>setTeen(e.target.value)}>
+                                    <option value={0} selected="selected">0명</option>
+                                    <option value={1}>1명</option>
+                                    <option value={2}>2명</option>
+                                    <option value={3}>3명</option>
+                                    <option value={4}>4명</option>
+                            </select>
+                            <p>시니어</p>
+                            <select name="senior_num" onChange={(e)=>setSenior(e.target.value)}>
+                                    <option value={0} selected="selected">0명</option>
+                                    <option value={1}>1명</option>
+                                    <option value={2}>2명</option>
+                                    <option value={3}>3명</option>
+                                    <option value={4}>4명</option>
+                            </select>
+                            {/* <button class = 'btn1' type="button" onClick={()=>checkHandler2()}>다시선택</button> */}
+                            <img onClick={()=>checkHandler2()} class="refresh_img" src="refresh.png"/>
                         </div>
                         <div class='seat_map'>
                             <div class='screen'>
@@ -494,136 +588,136 @@ const Reservation = () => {
                             </div>
                             <div class='seatA'>
                                 <p><u>A</u></p>
-                                <input onClick={()=>setSeat(seat + ["A1"])} type="checkbox" name='seat' value={'1'} />
-                                <input onClick={()=>setSeat(seat + ["A2"])} type="checkbox" name='seat' value={'2'}/> 
-                                <input onClick={()=>setSeat(seat + ["A3"])} class="thirdTwelve" type="checkbox" name='seat' value={'3'} />
-                                <input onClick={()=>setSeat(seat + ["A4"])} type="checkbox" name='seat' value={'4'} />
-                                <input onClick={()=>setSeat(seat + ["A5"])} type="checkbox" name='seat' value={'5'} />
-                                <input onClick={()=>setSeat(seat + ["A6"])} type="checkbox" name='seat' value={'6'} />
-                                <input onClick={()=>setSeat(seat + ["A7"])} type="checkbox" name='seat' value={'7'} />
-                                <input onClick={()=>setSeat(seat + ["A8"])} type="checkbox" name='seat' value={'8'} />
-                                <input onClick={()=>setSeat(seat + ["A9"])} type="checkbox" name='seat' value={'9'} />
-                                <input onClick={()=>setSeat(seat + ["A10"])} type="checkbox" name='seat' value={'10'} />
-                                <input onClick={()=>setSeat(seat + ["A11"])} type="checkbox" name='seat' value={'11'} />
-                                <input onClick={()=>setSeat(seat + ["A12"])} class="thirdTwelve" type="checkbox" name='seat' value={'12'} />
-                                <input onClick={()=>setSeat(seat + ["A13"])} type="checkbox" name='seat' value={'13'} />
-                                <input onClick={()=>setSeat(seat + ["A14"])} type="checkbox" name='seat' value={'14'} />
-                                <input onClick={()=>setSeat(seat + ["A15"])} type="checkbox" name='seat' value={'15'} />
+                                <input onClick={()=>setSeat(seat + ["A01 "])} type="checkbox" name='seat' value={'1'} />
+                                <input onClick={()=>setSeat(seat + ["A02 "])} type="checkbox" name='seat' value={'2'}/> 
+                                <input onClick={()=>setSeat(seat + ["A03 "])} class="thirdTwelve" type="checkbox" name='seat' value={'3'} />
+                                <input onClick={()=>setSeat(seat + ["A04 "])} type="checkbox" name='seat' value={'4'} />
+                                <input onClick={()=>setSeat(seat + ["A05 "])} type="checkbox" name='seat' value={'5'} />
+                                <input onClick={()=>setSeat(seat + ["A06 "])} type="checkbox" name='seat' value={'6'} />
+                                <input onClick={()=>setSeat(seat + ["A07 "])} type="checkbox" name='seat' value={'7'} />
+                                <input onClick={()=>setSeat(seat + ["A08 "])} type="checkbox" name='seat' value={'8'} />
+                                <input onClick={()=>setSeat(seat + ["A09 "])} type="checkbox" name='seat' value={'9'} />
+                                <input onClick={()=>setSeat(seat + ["A10 "])} type="checkbox" name='seat' value={'10'} />
+                                <input onClick={()=>setSeat(seat + ["A11 "])} type="checkbox" name='seat' value={'11'} />
+                                <input onClick={()=>setSeat(seat + ["A12 "])} class="thirdTwelve" type="checkbox" name='seat' value={'12'} />
+                                <input onClick={()=>setSeat(seat + ["A13 "])} type="checkbox" name='seat' value={'13'} />
+                                <input onClick={()=>setSeat(seat + ["A14 "])} type="checkbox" name='seat' value={'14'} />
+                                <input onClick={()=>setSeat(seat + ["A15 "])} type="checkbox" name='seat' value={'15'} />
                             </div>
                             <div class='seatB_G'>
                                 <p><u>B</u></p>
-                                <input type="checkbox" name='seat' value='1'/> 
-                                <input type="checkbox" name='seat' value='2' />
-                                <input class="thirdTwelve" type="checkbox" name='seat' value='3' />
-                                <input type="checkbox" name='seat' value='4' />
-                                <input type="checkbox" name='seat' value='5' />
-                                <input type="checkbox" name='seat' value='6' />
-                                <input type="checkbox" name='seat' value='7' />
-                                <input type="checkbox" name='seat' value='8' />
-                                <input type="checkbox" name='seat' value='9' />
-                                <input type="checkbox" name='seat' value='10' />
-                                <input type="checkbox" name='seat' value='11' />
-                                <input class="thirdTwelve" type="checkbox" name='seat' value='12' />
-                                <input type="checkbox" name='seat' value='13' />
-                                <input type="checkbox" name='seat' value='14' />
-                                <input type="checkbox" name='seat' value='15' />
+                                <input onClick={()=>setSeat(seat + ["B01 "])} type="checkbox" name='seat' value='1'/> 
+                                <input onClick={()=>setSeat(seat + ["B02 "])} type="checkbox" name='seat' value='2' />
+                                <input onClick={()=>setSeat(seat + ["B03 "])} class="thirdTwelve" type="checkbox" name='seat' value='3' />
+                                <input onClick={()=>setSeat(seat + ["B04 "])} type="checkbox" name='seat' value='4' />
+                                <input onClick={()=>setSeat(seat + ["B05 "])} type="checkbox" name='seat' value='5' />
+                                <input onClick={()=>setSeat(seat + ["B06 "])} type="checkbox" name='seat' value='6' />
+                                <input onClick={()=>setSeat(seat + ["B07 "])} type="checkbox" name='seat' value='7' />
+                                <input onClick={()=>setSeat(seat + ["B08 "])} type="checkbox" name='seat' value='8' />
+                                <input onClick={()=>setSeat(seat + ["B09 "])} type="checkbox" name='seat' value='9' />
+                                <input onClick={()=>setSeat(seat + ["B10 "])} type="checkbox" name='seat' value='10' />
+                                <input onClick={()=>setSeat(seat + ["B11 "])} type="checkbox" name='seat' value='11' />
+                                <input onClick={()=>setSeat(seat + ["B12 "])} class="thirdTwelve" type="checkbox" name='seat' value='12' />
+                                <input onClick={()=>setSeat(seat + ["B13 "])} type="checkbox" name='seat' value='13' />
+                                <input onClick={()=>setSeat(seat + ["B14 "])} type="checkbox" name='seat' value='14' />
+                                <input onClick={()=>setSeat(seat + ["B15 "])} type="checkbox" name='seat' value='15' />
                             </div>
                             <div class='seatB_G'>
                                 <p><u>C</u></p>
-                                <input type="checkbox" name='seat' value='1' />
-                                <input type="checkbox" name='seat' value='2' />
-                                <input class="thirdTwelve" type="checkbox" name='seat' value='3' />
-                                <input type="checkbox" name='seat' value='4' />
-                                <input type="checkbox" name='seat' value='5' />
-                                <input type="checkbox" name='seat' value='6' />
-                                <input type="checkbox" name='seat' value='7' />
-                                <input type="checkbox" name='seat' value='8' />
-                                <input type="checkbox" name='seat' value='9' />
-                                <input type="checkbox" name='seat' value='10' />
-                                <input type="checkbox" name='seat' value='11' />
-                                <input class="thirdTwelve" type="checkbox" name='seat' value='12'/>
-                                <input type="checkbox" name='seat' value='13' />
-                                <input type="checkbox" name='seat' value='14' />
-                                <input type="checkbox" name='seat' value='15' />
+                                <input onClick={()=>setSeat(seat + ["C01 "])} type="checkbox" name='seat' value='1' />
+                                <input onClick={()=>setSeat(seat + ["C02 "])} type="checkbox" name='seat' value='2' />
+                                <input onClick={()=>setSeat(seat + ["C03 "])} class="thirdTwelve" type="checkbox" name='seat' value='3' />
+                                <input onClick={()=>setSeat(seat + ["C04 "])} type="checkbox" name='seat' value='4' />
+                                <input onClick={()=>setSeat(seat + ["C05 "])} type="checkbox" name='seat' value='5' />
+                                <input onClick={()=>setSeat(seat + ["C06 "])} type="checkbox" name='seat' value='6' />
+                                <input onClick={()=>setSeat(seat + ["C07 "])} type="checkbox" name='seat' value='7' />
+                                <input onClick={()=>setSeat(seat + ["C08 "])} type="checkbox" name='seat' value='8' />
+                                <input onClick={()=>setSeat(seat + ["C09 "])} type="checkbox" name='seat' value='9' />
+                                <input onClick={()=>setSeat(seat + ["C10 "])} type="checkbox" name='seat' value='10' />
+                                <input onClick={()=>setSeat(seat + ["C11 "])} type="checkbox" name='seat' value='11' />
+                                <input onClick={()=>setSeat(seat + ["C12 "])} class="thirdTwelve" type="checkbox" name='seat' value='12'/>
+                                <input onClick={()=>setSeat(seat + ["C13 "])} type="checkbox" name='seat' value='13' />
+                                <input onClick={()=>setSeat(seat + ["C14 "])} type="checkbox" name='seat' value='14' />
+                                <input onClick={()=>setSeat(seat + ["C15 "])} type="checkbox" name='seat' value='15' />
                             </div>
                             <div class='seatB_G'>
                                 <p><u>D</u></p>
-                                <input type="checkbox" name='seat' value='1' />
-                                <input type="checkbox" name='seat' value='2' />
-                                <input class="thirdTwelve" type="checkbox" name='seat' value='3' />
-                                <input type="checkbox" name='seat' value='4' />
-                                <input type="checkbox" name='seat' value='5' />
-                                <input type="checkbox" name='seat' value='6' />
-                                <input type="checkbox" name='seat' value='7' />
-                                <input type="checkbox" name='seat' value='8' />
-                                <input type="checkbox" name='seat' value='9' />
-                                <input type="checkbox" name='seat' value='10' />
-                                <input type="checkbox" name='seat' value='11' />
-                                <input class="thirdTwelve" type="checkbox" name='seat' value='12' />
-                                <input type="checkbox" name='seat' value='13' />
-                                <input type="checkbox" name='seat' value='14' />
-                                <input type="checkbox" name='seat' value='15' />
+                                <input  onClick={()=>setSeat(seat + ["D01 "])} type="checkbox" name='seat' value='1' />
+                                <input  onClick={()=>setSeat(seat + ["D02 "])} type="checkbox" name='seat' value='2' />
+                                <input  onClick={()=>setSeat(seat + ["D03 "])} class="thirdTwelve" type="checkbox" name='seat' value='3' />
+                                <input  onClick={()=>setSeat(seat + ["D04 "])} type="checkbox" name='seat' value='4' />
+                                <input  onClick={()=>setSeat(seat + ["D05 "])} type="checkbox" name='seat' value='5' />
+                                <input  onClick={()=>setSeat(seat + ["D06 "])} type="checkbox" name='seat' value='6' />
+                                <input  onClick={()=>setSeat(seat + ["D07 "])} type="checkbox" name='seat' value='7' />
+                                <input  onClick={()=>setSeat(seat + ["D08 "])} type="checkbox" name='seat' value='8' />
+                                <input  onClick={()=>setSeat(seat + ["D09 "])} type="checkbox" name='seat' value='9' />
+                                <input  onClick={()=>setSeat(seat + ["D10 "])} type="checkbox" name='seat' value='10' />
+                                <input  onClick={()=>setSeat(seat + ["D11 "])} type="checkbox" name='seat' value='11' />
+                                <input  onClick={()=>setSeat(seat + ["D12 "])} class="thirdTwelve" type="checkbox" name='seat' value='12' />
+                                <input  onClick={()=>setSeat(seat + ["D13 "])} type="checkbox" name='seat' value='13' />
+                                <input  onClick={()=>setSeat(seat + ["D14 "])} type="checkbox" name='seat' value='14' />
+                                <input  onClick={()=>setSeat(seat + ["D15 "])} type="checkbox" name='seat' value='15' />
                             </div>
                             <div class='seatB_G'>
                                 <p><u>E</u></p>
-                                <input type="checkbox" name='seat' value='1' />
-                                <input class="thirdTwelve" type="checkbox" name='seat' value='2' />
-                                <input type="checkbox" name='seat' value='3' />
-                                <input type="checkbox" name='seat' value='4' />
-                                <input type="checkbox" name='seat' value='5' />
-                                <input type="checkbox" name='seat' value='6' />
-                                <input type="checkbox" name='seat' value='7' />
-                                <input type="checkbox" name='seat' value='8' />
-                                <input type="checkbox" name='seat' value='9' />
-                                <input type="checkbox" name='seat' value='10' />
-                                <input type="checkbox" name='seat' value='11' />
-                                <input class="thirdTwelve" type="checkbox" name='seat' value='12' />
-                                <input type="checkbox" name='seat' value='13' />
-                                <input type="checkbox" name='seat' value='14' />
-                                <input type="checkbox" name='seat' value='15' />
+                                <input onClick={()=>setSeat(seat + ["E01 "])} type="checkbox" name='seat' value='1' />
+                                <input onClick={()=>setSeat(seat + ["E02 "])} class="thirdTwelve" type="checkbox" name='seat' value='2' />
+                                <input onClick={()=>setSeat(seat + ["E03 "])} type="checkbox" name='seat' value='3' />
+                                <input onClick={()=>setSeat(seat + ["E04 "])} type="checkbox" name='seat' value='4' />
+                                <input onClick={()=>setSeat(seat + ["E05 "])} type="checkbox" name='seat' value='5' />
+                                <input onClick={()=>setSeat(seat + ["E06 "])} type="checkbox" name='seat' value='6' />
+                                <input onClick={()=>setSeat(seat + ["E07 "])} type="checkbox" name='seat' value='7' />
+                                <input onClick={()=>setSeat(seat + ["E08 "])} type="checkbox" name='seat' value='8' />
+                                <input onClick={()=>setSeat(seat + ["E09 "])} type="checkbox" name='seat' value='9' />
+                                <input onClick={()=>setSeat(seat + ["E10 "])} type="checkbox" name='seat' value='10' />
+                                <input onClick={()=>setSeat(seat + ["E11 "])} type="checkbox" name='seat' value='11' />
+                                <input onClick={()=>setSeat(seat + ["E12 "])} class="thirdTwelve" type="checkbox" name='seat' value='12' />
+                                <input onClick={()=>setSeat(seat + ["E13 "])} type="checkbox" name='seat' value='13' />
+                                <input onClick={()=>setSeat(seat + ["E14 "])} type="checkbox" name='seat' value='14' />
+                                <input onClick={()=>setSeat(seat + ["E15 "])} type="checkbox" name='seat' value='15' />
                             </div>
                             <div class='seatB_G'>
                                 <p><u>F</u></p>
-                                <input type="checkbox" name='seat' value='1' />
-                                <input type="checkbox" name='seat' value='2' />
-                                <input class="thirdTwelve" type="checkbox" name='seat' value='3' />
-                                <input type="checkbox" name='seat' value='4' />
-                                <input type="checkbox" name='seat' value='5' />
-                                <input type="checkbox" name='seat' value='6' />
-                                <input type="checkbox" name='seat' value='7' />
-                                <input type="checkbox" name='seat' value='8' />
-                                <input type="checkbox" name='seat' value='9' />
-                                <input type="checkbox" name='seat' value='10'/>
-                                <input type="checkbox" name='seat' value='11'/>
-                                <input class="thirdTwelve" type="checkbox" name='seat' value='12' />
-                                <input type="checkbox" name='seat' value='13' />
-                                <input type="checkbox" name='seat' value='14' />
-                                <input type="checkbox" name='seat' value='15' />
+                                <input onClick={()=>setSeat(seat + ["F01 "])} type="checkbox" name='seat' value='1' />
+                                <input onClick={()=>setSeat(seat + ["F02 "])} type="checkbox" name='seat' value='2' />
+                                <input onClick={()=>setSeat(seat + ["F03 "])} class="thirdTwelve" type="checkbox" name='seat' value='3' />
+                                <input onClick={()=>setSeat(seat + ["F04 "])} type="checkbox" name='seat' value='4' />
+                                <input onClick={()=>setSeat(seat + ["F05 "])} type="checkbox" name='seat' value='5' />
+                                <input onClick={()=>setSeat(seat + ["F06 "])} type="checkbox" name='seat' value='6' />
+                                <input onClick={()=>setSeat(seat + ["F07 "])} type="checkbox" name='seat' value='7' />
+                                <input onClick={()=>setSeat(seat + ["F08 "])} type="checkbox" name='seat' value='8' />
+                                <input onClick={()=>setSeat(seat + ["F09 "])} type="checkbox" name='seat' value='9' />
+                                <input onClick={()=>setSeat(seat + ["F10 "])} type="checkbox" name='seat' value='10'/>
+                                <input onClick={()=>setSeat(seat + ["F11 "])} type="checkbox" name='seat' value='11'/>
+                                <input onClick={()=>setSeat(seat + ["F12 "])} class="thirdTwelve" type="checkbox" name='seat' value='12' />
+                                <input onClick={()=>setSeat(seat + ["F13 "])} type="checkbox" name='seat' value='13' />
+                                <input onClick={()=>setSeat(seat + ["F14 "])} type="checkbox" name='seat' value='14' />
+                                <input onClick={()=>setSeat(seat + ["F15 "])} type="checkbox" name='seat' value='15' />
                             </div>
                             <div class='seatB_G'>
                                 <p><u>G</u></p>
-                                <input type="checkbox" name='seat' value='1' />
-                                <input type="checkbox" name='seat' value='2' />
-                                <input class="thirdTwelve" type="checkbox" name='seat' value='3' />
-                                <input type="checkbox" name='seat' value='4' />
-                                <input type="checkbox" name='seat' value='5' />
-                                <input type="checkbox" name='seat' value='6' />
-                                <input type="checkbox" name='seat' value='7' />
-                                <input type="checkbox" name='seat' value='8' />
-                                <input type="checkbox" name='seat' value='9' />
-                                <input type="checkbox" name='seat' value='10' />
-                                <input type="checkbox" name='seat' value='11' />
-                                <input class="thirdTwelve" type="checkbox" name='seat' value='12' />
-                                <input type="checkbox" name='seat' value='13' />
-                                <input type="checkbox" name='seat' value='14' />
-                                <input type="checkbox" name='seat' value='15' />
+                                <input onClick={()=>setSeat(seat + ["G01 "])} type="checkbox" name='seat' value='1' />
+                                <input onClick={()=>setSeat(seat + ["G02 "])} type="checkbox" name='seat' value='2' />
+                                <input onClick={()=>setSeat(seat + ["G03 "])} class="thirdTwelve" type="checkbox" name='seat' value='3' />
+                                <input onClick={()=>setSeat(seat + ["G04 "])} type="checkbox" name='seat' value='4' />
+                                <input onClick={()=>setSeat(seat + ["G05 "])} type="checkbox" name='seat' value='5' />
+                                <input onClick={()=>setSeat(seat + ["G06 "])} type="checkbox" name='seat' value='6' />
+                                <input onClick={()=>setSeat(seat + ["G07 "])} type="checkbox" name='seat' value='7' />
+                                <input onClick={()=>setSeat(seat + ["G08 "])} type="checkbox" name='seat' value='8' />
+                                <input onClick={()=>setSeat(seat + ["G09 "])} type="checkbox" name='seat' value='9' />
+                                <input onClick={()=>setSeat(seat + ["G10 "])} type="checkbox" name='seat' value='10' />
+                                <input onClick={()=>setSeat(seat + ["G11 "])} type="checkbox" name='seat' value='11' />
+                                <input onClick={()=>setSeat(seat + ["G12 "])} class="thirdTwelve" type="checkbox" name='seat' value='12' />
+                                <input onClick={()=>setSeat(seat + ["G13 "])} type="checkbox" name='seat' value='13' />
+                                <input onClick={()=>setSeat(seat + ["G14 "])} type="checkbox" name='seat' value='14' />
+                                <input onClick={()=>setSeat(seat + ["G15 "])} type="checkbox" name='seat' value='15' />
                             </div>
                         </div>
                         <div class='img_checkBox'>
                                 <img src='seat1.png'/>
                                 <p>선택 가능</p>
                                 <img src='seat1.png'/>
-                                <p>선택 가능</p>
+                                <p>선택 불가능</p>
                         </div>
                     </div>
                     <div class='check'>
@@ -647,12 +741,16 @@ const Reservation = () => {
                         </div>
                         <div class='buy_btn'>
                             <button class = 'btn1' type="button" onClick={()=>checkHandler2()}>취소</button>
-                            <button class = 'btn2' type="button" onClick={get_reservation}>결제</button>
+                            <Link href="/PriceCheck"><button class = 'btn2' type="button" onClick={get_reservation}>결제</button></Link>
                         </div>
                     </div>
                 </div>  
             </div>
-            <div class='empty'></div>
+            <div class='empty'>
+                <div class="copyright">
+                    Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
+                </div>
+            </div>
         </div>
     )
 
