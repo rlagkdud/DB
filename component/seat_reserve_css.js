@@ -217,13 +217,14 @@ const Seat_reserve_css = () => {
             padding-top:5px;
             text-align: right;
         }
-        .buy_btn .btn1{
+         .buy_btn .btn1{
             background-color:white;
             border:1px solid gray;
             text-align: center; 
             height: 30px;
             width: 60px;
-        }
+        } 
+        
         .buy_btn .btn2{
             background-color: #fd5987;
             border-style:none;
@@ -235,7 +236,11 @@ const Seat_reserve_css = () => {
             background: #f07598;
             height: 70px;
             width:100%;
-
+            color:#F4C2C2;
+        }
+        .copyright a{
+            text-decoration:none;
+            color: #F4C2C2;
         }
         .img_checkBox{
             padding-top:10px;
@@ -254,10 +259,11 @@ const Seat_reserve_css = () => {
         .totalprice{
             margin: 10px 0 10px 120px;
         }
-
-
-
-
+        .refresh_img{
+            margin-left:40px;
+            width:20px;
+            height:20px;
+        }
         `}</style>
     )
 }
