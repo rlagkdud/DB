@@ -149,6 +149,13 @@ ALTER TABLE theater_info MODIFY theater_id INT NOT NULL AUTO_INCREMENT;
 ALTER TABLE theater_seat MODIFY seat_id INT NOT NULL AUTO_INCREMENT;
 ALTER TABLE ticketing_info MODIFY order_id INT NOT NULL AUTO_INCREMENT;
 
+
+INSERT INTO customer VALUES 
+('user1', 'DemoMan', '1234','01011110000', '19980103', 'Bronze'),
+('user2', 'DemoMan1', '1234','01011110000', '19980103', 'Silver'),
+('user3', 'DemoMan2', '1234','01011110000', '19980103', 'Gold');
+
+
 INSERT INTO branch VALUES (1, '서울', '가산디지털');
 INSERT INTO branch VALUES (2, '서울', '가양');
 INSERT INTO branch VALUES (3, '서울','강동');

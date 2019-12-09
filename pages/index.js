@@ -201,19 +201,19 @@ const index = ({ name }) => {
 
                 <div class="movie_list">
                     <div class="movie1">
-                        <Link href="\movie_info_frozen"><img src="/Frozen.jpeg" alt="" /></Link>
+                        <Link href="\movie_info_frozen"><img src="/frozen2_sub.jpg" alt="" /></Link>
                     </div>
                     <div class="movie2">
                         <Link href="\movie_info_fordv"><img src="/fordv.jpeg" alt="" /></Link>
                     </div>
                     <div class="movie3">
-                        <Link href="\movie_info_knives"><img src="/knives.jpeg" alt="" /></Link>
+                        <Link href="\movie_info_knives"><img src="/knivesOut.jpg" alt="" /></Link>
                     </div>
                     <div class="movie4">
                         <Link href="\movie_info_she"><img src="/she.jpeg" alt="" /></Link>
                     </div>
                     <div class="movie5">
-                        <Link href="\movie_info_max"><img src="/max.jpeg" alt="" /></Link>
+                        <Link href="\movie_info_max"><img src="/lastchrismas.jpg" alt="" /></Link>
                     </div>
                 </div>
 

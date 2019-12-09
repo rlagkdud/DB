@@ -16,7 +16,7 @@ const movie_info_knives=()=>{
                 <div class="movie_info">
                     <div class="info">
                         <h1>영화 상세</h1>
-                        <img class="movie_img" src="/knives.jpeg" alt=""/>
+                        <img class="movie_img" src="/knivesOut.jpg" alt=""/>
                         <div class="title">
                             <p class="movie_name">나이브스 아웃</p>
                             <p class="ticketing_rate">예매율 : 10.8% (실관람객 : 237,231명)</p>

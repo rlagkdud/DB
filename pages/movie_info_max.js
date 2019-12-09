@@ -16,7 +16,7 @@ const movie_info_max=()=>{
                 <div class="movie_info">
                     <div class="info">
                         <h1>영화 상세</h1>
-                        <img class="movie_img" src="/max.jpeg" alt=""/>
+                        <img class="movie_img" src="/lastchrismas.jpg" alt=""/>
                         <div class="title">
                             <p class="movie_name">라스트 크리스마스</p>
                             <p class="ticketing_rate">예매율 : 10.8% (실관람객 : 0명)</p>
