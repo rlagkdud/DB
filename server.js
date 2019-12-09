@@ -29,13 +29,59 @@ app.prepare().then(() => {
         return app.render(req, res, '/index', req.query);
     })
 
-    server.post('/index', (req, res) => { 
-        console.log("errortype: 2");
-        console.log(req.data);
-        const params = { name: "????" };
+    //take data of user that which genre is many
+    server.post('/index', async (req, res) => {
+        var userID = req.body.userID;
+        var query_data= 'select * from ticketing_info where user_id =?'
+        var query_movie= 'select title from movie where movie_id =?'
+        var genre_arr = new Array();
+        var genre_n;
+
+        const connection = await pool.getConnection(async conn => conn);
+        const [result] = await connection.query(query_data, [userID]);
+        
+
+        const data = result;
+
+        const [result_m] = await connection.query(query_movie, [data[ data.length - 1 ].movie_id])
+
+        
+        console.log(data)
+        console.log(result_m[0].title)
+
+        for(var i = 0; i < data.length; i ++){
+            genre_arr[i] = data[i].movie_genre;
+        };
+
+        let genre = genre_arr.filter( (item, idx, array) => {
+            return array.indexOf( item ) === idx ;
+        });
+        var first;
+        var max = 0;
+
+        for(var i = 0; i < genre.length; i++){
+            var count = 0;
+            for(var j = 0; j < genre_arr.length; j++){
+                if(genre[i] === genre_arr[j]){
+                    count = count + 1;
+                }
+            };
+
+            if(count >= max) {
+                max = count;
+                first = genre[i];
+            };
+
+        };
+
+        const params = { genre: first,  recent: result_m[0].title};
         res.send(params);
-        return app.render(req, res, '/index', req.query);
+        console.log('!');
+        connection.release();
+        
+        app.render(req, res, '/');
     });
+    //end
 
     server.get('/Mypage', (req, res) => {
         console.log("errortype: 3");
@@ -82,7 +128,7 @@ app.prepare().then(() => {
 
             if (db_pwd === pw) {
                 connection.release();
-                const params = { bool: true, userID: req.body.userID, vip: result[0].vip};
+                const params = { bool: true, userID: req.body.userID, vip: result[0].vip, userName: result_d[0].user_name};
                 res.send(params);
                 app.render(req, res, page);
             } else {

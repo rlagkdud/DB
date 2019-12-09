@@ -14,7 +14,7 @@ const Login = () => {
     function gotoReg () {
         router.push('/Join');
     }
-    
+
     function getid(e) {  getID(e.target.value); }
     function getpw(e) {  getPW(e.target.value); }
 
@@ -32,9 +32,10 @@ const Login = () => {
             const check = res.data.bool;
             
             if(check){
-                alert('환영합니다! '+ res.data.userID +'님!');
-                localStorage.setItem('usrID', res.data.userID);
-                console.log(localStorage.getItem('usrID'));
+                alert('환영합니다! '+ res.data.userName +'님!');
+                localStorage.setItem('name', res.data.userName);
+                localStorage.setItem('userID', res.data.userID);
+                console.log(localStorage.getItem('name'));
                 router.push({pathname: '/Mypage' });
             }
             else{

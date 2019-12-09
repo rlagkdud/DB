@@ -10,7 +10,7 @@ const Mypage = () => {
 
     useEffect(() =>{
 
-        setName(localStorage.getItem('usrID'));
+        setName(localStorage.getItem('name'));
     }, [])
 
 

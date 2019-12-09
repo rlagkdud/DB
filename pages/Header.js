@@ -11,19 +11,13 @@ const Header = () => {
     const [logStat, getStat] = useState(false);
 
     useEffect(() => {
+            getData(localStorage.getItem('userID'));
 
-            console.log(router.pathname);
-            console.log(localStorage.getItem('usrID'));
-            getData(localStorage.getItem('usrID'));
-            console.log(userData);
-
-            if(localStorage.getItem('usrID') !== null) {
+            if(localStorage.getItem('userID') !== null) {
                 getStat(true);
-                console.log(logStat);
             }
             else{
                 getStat(false);
-                console.log(logStat);
                 localStorage.clear();
             }
         
