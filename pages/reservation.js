@@ -19,6 +19,8 @@ for (var i=0; i<3; i++) {
     today.setDate(today.getDate() + 1)
 }
 
+var poster = []
+
 const DateOption = ({number,onClick,content,children})=>(
     <DateAnchor onClick={() => onClick(number)} isDate={number === content}>
         {children}
@@ -35,10 +37,16 @@ const BranchOption = ({number,onClick,choose_branch,children})=>(
     </BranchAnchor>
 )
 const MovieOption = ({number,onClick,choose_movie,children})=>(
+    // console.log("movieOption");
     <MovieAnchor onClick={() => onClick(number)} isMovie={number === choose_movie}>
         {children}
     </MovieAnchor>
+    // <MovieAnchor onClick={() => onClick(number)} isMovie={number === choose_movie}>
+    // {children}
+    // </MovieAnchor>
 )
+
+
 
 const TimeOption = ({number,onClick,choose_time,children})=>(
     <TimeAnchor onClick={() => onClick(number)} isTime={number === choose_time}>
@@ -61,7 +69,7 @@ const Reservation = () => {
     const [adult, setAdult] = useState(0);
     const [teen, setTeen] = useState(0);
     const [senior, setSenior] = useState(0);
-
+    const [poster,setPoster] = useState('');
 
     function checkHandler(){
         if(check==false){
@@ -443,10 +451,10 @@ const Reservation = () => {
     const movies=(
         <div class="scroll">
                 <MovieOption onClick={setChooseMovie} number={'시동'} choose_movie={choose_movie}>시동</MovieOption>
-                <MovieOption onClick={setChooseMovie} number={'겨울왕국2(자막)'} choose_movie={choose_movie}>겨울왕국2(자막)</MovieOption>
-                <MovieOption onClick={setChooseMovie} number={'겨울왕국2(더빙)'} choose_movie={choose_movie}>겨울왕국2(더빙)</MovieOption>
+                <MovieOption onClick={setChooseMovie} number={'frozen2'} choose_movie={choose_movie}>겨울왕국2(자막)</MovieOption>
+                <MovieOption onClick={setChooseMovie} number={'frozen2_sub'} choose_movie={choose_movie}>겨울왕국2(더빙)</MovieOption>
                 <MovieOption onClick={setChooseMovie} number={'포드V페라리(자막)'} choose_movie={choose_movie}>포드V페라리(자막)</MovieOption>
-                <MovieOption onClick={setChooseMovie} number={'나이브스 아웃(자막)'} choose_movie={choose_movie}>나이브스 아웃(자막)</MovieOption>
+                <MovieOption onClick={setChooseMovie} number={'knivesOut'} choose_movie={choose_movie}>나이브스 아웃(자막)</MovieOption>
                 <MovieOption onClick={setChooseMovie} number={'감쪽같은 그녀'} choose_movie={choose_movie}>감쪽같은 그녀</MovieOption>
                 <MovieOption onClick={setChooseMovie} number={'라스트 크리스마스(자막)'} choose_movie={choose_movie}>라스트 크리스마스(자막)</MovieOption>
                 <MovieOption onClick={setChooseMovie} number={'아내를 죽였다'} choose_movie={choose_movie}>아내를 죽였다</MovieOption>
@@ -528,6 +536,7 @@ const Reservation = () => {
                 </div>
                 <div class="next">
                         <button class="confirm" onClick={()=>setCheck(true)}>확인</button>
+                        {/* <button class="confirm" onClick={()=>checkHandler3()}>확인</button> */}
                     <button class="cancel" onClick={()=>checkHandler()}>취소</button> 
 
                     
@@ -714,15 +723,15 @@ const Reservation = () => {
                             </div>
                         </div>
                         <div class='img_checkBox'>
-                                <img src='seat1.png'/>
+                                <img src='seat.png'/>
                                 <p>선택 가능</p>
-                                <img src='seat1.png'/>
+                                <img src='seat_checked.png'/>
                                 <p>선택 불가능</p>
                         </div>
                     </div>
                     <div class='check'>
                         <h3>예매 정보</h3>
-                        <img class = 'check_poster' src='redvelvet.jpg'/>
+                        <img class = 'check_poster' src={choose_movie+".jpg"}/>
                         <div class='check_name'>
                             <h5>{choose_movie}</h5>
                             <h5>3D</h5>
