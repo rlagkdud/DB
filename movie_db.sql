@@ -19,7 +19,7 @@ CREATE TABLE n_customer (
 );
 
 create table branch(
-    branch_id int(10),
+    branch_id int(10) ,
     branch_region varchar(20),
     branch_city varchar(20),
 
@@ -110,9 +110,19 @@ create table settlement(
     branch_id int(10),
     date date,
     day_price int(30),
-    foreign key(branch_id) references point(branch_id) on update CASCADE
+    foreign key(branch_id) references branch(branch_id) on update CASCADE
 
 );
+
+create table theater_info(
+    theater_id int(10),
+    theater_num varchar(20),
+    branch_id int(10),
+
+    primary key(theater_id),
+    foreign key (branch_id) references branch(branch_id) on delete CASCADE on update CASCADE
+);
+
 
 create table theater_fac(
     theater_id int(10),
@@ -125,14 +135,6 @@ create table theater_fac(
 
 );
 
-create table theater_info(
-    theater_id int(10),
-    theater_num varchar(20),
-    branch_id int(10),
-
-    primary key(theater_id),
-    foreign key (branch_id) references point(branch_id) on delete CASCADE on update CASCADE
-);
 
 CREATE TABLE emp (
     emp_name varchar(20) NOT NULL,
@@ -146,12 +148,12 @@ ALTER TABLE movie MODIFY movie_id INT NOT NULL AUTO_INCREMENT;
 ALTER TABLE theater_info MODIFY theater_id INT NOT NULL AUTO_INCREMENT;
 ALTER TABLE theater_seat MODIFY seat_id INT NOT NULL AUTO_INCREMENT;
 
-INSERT INTO branch(branch_region, branch_city) VALUES ('서울', '가산디지털');
-INSERT INTO branch(branch_region, branch_city) VALUES ('서울', '가양');
-INSERT INTO branch(branch_region, branch_city) VALUES ('서울','강동');
-INSERT INTO branch(branch_region, branch_city) VALUES ('경기/인천', '검단');
-INSERT INTO branch(branch_region, branch_city) VALUES ('경기/인천', '광교아울렛');
-INSERT INTO branch(branch_region, branch_city) VALUES ('경기/인천', '광주터미널');
+INSERT INTO branch VALUES (1, '서울', '가산디지털');
+INSERT INTO branch VALUES (2, '서울', '가양');
+INSERT INTO branch VALUES (3, '서울','강동');
+INSERT INTO branch VALUES (4, '경기/인천', '검단');
+INSERT INTO branch VALUES (5, '경기/인천', '광교아울렛');
+INSERT INTO branch VALUES (6, '경기/인천', '광주터미널');
 
 INSERT INTO movie(movie_genre, title, limit_age, dimension, runtime,
 theater_id, start_time, branch_id) VALUES
@@ -160,16 +162,9 @@ theater_id, start_time, branch_id) VALUES
  ('애니메이션', '겨울왕국2(자막)', 0, '2D', 103, 3, '12:00', '가양'),
  ('애니메이션', '겨울왕국2(자막)', 0, '2D', 103, 3, '14:00', '가양');
 
-INSERT INTO theater(theater_num, branch_id) VALUES
-(1, '가산디지털'), (2, '가산디지털'), (1, '가양'), (2, '가양');
-
 INSERT INTO theater_seat(movie_id, theater_id, theater_num, seat_num) VALUES
-(1, 1, 1, 'A1'),  (1, 1, 1, 'A2'),  (1, 1, 1, 'A3'),  (1, 1, 1, 'A4'),
-(1, 1, 1, 'B1'),  (1, 1, 1, 'B2'),  (1, 1, 1, 'B3'),  (1, 1, 1, 'B4');
-
-insert into point
-values
-(1, '서울', '가산 디지털 단지'), (2, '서울', '김포 공항'), (3, '경기도', '안산 고잔');
+(1, 1, 1, 'A01'),  (1, 1, 1, 'A02'),  (1, 1, 1, 'A03'),  (1, 1, 1, 'A04'),
+(1, 1, 1, 'B01'),  (1, 1, 1, 'B02'),  (1, 1, 1, 'B03'),  (1, 1, 1, 'B04');
 
 insert into settlement
 values
