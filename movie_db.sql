@@ -26,6 +26,8 @@ create table branch(
     primary key(branch_id)
 );
 
+ALTER TABLE branch MODIFY branch_id INT NOT NULL AUTO_INCREMENT;
+
 CREATE TABLE movie (
     movie_id varchar(20) NOT NULL,
     movie_genre varchar(20) NOT NULL,
@@ -39,6 +41,8 @@ CREATE TABLE movie (
     PRIMARY KEY (movie_id)
 );
 
+ALTER TABLE movie MODIFY movie_id INT NOT NULL AUTO_INCREMENT;
+
 CREATE TABLE ticketing_info (
     order_id varchar(20) NOT NULL,
     movie_genre varchar(20) NOT NULL,
@@ -50,6 +54,9 @@ CREATE TABLE ticketing_info (
     branch_id varchar(20) NOT NULL,
     PRIMARY KEY (order_id)
 );
+
+
+ALTER TABLE ticketing_info MODIFY order_id INT NOT NULL AUTO_INCREMENT;
 
 CREATE TABLE n_ticketing_info (
     order_id varchar(20) NOT NULL,
@@ -88,6 +95,8 @@ CREATE TABLE theater_seat (
     PRIMARY KEY (seat_id)
 );
 
+ALTER TABLE theater_seat MODIFY seat_id INT NOT NULL AUTO_INCREMENT;
+
 CREATE TABLE comment (
     comment_no int(11) NOT NULL,
     user_id varchar(20) NOT NULL,
@@ -123,6 +132,8 @@ create table theater_info(
     foreign key (branch_id) references branch(branch_id) on delete CASCADE on update CASCADE
 );
 
+ALTER TABLE theater_info MODIFY theater_id INT NOT NULL AUTO_INCREMENT;
+
 
 create table theater_fac(
     theater_id int(10),
@@ -143,11 +154,9 @@ CREATE TABLE emp (
     emp_phone varchar(15)
 );
 
-ALTER TABLE branch MODIFY branch_id INT NOT NULL AUTO_INCREMENT;
-ALTER TABLE movie MODIFY movie_id INT NOT NULL AUTO_INCREMENT;
-ALTER TABLE theater_info MODIFY theater_id INT NOT NULL AUTO_INCREMENT;
-ALTER TABLE theater_seat MODIFY seat_id INT NOT NULL AUTO_INCREMENT;
-ALTER TABLE ticketing_info MODIFY order_id INT NOT NULL AUTO_INCREMENT;
+
+
+
 
 
 INSERT INTO customer VALUES 
@@ -217,3 +226,34 @@ theater_id, start_time, branch_id) values
 ('애니메이션', '알라딘', 12, '2D', 103, 3, '12:00', '가산디지털'),
 ('애니메이션', '라이온킹', 12, '2D', 103, 3, '12:00', '가산디지털'),
 ('애니메이션', '토이스토리4', 12, '2D', 103, 3, '12:00', '가산디지털');
+
+insert into ticketing_info
+(movie_genre, user_id, count, total_discount, total_price, movie_id, branch_id) 
+values 
+( '애니메이션', 'user1', 2, 0, 0, 28, 1 ),
+( '애니메이션', 'user1', 2, 0, 0, 26, 1 ),
+( '애니메이션', 'user1', 2, 0, 0, 27, 1 ),
+( '호러', 'user1', 2, 0, 0, 2, 1 ),
+( '호러', 'user1', 2, 0, 0, 2, 1 ),
+( '스릴러', 'user1', 2, 0, 0, 15, 1 ),
+( '스릴러', 'user1', 2, 0, 0, 15, 1 ),
+( '스릴러', 'user1', 2, 0, 0, 14, 1 ),
+( 'SF', 'user1', 2, 0, 0, 17, 1 ),
+( 'SF', 'user2', 2, 0, 0, 17, 1 ),
+( 'SF', 'user2', 3, 0, 0, 17, 1 ),
+( 'SF', 'user2', 3, 0, 0, 17, 1 ),
+( '어드벤쳐', 'user2', 1, 0, 0, 20, 1 ),
+( '어드벤쳐', 'user2', 1, 0, 0, 21, 1 ),
+( '어드벤쳐', 'user2', 2, 0, 0, 21, 1 ),
+( '로맨스', 'user2', 1, 0, 0, 9, 1 ),
+( '액션', 'user3', 1, 0, 0, 11, 1 ),
+( '액션', 'user3', 1, 0, 0, 13, 1 ),
+( '로맨스', 'user3', 1, 0, 0, 9, 1 ),
+( '로맨스', 'user3', 1, 0, 0, 10, 1 ),
+( '로맨스', 'user3', 2, 0, 0, 10, 1 ),
+( '로맨스', 'user3', 3, 0, 0, 8, 1 ),
+( '로맨스', 'user3', 1, 0, 0, 8, 1 ),
+( '드라마', 'user3', 2, 0, 0, 23, 1 ),
+( '드라마', 'user3', 2, 0, 0, 25, 1 ),
+( '드라마', 'user3', 4, 0, 0, 26, 1 )
+;
