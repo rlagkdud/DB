@@ -236,6 +236,10 @@ const Seat_reserve_css = () => {
             width:100%;
 
         }
+        .copyright a{
+            text-decoration:none;
+            color: #F4C2C2;
+        }
         .img_checkBox{
             padding-top:10px;
             text-align: right;
