@@ -80,10 +80,12 @@ const Login_css=()=>{
         }
         
         .login {
+          float: left;
           text-align: center;
           font-size: 14px;
           font-weight: 700;
           height: 28px;
+          width: 136px;
           padding: 0 8px;
           background-color: #343B40;
           color: #E6BEBE;

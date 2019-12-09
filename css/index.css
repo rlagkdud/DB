@@ -2,7 +2,7 @@ body{
   margin: 0;
 }
 .main {
-  background-image: url(../image/pinkmoon.jpg);
+  background-image: url(../public/static/pinkmoon.jpg);
   background-color: white;
   background-size: cover;
   background-position: top;
@@ -323,14 +323,14 @@ input#img-6:checked ~ .nav-dots label#img-dot-6 {
   height: 150px;
 }
 .membership {
-  background-image: url(../image/membership.png);
+  background-image: url(../public/static/membership.png);
   background-size: cover;
   background-position: center;
   height: 200px;
 }
 
 .footer {
-  background-image: url(../image/footer.png);
+  background-image: url(../public/static/footer.png);
   background-size: cover;
   background-position: center;
   height: 50px;

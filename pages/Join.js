@@ -1,6 +1,6 @@
 import Join_css from '../component/Join_css'
 import Header from './Header'
-import Head from 'next/Head'
+import Head from 'next/head'
 const Join=()=>{
     return(
         <div>

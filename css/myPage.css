@@ -2,7 +2,7 @@ body{
     margin: 0;
   }
   .main {
-    background-image: url(../image/pinkmoon.jpg);
+    background-image: url(../public/static/pinkmoon.jpg);
     background-color: white;
     background-size: cover;
     background-position: top;

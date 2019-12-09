@@ -279,14 +279,14 @@ const Index_css=()=>{
           height: 150px;
         }
         .membership {
-          background-image: url(membership.png);
+          background-image: url(/membership.png);
           background-size: cover;
           background-position: center;
           height: 200px;
         }
 
         .footer {
-          background-image: url(footer.png);
+          background-image: url(/footer.png);
           background-size: cover;
           background-position: center;
           height: 50px;

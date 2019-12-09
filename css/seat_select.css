@@ -136,7 +136,7 @@ input[type='checkbox']{
     outline: none;
     box-shadow: none;
     vertical-align: middle;
-    background: url("../image/seat1.png")no-repeat;
+    background: url("../public/static/seat1.png")no-repeat;
 }
 
 input[type='checkbox']:checked {
@@ -145,7 +145,7 @@ input[type='checkbox']:checked {
     -o-appearance: none;
     box-shadow: none;
     /* background-color: aqua; */
-    background: url("../image/seat1_checked.png") no-repeat;
+    background: url("../public/static/seat1_checked.png") no-repeat;
 }
 .check_poster{
     float:left;
