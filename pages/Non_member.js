@@ -1,4 +1,6 @@
 import Header from './Header'
+import { useState } from 'react'
+import { useRouter } from 'next/router'
 import Non_member_css from '../component/Non_member_css'
 import Head from 'next/head'
 const Non_member=()=>{
@@ -18,7 +20,6 @@ const Non_member=()=>{
                         <form action="" method="post">
                             <p class="name"><input type="text" name="user_name" placeholder="이름" required/></p>
                             <p class="non-ph"><input type="text" name="user_ph" placeholder="연락처" required/></p>
-                            <p class="non-pwd"><input type="password" name="user_pwd" placeholder="휴대폰 번호" required/></p>
                             <p class="non-birth"><input type="text" name="user_birth" placeholder="생년월일(YYMMDD)" required/></p>
                             <img src="bar.png" width="100%" alt=""/>
                             <input class="non-sign_in" type="submit" value="Sign In"/>

@@ -14,11 +14,7 @@ const Login = () => {
     function gotoReg () {
         router.push('/Join');
     }
-
-    // useEffect(() =>{
-
-    // });
-
+    
     function getid(e) {  getID(e.target.value); }
     function getpw(e) {  getPW(e.target.value); }
 

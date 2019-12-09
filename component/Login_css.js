@@ -130,7 +130,7 @@ const Login_css=()=>{
         
         .back{
           background-color:   #F4C2C2;
-          height:100%;
+          height: 500px;
           text-align:center;
         }
         .whiteback {

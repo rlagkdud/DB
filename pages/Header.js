@@ -36,7 +36,7 @@ const Header = () => {
             router.events.off('routeChangeStart', handleRouteChange)
         }
     
-    },[logStat])
+    },[])
     
     function getMethod (e) {
         const val = e.target.name;
