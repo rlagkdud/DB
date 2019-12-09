@@ -35,17 +35,30 @@ const TimeOption = ({number,onClick,choose_time,children})=>(
 )
 
 
-const reservation = () => {
+const Reservation = () => {
 
     const [content, setContent] = useState(-1)
     const [region, setRegion] =useState(0)
-    const [choose_region,setChooseRegion]=useState(0)
+    const [choose_region,setChooseRegion]=useState('서울')
     const [choose_branch,setChooseBranch]=useState(0)
     const [choose_movie,setChooseMovie]=useState(0)
     const [choose_time,setChooseTime]=useState(0)
     const [check, setCheck]=useState(false)
-    const [back, setBack]=useState(false)
-    
+    const [seat, setSeat] = useState([])
+
+    function checkHandler(){
+        if(check==false){
+            setContent(-1)
+            setChooseRegion(0)
+            setChooseBranch(0)
+            setChooseMovie(0)
+            setChooseTime(0)
+        }
+    }
+    function checkHandler2(){    
+        setChooseTime(0)
+        setSeat([])        
+    }
 
 
     
@@ -319,19 +332,18 @@ const reservation = () => {
 
     const movies=(
         <div class="scroll">
-                <MovieOption onClick={setChooseMovie} number={'블랙머니1'} choose_movie={choose_movie}>블랙머니</MovieOption>
-                <MovieOption onClick={setChooseMovie} number={'블랙머니2'} choose_movie={choose_movie}>블랙머니</MovieOption>
-                <MovieOption onClick={setChooseMovie} number={'겨울왕국(자막)'} choose_movie={choose_movie}>겨울왕국(자막)</MovieOption>
-                <MovieOption onClick={setChooseMovie} number={'겨울왕국(더빙)'} choose_movie={choose_movie}>겨울왕국(더빙)</MovieOption>
-                <MovieOption onClick={setChooseMovie} number={'조커(자막)'} choose_movie={choose_movie}>조커(자막)</MovieOption>
-                <MovieOption onClick={setChooseMovie} number={'조커(더빙)'} choose_movie={choose_movie}>조커(더빙)</MovieOption>
-                <MovieOption onClick={setChooseMovie} number={'82년생 김지영'} choose_movie={choose_movie}>82년생 김지영</MovieOption>
-                <MovieOption onClick={setChooseMovie} number={'어벤져스'} choose_movie={choose_movie}>어벤져스</MovieOption>
-                <MovieOption onClick={setChooseMovie} number={'바보몽총이'} choose_movie={choose_movie}>바보몽총이</MovieOption>
-                <MovieOption onClick={setChooseMovie} number={'왤케힘드니'} choose_movie={choose_movie}>왤케힘드니</MovieOption>
-                <MovieOption onClick={setChooseMovie} number={'빨리하고'} choose_movie={choose_movie}>빨리하고</MovieOption>
-                <MovieOption onClick={setChooseMovie} number={'끝내야지'} choose_movie={choose_movie}>끝내야지</MovieOption>
-                <MovieOption onClick={setChooseMovie} number={'메롱메롱'} choose_movie={choose_movie}>메롱메롱</MovieOption>
+                <MovieOption onClick={setChooseMovie} number={'시동'} choose_movie={choose_movie}>시동</MovieOption>
+                <MovieOption onClick={setChooseMovie} number={'겨울왕국2(자막)'} choose_movie={choose_movie}>겨울왕국2(자막)</MovieOption>
+                <MovieOption onClick={setChooseMovie} number={'겨울왕국2(더빙)'} choose_movie={choose_movie}>겨울왕국2(더빙)</MovieOption>
+                <MovieOption onClick={setChooseMovie} number={'포드V페라리(자막)'} choose_movie={choose_movie}>포드V페라리(자막)</MovieOption>
+                <MovieOption onClick={setChooseMovie} number={'나이브스 아웃(자막)'} choose_movie={choose_movie}>나이브스 아웃(자막)</MovieOption>
+                <MovieOption onClick={setChooseMovie} number={'감쪽같은 그녀'} choose_movie={choose_movie}>감쪽같은 그녀</MovieOption>
+                <MovieOption onClick={setChooseMovie} number={'라스트 크리스마스(자막)'} choose_movie={choose_movie}>라스트 크리스마스(자막)</MovieOption>
+                <MovieOption onClick={setChooseMovie} number={'아내를 죽였다'} choose_movie={choose_movie}>아내를 죽였다</MovieOption>
+                <MovieOption onClick={setChooseMovie} number={'블랙머니'} choose_movie={choose_movie}>블랙머니</MovieOption>
+                <MovieOption onClick={setChooseMovie} number={'쥬만지:넥스트레벨(자막)'} choose_movie={choose_movie}>쥬만지:넥스트레벨(자막)</MovieOption>
+                <MovieOption onClick={setChooseMovie} number={'프란시스코 교황:맨 오브 히스 워드(자막)'} choose_movie={choose_movie}>프란시스코 교황:맨 오브 히스 워드(자막)'</MovieOption>
+                <MovieOption onClick={setChooseMovie} number={'나를 찾아줘'} choose_movie={choose_movie}>나를 찾아줘</MovieOption>
         </div>
     )
 
@@ -345,18 +357,6 @@ const reservation = () => {
                 <div class="date">
                     <h3>날짜</h3>
                     <div class="point">
-                        <DateOption onClick={setContent} number={'11/28'} content={content}>11/28</DateOption>
-                        <DateOption onClick={setContent} number={'11/29'} content={content}>11/29</DateOption>
-                        <DateOption onClick={setContent} number={'11/30'} content={content}>11/30</DateOption>
-                        <DateOption onClick={setContent} number={'12/1'} content={content}>12/1</DateOption>
-                        <DateOption onClick={setContent} number={'12/2'} content={content}>12/2</DateOption>
-                        <DateOption onClick={setContent} number={'12/3'} content={content}>12/3</DateOption>
-                        <DateOption onClick={setContent} number={'12/4'} content={content}>12/4</DateOption>
-                        <DateOption onClick={setContent} number={'12/5'} content={content}>12/5</DateOption>
-                        <DateOption onClick={setContent} number={'12/6'} content={content}>12/6</DateOption>
-                        <DateOption onClick={setContent} number={'12/7'} content={content}>12/7</DateOption>
-                        <DateOption onClick={setContent} number={'12/8'} content={content}>12/8</DateOption>
-                        <DateOption onClick={setContent} number={'12/9'} content={content}>12/9</DateOption>
                         <DateOption onClick={setContent} number={'12/10'} content={content}>12/10</DateOption>
                         <DateOption onClick={setContent} number={'12/11'} content={content}>12/11</DateOption>
                         <DateOption onClick={setContent} number={'12/12'} content={content}>12/12</DateOption>
@@ -367,6 +367,27 @@ const reservation = () => {
                         <DateOption onClick={setContent} number={'12/17'} content={content}>12/17</DateOption>
                         <DateOption onClick={setContent} number={'12/18'} content={content}>12/18</DateOption>
                         <DateOption onClick={setContent} number={'12/19'} content={content}>12/19</DateOption>
+                        <DateOption onClick={setContent} number={'12/20'} content={content}>12/20</DateOption>
+                        <DateOption onClick={setContent} number={'12/21'} content={content}>12/21</DateOption>
+                        <DateOption onClick={setContent} number={'12/22'} content={content}>12/22</DateOption>
+                        <DateOption onClick={setContent} number={'12/23'} content={content}>12/23</DateOption>
+                        <DateOption onClick={setContent} number={'12/24'} content={content}>12/24</DateOption>
+                        <DateOption onClick={setContent} number={'12/25'} content={content}>12/25</DateOption>
+                        <DateOption onClick={setContent} number={'12/26'} content={content}>12/26</DateOption>
+                        <DateOption onClick={setContent} number={'12/27'} content={content}>12/27</DateOption>
+                        <DateOption onClick={setContent} number={'12/28'} content={content}>12/28</DateOption>
+                        <DateOption onClick={setContent} number={'12/29'} content={content}>12/29</DateOption>
+                        <DateOption onClick={setContent} number={'12/30'} content={content}>12/30</DateOption>
+                        <DateOption onClick={setContent} number={'12/31'} content={content}>12/31</DateOption>
+                        <DateOption onClick={setContent} number={'1/1'} content={content}>1/1</DateOption>
+                        <DateOption onClick={setContent} number={'1/2'} content={content}>1/2</DateOption>
+                        <DateOption onClick={setContent} number={'1/3'} content={content}>1/3</DateOption>
+                        <DateOption onClick={setContent} number={'1/4'} content={content}>1/4</DateOption>
+                        <DateOption onClick={setContent} number={'1/5'} content={content}>1/5</DateOption>
+                        <DateOption onClick={setContent} number={'1/6'} content={content}>1/6</DateOption>
+
+
+
 
                     </div>
                 </div>
@@ -394,7 +415,7 @@ const reservation = () => {
                 </div>
                 <div class="next">
                         <button class="confirm" onClick={()=>setCheck(true)}>확인</button>
-                    <button class="cancel" onClick={()=>setCheck(false)}>취소</button> 
+                    <button class="cancel" onClick={()=>checkHandler()}>취소</button> 
 
                     
                 </div>                  
@@ -438,12 +459,12 @@ const reservation = () => {
                                     <option value="4명">4명</option>
                             </select>
                             <p>시니어</p>
-                            <select name="senior_num">
-                                    <option value="0명" selected="selected">0명</option>
-                                    <option value="1명">1명</option>
-                                    <option value="2명">2명</option>
-                                    <option value="3명">3명</option>
-                                    <option value="4명">4명</option>
+                            <select onClick={(e)=>set} name="senior_num">
+                                    <option value={0} selected="selected">0명</option>
+                                    <option value={1}>1명</option>
+                                    <option value={2}>2명</option>
+                                    <option value={3}>3명</option>
+                                    <option value={4}>4명</option>
                             </select>
                         </div>
                         <div class='seat_map'>
@@ -452,21 +473,21 @@ const reservation = () => {
                             </div>
                             <div class='seatA'>
                                 <p><u>A</u></p>
-                                <input type="checkbox" name='seat' value='1' />
-                                <input type="checkbox" name='seat' value='2'/> 
-                                <input class="thirdTwelve" type="checkbox" name='seat' value='3' />
-                                <input type="checkbox" name='seat' value='4' />
-                                <input type="checkbox" name='seat' value='5' />
-                                <input type="checkbox" name='seat' value='6' />
-                                <input type="checkbox" name='seat' value='7' />
-                                <input type="checkbox" name='seat' value='8' />
-                                <input type="checkbox" name='seat' value='9' />
-                                <input type="checkbox" name='seat' value='10' />
-                                <input type="checkbox" name='seat' value='11' />
-                                <input class="thirdTwelve" type="checkbox" name='seat' value='12' />
-                                <input type="checkbox" name='seat' value='13' />
-                                <input type="checkbox" name='seat' value='14' />
-                                <input type="checkbox" name='seat' value='15' />
+                                <input onClick={()=>setSeat(seat + ["A1"])} type="checkbox" name='seat' value={'1'} />
+                                <input onClick={()=>setSeat(seat + ["A2"])} type="checkbox" name='seat' value={'2'}/> 
+                                <input onClick={()=>setSeat(seat + ["A3"])} class="thirdTwelve" type="checkbox" name='seat' value={'3'} />
+                                <input onClick={()=>setSeat(seat + ["A4"])} type="checkbox" name='seat' value={'4'} />
+                                <input onClick={()=>setSeat(seat + ["A5"])} type="checkbox" name='seat' value={'5'} />
+                                <input onClick={()=>setSeat(seat + ["A6"])} type="checkbox" name='seat' value={'6'} />
+                                <input onClick={()=>setSeat(seat + ["A7"])} type="checkbox" name='seat' value={'7'} />
+                                <input onClick={()=>setSeat(seat + ["A8"])} type="checkbox" name='seat' value={'8'} />
+                                <input onClick={()=>setSeat(seat + ["A9"])} type="checkbox" name='seat' value={'9'} />
+                                <input onClick={()=>setSeat(seat + ["A10"])} type="checkbox" name='seat' value={'10'} />
+                                <input onClick={()=>setSeat(seat + ["A11"])} type="checkbox" name='seat' value={'11'} />
+                                <input onClick={()=>setSeat(seat + ["A12"])} class="thirdTwelve" type="checkbox" name='seat' value={'12'} />
+                                <input onClick={()=>setSeat(seat + ["A13"])} type="checkbox" name='seat' value={'13'} />
+                                <input onClick={()=>setSeat(seat + ["A14"])} type="checkbox" name='seat' value={'14'} />
+                                <input onClick={()=>setSeat(seat + ["A15"])} type="checkbox" name='seat' value={'15'} />
                             </div>
                             <div class='seatB_G'>
                                 <p><u>B</u></p>
@@ -595,7 +616,7 @@ const reservation = () => {
                             <p>상영일<h5>{content}</h5></p><br/>
                             <p>상영시간<h5>{choose_time}</h5></p><br/>
                             <p>상영관<h5>{choose_branch}</h5></p><br/>
-                            <p>좌석<h5>C7, C8</h5></p><br/>
+                            <p>좌석<h5>{seat}</h5></p><br/>
                         </div>
                         <div class='see_price'>
                             <h2>총 결제금액</h2><br/>
@@ -604,7 +625,7 @@ const reservation = () => {
                             <h4 class="totalprice">18000</h4>
                         </div>
                         <div class='buy_btn'>
-                            <button class = 'btn1' type="button" onClick={()=>setCheck(false)}>취소</button>
+                            <button class = 'btn1' type="button" onClick={()=>checkHandler2()}>취소</button>
                             <Link href="/PriceCheck"><button class = 'btn2' type="button" onclick="location.href='' ">결제</button></Link>
                         </div>
                     </div>
@@ -629,4 +650,4 @@ const reservation = () => {
     )
 }
 
-export default reservation
+export default Reservation

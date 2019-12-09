@@ -226,17 +226,37 @@ const index = ({ name }) => {
                     </div>
                     <div class="genre_wrap">
                         <div class="genre_img">
-                            <img src="/genre1.jpeg" height="350px" alt="" />
-                            <img src="/genre2.jpeg" height="350px" alt="" />
-                            <br />
-                            <img src="/genre3.jpeg" height="350px" alt="" />
-                            <img src="/genre4.jpeg" height="350px" alt="" />
-                            <br />
+                        <figure class="genre_snip">
+                          <img src="/genre1.jpeg" height="350px" width="350px" alt="sample57" />
+                          <figcaption>
+                            <h3>요곳에 마우스를</h3>
+                            <h5>올리면 말이야</h5>
+                          </figcaption>
+                          <a href="#"></a>
+                        </figure>
+                        <figure class="genre_snip"><img src="/genre2.jpeg" alt="sample59" />
+                          <figcaption>
+                            <h3>장르가 나타난다</h3>
+                            <h5>이말이야</h5>
+                          </figcaption>
+                          <a href="#"></a>
+                        </figure> <br/>
+                        <figure class="genre_snip"><img src="/genre3.jpeg" alt="sample60" />
+                          <figcaption>
+                            <h3>어떤 장르 넣을까</h3>
+                            <h5>히히히히히</h5>
+                          </figcaption>
+                          <a href="#"></a>
+                        </figure>
+                        <figure class="genre_snip"><img src="/genre4.jpeg" alt="sample60" />
+                          <figcaption>
+                            <h3>근데 이것도 장르추천</h3>
+                            <h5>불러와야 하는건데 엉엉 할일이 생각나버렸다,,,</h5>
+                          </figcaption>
+                          <a href="#"></a>
+                        </figure><br/>
                         </div>
-                        <button type="button" onclick="window.location.href'' ">
-                            {" "}
-                            MORE{" "}
-                        </button>
+                        <Link href="\Mypage"><button type="button"> MORE </button></Link>
                     </div>
                 </div>
                 <div class="banner">
@@ -258,5 +278,5 @@ const index = ({ name }) => {
 
 //     return { name: data };
 // };
-
 export default index;
+

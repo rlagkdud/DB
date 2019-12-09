@@ -1,7 +1,6 @@
 
 import styled from '@emotion/styled'
 
-
 export const DateAnchor = styled.button`
     color: #808088;
     float:left;
@@ -60,6 +59,7 @@ export const MovieAnchor = styled.div`
     margin-bottom:2rem;
     padding-left:4px;
     padding-right:4px;
+    width:100px;
 
     &:hover{
         border:solid #f83b71;
@@ -78,4 +78,17 @@ export const TimeAnchor= styled.button`
     }
     color:${(props)=>(props.isTime ? "white" : "")};
 `
-
+export const SeatAnchor = styled.input`
+    margin:0;
+    width: 20px !important;
+    height: 20px !important;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -o-appearance: none;
+    outline: none;
+    box-shadow: none;
+    vertical-align: middle;
+    background: url("seat1.png") no-repeat;
+    margin: 3px 3px 3px 4px;
+    background:${(props)=>(props.isSeat ? url('seat1_checked.png') : "")};
+`

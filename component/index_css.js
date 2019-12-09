@@ -291,7 +291,90 @@ const Index_css=()=>{
           background-position: center;
           height: 50px;
         }
+        .genre_snip {
+          display: inline-block;
+          /* font-family: 'Source Sans Pro', sans-serif; */
+          position: relative;
+          overflow: hidden;
+          margin: 10px;
+          min-width: 350px;
+          max-width: 350px;
+          width: 100%;
+          color: #343B40;
+          text-align: left;
+          font-size: 20px;
+          background-color: #F2F2F2;
+        }
 
+        .genre_snip * {
+          -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+          -webkit-transition: all 0.45s ease;
+          transition: all 0.45s ease;
+        }
+
+        .genre_snip img {
+          vertical-align: top;
+          max-width: 100%;
+          backface-visibility: hidden;
+        }
+
+        .genre_snip figcaption {
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          z-index: 1;
+          align-items: center;
+          bottom: 0;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+        }
+
+        .genre_snip h3,
+        .genre_snip h5 {
+          margin: 0;
+          opacity: 0;
+          letter-spacing: 1px;
+        }
+
+        .genre_snip h3 {
+          -webkit-transform: translateY(-100%);
+          transform: translateY(-100%);
+          text-transform: uppercase;
+          font-weight: 400;
+        }
+
+        .genre_snip h5 {
+          font-weight: normal;
+          font-style: italic;
+          color: #888;
+          -webkit-transform: translateY(100%);
+          transform: translateY(100%);
+        }
+
+        .genre_snip a {
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          z-index: 1;
+        }
+
+        .genre_snip:hover > img,
+        .genre_snip.hover > img {
+          opacity: 0.1;
+        }
+
+        .genre_snip:hover h3,
+        .genre_snip.hover h3,
+        .genre_snip:hover h5,
+        .genre_snip.hover h5 {
+          -webkit-transform: translateY(0);
+          transform: translateY(0);
+          opacity: 1
 
 
 
