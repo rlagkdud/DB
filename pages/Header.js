@@ -9,7 +9,7 @@ const Header = () => {
     const router = useRouter();
     const [userData, getData] = useState(null);
     const [logStat, getStat] = useState(false);
-    const [member, getMember] = useState(false);
+    const [member, getMember] = useState('');
 
     useEffect(() => {
 
@@ -45,7 +45,7 @@ const Header = () => {
         if (!logStat) {
             alert('로그인이 필요한 서비스 입니다');
             router.push('/Login');
-        } else if (member === false) {
+        } else if (member === 'no') {
             alert('비회원으로는 이용할 수 없는 서비스 입니다');
         } else {
             router.push({ pathname: val });

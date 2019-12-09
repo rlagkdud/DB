@@ -28,7 +28,7 @@ const Non_member=()=>{
             if (check) {
                 localStorage.setItem('usrID', res.data.userName);
                 localStorage.setItem('pn', res.data.userPN)
-                localStorage.setItem('member', false);
+                localStorage.setItem('member', 'no');
                 alert('비회원으로 로그인 되었습니다.');
                 router.push({pathname: '/' });
             }

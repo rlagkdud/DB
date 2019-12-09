@@ -1,10 +1,22 @@
 import PriceCheck_css from '../component/PriceCheck_css'
+import { useState, useEffect } from "react";
 import Header from './Header'
 import Head from 'next/head'
 import Axios from "axios";
 import { useRouter } from 'next/router'
 
 const PriceCheck=()=>{
+    const [member, getMember] = useState(false);
+    const [vip, getVip] = useState('');
+    useEffect(() => {
+        if(localStorage.getItem('member') !== null) {
+            getMember(localStorage.getItem('member'));
+        }
+        if(localStorage.getItem('vip') !== null) {
+            getVip(localStorage.getItem('vip'));
+        }
+    },[])
+
     const router = useRouter();
     const branch = localStorage.getItem('branch')
     localStorage.removeItem('branch')
@@ -20,19 +32,17 @@ const PriceCheck=()=>{
     localStorage.removeItem('seat')
     var price = localStorage.getItem('price')
     localStorage.removeItem('price')
-    var vip = ''
-    var member = localStorage.getItem('member')
-    if (member === true) {
-        vip = localStorage.getItem('vip')
-    
-    }
     var eng_title = localStorage.getItem('eng_title')
     localStorage.removeItem('eng_title')
-    console.log(eng_title)
 
     var per = 0.0;
     var discount = 0;
     var last_price = 0;
+    function set_member() {
+        if(localStorage.getItem('member') !== null) {
+            getMember(localStorage.getItem('member'));
+        }
+    }
     function get_rank() {
         if (vip === 'Bronze') {
             per = 0.0;
@@ -52,7 +62,7 @@ const PriceCheck=()=>{
     get_rank();
     
     function order_complete() {
-        if (member === true) {
+        if (member === 'yes') {
             Axios({
                 method: 'POST',
                 url: '/order',
@@ -75,7 +85,7 @@ const PriceCheck=()=>{
                 }
             });
         }
-        else {
+        else if (member === 'no') {
             console.log('비회원예매 진입 part1')
             Axios({
                 method: 'POST',
@@ -97,6 +107,10 @@ const PriceCheck=()=>{
                     alert('뭔가... 뭔가가 잘못됨');
                 }
             })
+        } else {
+            alert("something gonna wrong...");
+            console.log(member);
+            set_member();
         }
     }
 

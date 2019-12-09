@@ -36,7 +36,7 @@ const Login = () => {
                 localStorage.setItem('usrID', res.data.userID);
                 localStorage.setItem('name', res.data.userName);
                 localStorage.setItem('vip', res.data.vip);
-                localStorage.setItem('member', true);
+                localStorage.setItem('member', 'yes');
                 console.log(localStorage.getItem('name'));
                 router.push({pathname: '/Mypage' });
             }
