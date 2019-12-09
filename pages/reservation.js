@@ -14,6 +14,7 @@ import{ DateAnchor,RegionAnchor,BranchAnchor,MovieAnchor,TimeAnchor } from '../c
 //오늘 날짜 ~ 2일뒤까지
 var today = new Date()
 var load_date = []
+var price = 0
 for (var i=0; i<3; i++) {
     load_date.push((today.getMonth() + 1) + '/' + today.getDate())
     today.setDate(today.getDate() + 1)
@@ -49,6 +50,8 @@ const TimeOption = ({number,onClick,choose_time,children})=>(
 
 const Reservation = () => {
     const router = useRouter();
+
+    const current_user = localStorage.getItem('usrID')
 
     const [content, setContent] = useState(-1)
     const [region, setRegion] =useState(0)
@@ -94,11 +97,20 @@ const Reservation = () => {
         });
     }
 
+    function get_price() {
+        var total_price = 0;
+        total_price += (10000 * adult);
+        total_price += (7000 * teen);
+        total_price += (7000 * senior);
+        return total_price;
+    }
+
     function get_reservation() {
         var seats = [];
+        price = get_price();
         for (var i=0; i<seat.length; i++) {
-            seats.push(seat[i] + seat[i+1]);
-            i++;
+            seats.push(seat[i] + seat[i+1] + seat[i+2]);
+            i = i + 3;
         }
         Axios({
             method: 'POST',
@@ -110,14 +122,19 @@ const Reservation = () => {
                 movie: choose_movie
             }
         }).then( (res) => {
-            console.log(res.data.theater_num)
             localStorage.setItem('theater_id', res.data.theater_num)
-            console.log("2: " + localStorage.getItem('theater_id'))
+            localStorage.setItem('movie_id', res.data.movie_id)
             localStorage.setItem('branch', choose_branch)
             localStorage.setItem('date', content)
             localStorage.setItem('movie', choose_movie)
             localStorage.setItem('time', choose_time)
             localStorage.setItem('seat', seats)
+            localStorage.setItem('price', price)
+            var cnt = 0;
+            cnt = cnt + (adult*1);
+            cnt = cnt + (senior*1);
+            cnt = cnt + (teen*1);
+            localStorage.setItem('count', cnt)
             router.push({pathname: '/PriceCheck' });
         });
     }
@@ -547,11 +564,11 @@ const Reservation = () => {
                     <div class='reserve'>
                         <h2>상영시간</h2>
                         <div class = 'movie_playtime'>
-                                <TimeOption onClick={setChooseTime} number ={'10:30'} choose_time ={choose_time}>10:30</TimeOption>
-                                <TimeOption onClick={setChooseTime} number ={'11:30'} choose_time ={choose_time}>11:30</TimeOption>
-                                <TimeOption onClick={setChooseTime} number ={'12:30'} choose_time ={choose_time}>12:30</TimeOption>
-                                <TimeOption onClick={setChooseTime} number ={'1:30'} choose_time ={choose_time}>1:30</TimeOption>
-                                <TimeOption onClick={setChooseTime} number ={'2:30'} choose_time ={choose_time}>2:30</TimeOption>
+                                <TimeOption onClick={setChooseTime} number ={'10:00'} choose_time ={choose_time}>10:00</TimeOption>
+                                <TimeOption onClick={setChooseTime} number ={'12:00'} choose_time ={choose_time}>12:00</TimeOption>
+                                <TimeOption onClick={setChooseTime} number ={'14:00'} choose_time ={choose_time}>14:00</TimeOption>
+                                <TimeOption onClick={setChooseTime} number ={'16:00'} choose_time ={choose_time}>16:00</TimeOption>
+                                <TimeOption onClick={setChooseTime} number ={'18:00'} choose_time ={choose_time}>18:00</TimeOption>
                         </div>
                         <div class="movie_memnum">
                             <h3>인원/좌석</h3>

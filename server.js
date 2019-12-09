@@ -14,7 +14,7 @@ const mysql = require("mysql2/promise");
 const pool = mysql.createPool({
     host: "localhost",
     user: "root",
-    password: "Cho641164!",
+    password: "111111",
     database: "movie"
 });
 
@@ -57,7 +57,7 @@ app.prepare().then(() => {
         var pw = req.body.userPW;
         
         var db_pwd;
-        var query = "select user_pw from customer where user_id= ?";
+        var query = "select * from customer where user_id= ?";
     
         var page = "/Login";
         var result_d;
@@ -75,13 +75,12 @@ app.prepare().then(() => {
             app.render(req, res, page, {});
         } else {
             
-            db_pwd = result[0].user_pwd;
+            db_pwd = result[0].user_pw;
             console.log("!" + db_pwd);
 
             if (db_pwd === pw) {
-                console.log("hello admin");
                 connection.release();
-                const params = { bool: true, userID: req.body.userID };
+                const params = { bool: true, userID: req.body.userID, vip: result[0].vip};
                 res.send(params);
                 app.render(req, res, page);
             } else {
@@ -161,6 +160,7 @@ app.prepare().then(() => {
         const [result] = await connection.query(query, [c_movie, c_time, c_branch]);
         result_id = result;
 
+        var movie_id = result_id[0].movie_id
 
         query = "select theater_id from movie where movie_id=?"
         const [thea] = await connection.query(query, [result_id[0].movie_id]);
@@ -179,11 +179,35 @@ app.prepare().then(() => {
             app.render(req, res, page, {});
         } else {
             connection.release();
-            const params = { bool: true, theater_num: theater_num, times: result_id };
+            const params = { bool: true, theater_num: theater_num, movie_id: movie_id};
             res.send(params);
             app.render(req, res, page);
         }
     });
+
+    server.post('/order', async (req, res) => {
+        var movie_id = req.body.movie_id;
+        var discount = req.body.discount;
+        var total_price = req.body.total_price;
+        var branch = req.body.branch;
+        var count = req.body.count;
+        var userID = req.body.userID;
+
+        var page = "/PriceCheck"
+        const connection = await pool.getConnection(async conn => conn)
+
+        var query = "SELECT * FROM movie WHERE movie_id=?"
+        const [result] = await connection.query(query, [movie_id])
+        var genre = result[0].movie_genre;
+
+        query = "INSERT INTO ticketing_info (movie_genre, user_id, count, total_discount, total_price, movie_id, branch_id) VALUES(?, ?, ?, ?, ?, ?, ?)"
+        await connection.query(query, [genre, userID, count, discount, total_price, movie_id, branch])
+
+        connection.release();
+        const params = { bool: true };
+        res.send(params);
+        app.render(req, res, page);
+    })
 
     server.get('/PriceCheck', (req, res) => {
         console.log("errortype: 3");
