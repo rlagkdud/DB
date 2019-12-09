@@ -154,10 +154,7 @@ CREATE TABLE emp (
     emp_phone varchar(15)
 );
 
-
-
-
-
+ALTER TABLE n_ticketing_info MODIFY order_id INT NOT NULL AUTO_INCREMENT;
 
 INSERT INTO customer VALUES 
 ('user1', 'DemoMan', '1234','01011110000', '19980103', 'Bronze'),

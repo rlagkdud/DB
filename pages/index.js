@@ -28,7 +28,7 @@ const index = () => {
                 method: 'POST',
                 url: '/index',
                 data:{
-                    userID : localStorage.getItem('userID')
+                    userID : localStorage.getItem('usrID')
                 }
             }).then( (res) => {
                 
