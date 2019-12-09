@@ -4,6 +4,14 @@
     "static/development/dll/dll_d6a88dbe3071bd165157.js.map"
   ],
   "pages": {
+    "/Login": [
+      "static/runtime/webpack.js",
+      "static/runtime/main.js"
+    ],
+    "/Mypage": [
+      "static/runtime/webpack.js",
+      "static/runtime/main.js"
+    ],
     "/_app": [
       "static/runtime/webpack.js",
       "static/runtime/main.js"

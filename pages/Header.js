@@ -6,23 +6,27 @@ import axios from "axios";
 
 const Header = () => {
 
-    const [log_stat, get_stat] = useState(false);
-    const [usrData, getData] = useState("");
     const router = useRouter();
+    const [userData, getData] = useState(null);
+    const [logStat, getStat] = useState(false);
 
     useEffect(() => {
-        const getData_= () =>{
+
             console.log(router.pathname);
-            getData(JSON.parse(localStorage.getItem('data')));
-            console.log(usrData);
-            if(usrData !== ""){
-                get_stat(true);
+            console.log(localStorage.getItem('usrID'));
+            getData(localStorage.getItem('usrID'));
+            console.log(userData);
+
+            if(localStorage.getItem('usrID') !== null) {
+                getStat(true);
+                console.log(logStat);
             }
             else{
-                get_stat(false);
+                getStat(false);
+                console.log(logStat);
+                localStorage.clear();
             }
-        };
-        getData_();
+        
         const handleRouteChange = url => {
             console.log('App is changing to: ', url)
         }
@@ -31,11 +35,29 @@ const Header = () => {
         return () => {
             router.events.off('routeChangeStart', handleRouteChange)
         }
-
-    }, [])
+    
+    },[logStat])
     
     function getMethod (e) {
         const val = e.target.name;
+        router.push({ pathname: val });
+    }
+    
+    function getMethodM (e) {
+        const val = e.target.name;
+        if (logStat) {
+            router.push({ pathname: val });
+        }
+        else {
+            alert('로그인이 필요한 서비스 입니다');
+            router.push('/Login');
+        }
+    }
+
+    function mLogout(e) {
+        const val = e.target.name;
+        alert('로그아웃 되었습니다!');
+        localStorage.clear();
         router.push({ pathname: val });
     }
     
@@ -85,13 +107,13 @@ const Header = () => {
                                 <a  name = "/reservation" onClick={getMethod}>영화예매</a>
                             </li>
                             <li>
-                                <a name="/Login" onClick={getMethod}>로그인</a>
+                                {logStat ? <a name='/index' onClick={mLogout}>로그아웃</a> : <a name='/Login' onClick={getMethod}>로그인</a>}
                             </li>
-                            <li>
+                            {logStat ? <></> : <li>
                                 <a name="/Join" onClick={getMethod}>회원가입</a>
-                            </li>
+                            </li> }
                             <li>
-                                <a name='/Mypage' onClick={getMethod}> 마이페이지 </a>
+                                <a name='/Mypage' onClick={getMethodM}> 마이페이지 </a>
                             </li>
                         </ul>
                     </nav>
