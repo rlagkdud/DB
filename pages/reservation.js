@@ -1,11 +1,21 @@
 
 import {useState} from 'react'
 import Header from './Header'
+import { useRouter } from 'next/router'
 import Reservation_css from '../component/reservation_css'
 import Seat_reserve_css from '../component/seat_reserve_css'
 import Link from 'next/link'
 import Head from 'next/head'
+import Axios from 'axios'
 import{ DateAnchor,RegionAnchor,BranchAnchor,MovieAnchor,TimeAnchor } from '../component/example'
+
+//오늘 날짜 ~ 2일뒤까지
+var today = new Date()
+var load_date = []
+for (var i=0; i<3; i++) {
+    load_date.push((today.getMonth() + 1) + '/' + today.getDate())
+    today.setDate(today.getDate() + 1)
+}
 
 const DateOption = ({number,onClick,content,children})=>(
     <DateAnchor onClick={() => onClick(number)} isDate={number === content}>
@@ -36,6 +46,7 @@ const TimeOption = ({number,onClick,choose_time,children})=>(
 
 
 const Reservation = () => {
+    const router = useRouter();
 
     const [content, setContent] = useState(-1)
     const [region, setRegion] =useState(0)
@@ -60,8 +71,47 @@ const Reservation = () => {
         setSeat([])        
     }
 
-
+    function get_branch() {
+        Axios({
+            method: 'POST',
+            url: '/reservation',
+            data:{
+                region: choose_region,
+                branch: choose_branch,
+                movie: choose_movie
+            }
+        }).then( (res) => {
+            console.log(res.data.times);
+        });
+    }
     
+    function get_reservation() {
+        var seats = [];
+        for (var i=0; i<seat.length; i++) {
+            seats.push(seat[i] + seat[i+1]);
+            i++;
+        }
+        Axios({
+            method: 'POST',
+            url: '/reservation_process',
+            data:{
+                time: choose_time,
+                seats: seats,
+                branch: choose_branch,
+                movie: choose_movie
+            }
+        }).then( (res) => {
+            console.log(res.data.theater_num)
+            localStorage.setItem('theater_id', res.data.theater_num)
+            console.log("2: " + localStorage.getItem('theater_id'))
+            localStorage.setItem('branch', choose_branch)
+            localStorage.setItem('date', content)
+            localStorage.setItem('movie', choose_movie)
+            localStorage.setItem('time', choose_time)
+            localStorage.setItem('seat', seats)
+            router.push({pathname: '/PriceCheck' });
+        });
+    }
     
     const seoul = (
         
@@ -357,38 +407,9 @@ const Reservation = () => {
                 <div class="date">
                     <h3>날짜</h3>
                     <div class="point">
-                        <DateOption onClick={setContent} number={'12/10'} content={content}>12/10</DateOption>
-                        <DateOption onClick={setContent} number={'12/11'} content={content}>12/11</DateOption>
-                        <DateOption onClick={setContent} number={'12/12'} content={content}>12/12</DateOption>
-                        <DateOption onClick={setContent} number={'12/13'} content={content}>12/13</DateOption>
-                        <DateOption onClick={setContent} number={'12/14'} content={content}>12/14</DateOption>
-                        <DateOption onClick={setContent} number={'12/15'} content={content}>12/15</DateOption>
-                        <DateOption onClick={setContent} number={'12/16'} content={content}>12/16</DateOption>
-                        <DateOption onClick={setContent} number={'12/17'} content={content}>12/17</DateOption>
-                        <DateOption onClick={setContent} number={'12/18'} content={content}>12/18</DateOption>
-                        <DateOption onClick={setContent} number={'12/19'} content={content}>12/19</DateOption>
-                        <DateOption onClick={setContent} number={'12/20'} content={content}>12/20</DateOption>
-                        <DateOption onClick={setContent} number={'12/21'} content={content}>12/21</DateOption>
-                        <DateOption onClick={setContent} number={'12/22'} content={content}>12/22</DateOption>
-                        <DateOption onClick={setContent} number={'12/23'} content={content}>12/23</DateOption>
-                        <DateOption onClick={setContent} number={'12/24'} content={content}>12/24</DateOption>
-                        <DateOption onClick={setContent} number={'12/25'} content={content}>12/25</DateOption>
-                        <DateOption onClick={setContent} number={'12/26'} content={content}>12/26</DateOption>
-                        <DateOption onClick={setContent} number={'12/27'} content={content}>12/27</DateOption>
-                        <DateOption onClick={setContent} number={'12/28'} content={content}>12/28</DateOption>
-                        <DateOption onClick={setContent} number={'12/29'} content={content}>12/29</DateOption>
-                        <DateOption onClick={setContent} number={'12/30'} content={content}>12/30</DateOption>
-                        <DateOption onClick={setContent} number={'12/31'} content={content}>12/31</DateOption>
-                        <DateOption onClick={setContent} number={'1/1'} content={content}>1/1</DateOption>
-                        <DateOption onClick={setContent} number={'1/2'} content={content}>1/2</DateOption>
-                        <DateOption onClick={setContent} number={'1/3'} content={content}>1/3</DateOption>
-                        <DateOption onClick={setContent} number={'1/4'} content={content}>1/4</DateOption>
-                        <DateOption onClick={setContent} number={'1/5'} content={content}>1/5</DateOption>
-                        <DateOption onClick={setContent} number={'1/6'} content={content}>1/6</DateOption>
-
-
-
-
+                    <DateOption onClick={setContent} number={load_date[0]} content={content}>{load_date[0]}</DateOption>
+                        <DateOption onClick={setContent} number={load_date[1]} content={content}>{load_date[1]}</DateOption>
+                        <DateOption onClick={setContent} number={load_date[2]} content={content}>{load_date[2]}</DateOption>
                     </div>
                 </div>
                 <hr class="hr" />
@@ -414,7 +435,7 @@ const Reservation = () => {
 
                 </div>
                 <div class="next">
-                        <button class="confirm" onClick={()=>setCheck(true)}>확인</button>
+                    <button class="confirm" onClick={get_branch}><div onClick={()=>setCheck(true)}>확인</div></button>
                     <button class="cancel" onClick={()=>checkHandler()}>취소</button> 
 
                     
@@ -434,11 +455,11 @@ const Reservation = () => {
                     <div class='reserve'>
                         <h2>상영시간</h2>
                         <div class = 'movie_playtime'>
-                                <TimeOption onClick={setChooseTime} number ={'10:30'} choose_time ={choose_time}>10:30</TimeOption>
-                                <TimeOption onClick={setChooseTime} number ={'11:30'} choose_time ={choose_time}>11:30</TimeOption>
-                                <TimeOption onClick={setChooseTime} number ={'12:30'} choose_time ={choose_time}>12:30</TimeOption>
-                                <TimeOption onClick={setChooseTime} number ={'1:30'} choose_time ={choose_time}>1:30</TimeOption>
-                                <TimeOption onClick={setChooseTime} number ={'2:30'} choose_time ={choose_time}>2:30</TimeOption>
+                        <TimeOption onClick={setChooseTime} number ={'10:00'} choose_time ={choose_time}>10:00</TimeOption>
+                                <TimeOption onClick={setChooseTime} number ={'12:00'} choose_time ={choose_time}>12:00</TimeOption>
+                                <TimeOption onClick={setChooseTime} number ={'13:00'} choose_time ={choose_time}>13:00</TimeOption>
+                                <TimeOption onClick={setChooseTime} number ={'14:00'} choose_time ={choose_time}>14:00</TimeOption>
+                                <TimeOption onClick={setChooseTime} number ={'16:00'} choose_time ={choose_time}>16:00</TimeOption>
                         </div>
                         <div class="movie_memnum">
                             <h3>인원/좌석</h3>
@@ -626,7 +647,7 @@ const Reservation = () => {
                         </div>
                         <div class='buy_btn'>
                             <button class = 'btn1' type="button" onClick={()=>checkHandler2()}>취소</button>
-                            <Link href="/PriceCheck"><button class = 'btn2' type="button" onclick="location.href='' ">결제</button></Link>
+                            <button class = 'btn2' type="button" onClick={get_reservation}>결제</button>
                         </div>
                     </div>
                 </div>  

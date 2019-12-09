@@ -3,6 +3,19 @@ import Header from './Header'
 import Head from 'next/head'
 
 const PriceCheck=()=>{
+    const branch = localStorage.getItem('branch')
+    localStorage.removeItem('branch')
+    const theater = localStorage.getItem('theater_id')
+    localStorage.removeItem('theater_id')
+    const dates = localStorage.getItem('date')
+    localStorage.removeItem('date')
+    const movie = localStorage.getItem('movie')
+    localStorage.removeItem('movie')
+    const times = localStorage.getItem('time')
+    localStorage.removeItem('time')
+    const seats = localStorage.getItem('seat')
+    localStorage.removeItem('seat')
+    
     return(
         <div>
             <Head>
@@ -18,11 +31,11 @@ const PriceCheck=()=>{
             <div class='lastCheck'>
                 <img class ='checkPoster' src='redvelvet3.jpg'/>
                 <div class ='checkMovie'>
-                    <h3>슬기다아아아</h3><br/>
-                    <p>상영일<h5>2019-11-19(화)</h5></p><br/>
-                    <p>상영시간<h5>10:00 AM</h5></p><br/>
-                    <p>상영관<h5>용산 4관</h5></p><br/>
-                    <p>좌석<h5>C7, C8</h5></p><br/>
+                    <h3>{movie}</h3><br/>
+                    <p>상영일<h5>{dates}</h5></p><br/>
+                    <p>상영시간<h5>{times}</h5></p><br/>
+                    <p>상영관<h5>{branch} {theater}관</h5></p><br/>
+                    <p>좌석<h5>{seats}</h5></p><br/>
                 </div>
                 <div class ='checkPrice'>
                     <h3>총 결제 금액</h3>
