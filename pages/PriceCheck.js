@@ -21,7 +21,10 @@ const PriceCheck=()=>{
     var price = localStorage.getItem('price')
     localStorage.removeItem('price')
     var vip = localStorage.getItem('vip')
-    
+    var eng_title = localStorage.getItem('eng_title')
+    localStorage.removeItem('eng_title')
+    console.log(eng_title)
+
     var per = 0.0;
     var discount = 0;
     var last_price = 0;
@@ -35,7 +38,6 @@ const PriceCheck=()=>{
         else if (vip === 'Gold') {
             per = 0.2;
         }
-        console.log(per);
         discount = price * per;
         last_price = price - discount;
     }
@@ -80,7 +82,7 @@ const PriceCheck=()=>{
             <div class='pay_checkContainer'>
             <h1>주문 확인</h1>
             <div class='lastCheck'>
-                <img class ='checkPoster' src='redvelvet3.jpg'/>
+                <img class ='checkPoster' src={eng_title+".jpg"}/>
                 <div class ='checkMovie'>
                     <h3>{movie}</h3><br/>
                     <p>상영일<h5>{dates}</h5></p><br/>

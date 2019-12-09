@@ -74,6 +74,19 @@ const Reservation = () => {
     const [senior, setSenior] = useState(0);
     const [poster,setPoster] = useState('');
 
+    var korean_name = '';
+    function rename() {
+        if (choose_movie === 'frozen2') {
+            korean_name = '겨울왕국2(자막)'
+        }
+        else if (choose_movie === 'frozen2_sub') {
+            korean_name = '겨울왕국2(더빙)'
+        }
+        else if (choose_movie === 'knivesOut') {
+            korean_name = '나이브스아웃'
+        }
+    }
+
     function checkHandler(){
         if(check==false){
             setContent(-1)
@@ -116,6 +129,7 @@ const Reservation = () => {
     function get_reservation() {
         var seats = [];
         price = get_price();
+        rename();
         for (var i=0; i<seat.length; i++) {
             seats.push(seat[i] + seat[i+1] + seat[i+2]);
             i = i + 3;
@@ -127,7 +141,7 @@ const Reservation = () => {
                 time: choose_time,
                 seats: seats,
                 branch: choose_branch,
-                movie: choose_movie
+                movie: korean_name
             }
         }).then( (res) => {
             localStorage.setItem('theater_id', res.data.theater_num)
@@ -138,6 +152,9 @@ const Reservation = () => {
             localStorage.setItem('time', choose_time)
             localStorage.setItem('seat', seats)
             localStorage.setItem('price', price)
+            localStorage.setItem('eng_title', choose_movie)
+            console.log(choose_movie)
+            console.log(localStorage.getItem('eng_title'))
             var cnt = 0;
             cnt = cnt + (adult*1);
             cnt = cnt + (senior*1);

@@ -83,7 +83,6 @@ app.prepare().then(() => {
             if (db_pwd === pw) {
                 connection.release();
                 const params = { bool: true, userID: req.body.userID, vip: result[0].vip};
-
                 res.send(params);
                 app.render(req, res, page);
             } else {
