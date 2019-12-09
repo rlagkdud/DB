@@ -234,6 +234,7 @@ const Seat_reserve_css = () => {
             background: #f07598;
             height: 70px;
             width:100%;
+            color:#F4C2C2;
 
         }
         .copyright a{
