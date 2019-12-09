@@ -18,17 +18,12 @@ CREATE TABLE n_customer (
     PRIMARY KEY (phone_num)
 );
 
-CREATE TABLE branch (
-    branch_id int(3) NOT NULL,
-    branch_region varchar(20) NOT NULL,
-    branch_city varchar(20) NOT NULL,
-    PRIMARY KEY (branch_id)
-);
+create table branch(
+    branch_id int(10),
+    branch_region varchar(20),
+    branch_city varchar(20),
 
-CREATE TABLE sattlement (
-    branch_id varchar(20) NOT NULL,
-    s_date date NOT NULL,
-    total_price int(11) NOT NULL
+    primary key(branch_id)
 );
 
 CREATE TABLE movie (
@@ -82,12 +77,6 @@ CREATE TABLE favorite_genre (
     PRIMARY KEY (user_id)
 );
 
-CREATE TABLE theater (
-    theater_id int(11) NOT NULL,
-    theater_num int(2) NOT NULL,
-    branch_id varchar(20) NOT NULL,
-    PRIMARY KEY (theater_id)
-);
 
 CREATE TABLE theater_seat (
     seat_id int(11) NOT NULL,
@@ -97,13 +86,6 @@ CREATE TABLE theater_seat (
     seat_num varchar(4) NOT NULL,
     is_reserv boolean DEFAULT FALSE,
     PRIMARY KEY (seat_id)
-);
-
-CREATE TABLE facility (
-    theater_id varchar(20) NOT NULL,
-    seat varchar(50) NOT NULL,
-    screen varchar(50) NOT NULL,
-    fire_ext varchar(50) NOT NULL
 );
 
 CREATE TABLE comment (
@@ -123,6 +105,35 @@ CREATE TABLE administer (
     PRIMARY KEY (admin_id)
 );
 
+create table settlement(
+
+    branch_id int(10),
+    date date,
+    day_price int(30),
+    foreign key(branch_id) references point(branch_id) on update CASCADE
+
+);
+
+create table theater_fac(
+    theater_id int(10),
+    seat varchar(100),
+    screen varchar(100),
+    fire_ext varchar(100),
+
+    primary key(theater_id),
+    foreign key(theater_id) references theater_info(theater_id) on delete CASCADE on update CASCADE
+
+);
+
+create table theater_info(
+    theater_id int(10),
+    theater_num varchar(20),
+    branch_id int(10),
+
+    primary key(theater_id),
+    foreign key (branch_id) references point(branch_id) on delete CASCADE on update CASCADE
+);
+
 CREATE TABLE emp (
     emp_name varchar(20) NOT NULL,
     emp_job varchar(20) NOT NULL,
@@ -132,7 +143,7 @@ CREATE TABLE emp (
 
 ALTER TABLE branch MODIFY branch_id INT NOT NULL AUTO_INCREMENT;
 ALTER TABLE movie MODIFY movie_id INT NOT NULL AUTO_INCREMENT;
-ALTER TABLE theater MODIFY theater_id INT NOT NULL AUTO_INCREMENT;
+ALTER TABLE theater_info MODIFY theater_id INT NOT NULL AUTO_INCREMENT;
 ALTER TABLE theater_seat MODIFY seat_id INT NOT NULL AUTO_INCREMENT;
 
 INSERT INTO branch(branch_region, branch_city) VALUES ('서울', '가산디지털');
@@ -155,3 +166,24 @@ INSERT INTO theater(theater_num, branch_id) VALUES
 INSERT INTO theater_seat(movie_id, theater_id, theater_num, seat_num) VALUES
 (1, 1, 1, 'A1'),  (1, 1, 1, 'A2'),  (1, 1, 1, 'A3'),  (1, 1, 1, 'A4'),
 (1, 1, 1, 'B1'),  (1, 1, 1, 'B2'),  (1, 1, 1, 'B3'),  (1, 1, 1, 'B4');
+
+insert into point
+values
+(1, '서울', '가산 디지털 단지'), (2, '서울', '김포 공항'), (3, '경기도', '안산 고잔');
+
+insert into settlement
+values
+(1, '2019-10-29', 1000), (1, '2019-10-10', 3000), (2, '2019-10-29', 2000), (3, '2019-10-20', 500);
+
+insert into theater_info
+values
+(1, '제 1관', 1), (2, '제 2관', 1), (3, '제 1관', 2), (4, '제 2관', 2), (5, '제 1관', 3), (6, '제 2관', 3);
+
+insert into theater_fac
+values
+(1, 'no prob', 'no_prob', '5 / missing : 0'),
+(2, 'prob: d/14, f/10', 'no_prob', '5 / missing : 0'),
+(3, 'no prob', 'no_prob', '5 / missing : 0'),
+(4, 'prob : c/4 ', 'no_prob', '4 / missing : 0'),
+(5, 'no prob', 'prob: left side crash', '3 / missing : 1'),
+(6, 'no prob', 'no_prob', '6 / missing : 0');
