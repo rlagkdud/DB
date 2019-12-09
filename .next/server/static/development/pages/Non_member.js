@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 5);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -120,10 +120,10 @@ const Header_css = () => {
 
 /***/ }),
 
-/***/ "./component/Login_css.js":
-/*!********************************!*\
-  !*** ./component/Login_css.js ***!
-  \********************************/
+/***/ "./component/Non_member_css.js":
+/*!*************************************!*\
+  !*** ./component/Non_member_css.js ***!
+  \*************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -137,13 +137,13 @@ __webpack_require__.r(__webpack_exports__);
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
 
-const Login_css = () => {
+const Non_member_css = () => {
   return __jsx(styled_jsx_style__WEBPACK_IMPORTED_MODULE_0___default.a, {
-    id: "213595980"
-  }, ".body_login{margin:0;background-color:#F4C2C2;}.login-card{padding:40px;width:274px;background-color:#fff;margin:0 auto 10px;border-radius:2px;overflow:hidden;text-align:center;}.login-card h1{font-weight:100;text-align:center;font-size:2.3em;}.username{margin:0px auto;}.username>input{display:block;font-size:16px;margin:0px auto;margin-bottom:10px;background:#fff;width:270px;height:38px;border:1px solid #d9d9d9;border-top:1px solid #c0c0c0;border-width:0px 0px 3px 0px;border-style:solid;box-sizing:border-box;padding:0 8px;box-shadow:0 2px 5px #0000007c inset;}.login-card input[type=submit]{width:50%;display:block;margin-bottom:10px;position:relative;float:left;}.pwd{margin:0px auto;}.pwd>input{display:block;font-size:16px;margin:0px auto;margin-bottom:10px;background:#fff;width:270px;height:38px;border:1px solid #d9d9d9;border-top:1px solid #c0c0c0;border-width:0px 0px 3px 0px;border-style:solid;box-sizing:border-box;padding:0 8px;box-shadow:0 2px 5px #0000007c inset;}.pwd>input:focus{outline:-webkit-focus-ring-color auto 2px;outline-color:-webkit-focus-ring-color;outline-style:auto;outline-width:2px;}.login{float:left;text-align:center;font-size:14px;font-weight:700;height:28px;width:136px;padding:0 8px;background-color:#343B40;color:#E6BEBE;}.sign_in{float:left;text-align:center;font-size:14px;font-weight:700;height:28px;width:136px;padding:0 8px;background-color:#343B40;color:#E6BEBE;}.membership_button{text-align:center;margin-top:15px;font-size:14px;font-weight:700;height:28px;padding:0 8px;background-color:#F2F2F2;color:#343B40;width:100%;display:block;margin-bottom:10px;position:relative;float:left;}.non_member{background-color:#F2F2F2;width:100%;height:28px;font-size:14px;font-weight:700;color:#343B40;margin-top:10px;}.back{background-color:#F4C2C2;height:100%;text-align:center;}.whiteback{margin:0 auto 10px;background-color:white;width:700px;height:400px;}\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9jYXpubS9EZXNrdG9wL01vdmllL0RCL2NvbXBvbmVudC9Mb2dpbl9jc3MuanMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBRTJCLEFBR2lCLEFBS08sQUFVRyxBQUtBLEFBS0YsQUFpQkosQUFRTSxBQUlGLEFBaUI4QixBQU9qQyxBQVdBLEFBWU8sQUFlTyxBQVdFLEFBS1IsU0FuSUksQ0EwQ1QsQ0FvQ0ksQUFXQSxFQXBGTixDQW9CRyxBQTZCQSxFQXZDRyxBQU1wQixBQThCQSxFQWtEa0IsQ0ErQk8sS0F6RkosQ0FyQ0csQUE4R1gsQUFXQSxJQXJHSyxBQTZCQSxBQXdCRCxBQVdBLEtBekZqQixBQWVrQixBQXNGRCxFQWVILENBV0ssS0F6RHdCLEFBOEQ3QixDQXpGTSxDQW9DRixBQVdBLENBaEVHLEFBNkJBLEVBakRBLENBK0dKLENBZkMsQ0F0RmxCLElBcUhjLENBTGQsS0FoRGMsQUFXQSxDQS9DRCxFQTBFSyxDQTNGQSxBQTZCQSxDQStDSixDQWhHTSxDQStIcEIsS0F6RkEsQUFvQ2MsQUFXQSxLQVlFLEVBZUEsQ0EzRkYsQUE2QkEsQ0FjUyxHQS9ETCxBQTBFRixBQVdBLE9BWVcsQ0E1RWIsQUE2QkEsQ0E4REksS0FyQ1MsQUFXQSxFQXJGUixBQStERyxJQTFDSyxBQTZCQSxLQThEM0IsT0FmZ0IsRUFoR2hCLEFBK0RBLEtBV2dCLEFBV0EsTUFoRWUsQUE2QkEsQ0ErQ2xCLE9BdEJiLEFBV0EsSUFZZ0IsY0FDSyxHQTdFVSxBQTZCQSxnQkFpRFgsYUE3RUMsQUE2QkEsS0FpRFIsV0FDYixHQTlFd0IsQUE2QkEsc0JBNUJSLEFBNkJBLGNBNUJ1QixBQTZCQSxxQ0E1QnZDLEFBNkJBIiwiZmlsZSI6Ii9Vc2Vycy9jYXpubS9EZXNrdG9wL01vdmllL0RCL2NvbXBvbmVudC9Mb2dpbl9jc3MuanMiLCJzb3VyY2VzQ29udGVudCI6WyJjb25zdCBMb2dpbl9jc3M9KCk9PntcbiAgICByZXR1cm4oXG4gICAgICAgIDxzdHlsZSBnbG9iYWwganN4PntgXG4gICAgICAgIC5ib2R5X2xvZ2lue1xuICAgICAgICBtYXJnaW46MDtcbiAgICAgICAgYmFja2dyb3VuZC1jb2xvcjogI0Y0QzJDMjtcbiAgICAgICAgfVxuXG4gICAgICAgIC5sb2dpbi1jYXJkIHtcbiAgICAgICAgICBwYWRkaW5nOiA0MHB4O1xuICAgICAgICAgIHdpZHRoOiAyNzRweDtcbiAgICAgICAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjZmZmO1xuICAgICAgICAgIG1hcmdpbjogMCBhdXRvIDEwcHg7XG4gICAgICAgICAgYm9yZGVyLXJhZGl1czogMnB4O1xuICAgICAgICAgIG92ZXJmbG93OiBoaWRkZW47XG4gICAgICAgICAgdGV4dC1hbGlnbjpjZW50ZXI7XG4gICAgICAgIH1cbiAgICAgICAgXG4gICAgICAgIC5sb2dpbi1jYXJkIGgxIHtcbiAgICAgICAgICBmb250LXdlaWdodDogMTAwO1xuICAgICAgICAgIHRleHQtYWxpZ246IGNlbnRlcjtcbiAgICAgICAgICBmb250LXNpemU6IDIuM2VtO1xuICAgICAgICB9XG4gICAgICAgIC51c2VybmFtZXtcbiAgICAgICAgICBtYXJnaW46IDBweCBhdXRvO1xuICAgICAgICAgIC8qIHBhZGRpbmc6IDUwcHggMHB4IDBweCAwcHg7ICovXG4gICAgICAgIH1cbiAgICAgICAgXG4gICAgICAgIC51c2VybmFtZSA+IGlucHV0IHtcbiAgICAgICAgICBkaXNwbGF5OiBibG9jaztcbiAgICAgICAgICBmb250LXNpemU6IDE2cHg7XG4gICAgICAgICAgbWFyZ2luOiAwcHggYXV0bztcbiAgICAgICAgICBtYXJnaW4tYm90dG9tOiAxMHB4O1xuICAgICAgICAgIGJhY2tncm91bmQ6ICNmZmY7XG4gICAgICAgICAgd2lkdGg6IDI3MHB4O1xuICAgICAgICAgIGhlaWdodDogMzhweDtcbiAgICAgICAgICBib3JkZXI6IDFweCBzb2xpZCAjZDlkOWQ5O1xuICAgICAgICAgIGJvcmRlci10b3A6IDFweCBzb2xpZCAjYzBjMGMwO1xuICAgICAgICAgIGJvcmRlci13aWR0aDogMHB4IDBweCAzcHggMHB4O1xuICAgICAgICAgIGJvcmRlci1zdHlsZTogc29saWQ7XG4gICAgICAgICAgYm94LXNpemluZzogYm9yZGVyLWJveDtcbiAgICAgICAgICBwYWRkaW5nOiAwIDhweDtcbiAgICAgICAgICBib3gtc2hhZG93OiAwIDJweCA1cHggIzAwMDAwMDdjIGluc2V0O1xuICAgICAgICB9XG4gICAgICAgIFxuICAgICAgICAubG9naW4tY2FyZCBpbnB1dFt0eXBlPXN1Ym1pdF0ge1xuICAgICAgICAgIHdpZHRoOiA1MCU7XG4gICAgICAgICAgZGlzcGxheTogYmxvY2s7XG4gICAgICAgICAgbWFyZ2luLWJvdHRvbTogMTBweDtcbiAgICAgICAgICBwb3NpdGlvbjogcmVsYXRpdmU7XG4gICAgICAgICAgZmxvYXQ6IGxlZnQ7XG4gICAgICAgIH1cbiAgICAgICAgXG4gICAgICAgIC5wd2R7XG4gICAgICAgICAgbWFyZ2luOiAwcHggYXV0bztcbiAgICAgICAgICAvKiBwYWRkaW5nOiAyMHB4IDBweCAwcHggMHB4OyAqL1xuICAgICAgICB9XG4gICAgICAgIC5wd2QgPiBpbnB1dCB7XG4gICAgICAgICAgZGlzcGxheTogYmxvY2s7XG4gICAgICAgICAgZm9udC1zaXplOiAxNnB4O1xuICAgICAgICAgIG1hcmdpbjogMHB4IGF1dG87XG4gICAgICAgICAgbWFyZ2luLWJvdHRvbTogMTBweDtcbiAgICAgICAgICBiYWNrZ3JvdW5kOiAjZmZmO1xuICAgICAgICAgIHdpZHRoOiAyNzBweDtcbiAgICAgICAgICBoZWlnaHQ6IDM4cHg7XG4gICAgICAgICAgYm9yZGVyOiAxcHggc29saWQgI2Q5ZDlkOTtcbiAgICAgICAgICBib3JkZXItdG9wOiAxcHggc29saWQgI2MwYzBjMDtcbiAgICAgICAgICBib3JkZXItd2lkdGg6IDBweCAwcHggM3B4IDBweDtcbiAgICAgICAgICBib3JkZXItc3R5bGU6IHNvbGlkO1xuICAgICAgICAgIGJveC1zaXppbmc6IGJvcmRlci1ib3g7XG4gICAgICAgICAgcGFkZGluZzogMCA4cHg7XG4gICAgICAgICAgYm94LXNoYWRvdzogMCAycHggNXB4ICMwMDAwMDA3YyBpbnNldDtcbiAgICAgICAgfVxuICAgICAgICBcbiAgICAgICAgLnB3ZCA+IGlucHV0OmZvY3Vze1xuICAgICAgICAgICAgb3V0bGluZTogLXdlYmtpdC1mb2N1cy1yaW5nLWNvbG9yIGF1dG8gMnB4O1xuICAgICAgICAgICAgb3V0bGluZS1jb2xvcjogLXdlYmtpdC1mb2N1cy1yaW5nLWNvbG9yO1xuICAgICAgICAgICAgb3V0bGluZS1zdHlsZTogYXV0bztcbiAgICAgICAgICAgIG91dGxpbmUtd2lkdGg6IDJweDtcbiAgICAgICAgfVxuICAgICAgICBcbiAgICAgICAgLmxvZ2luIHtcbiAgICAgICAgICBmbG9hdDogbGVmdDtcbiAgICAgICAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XG4gICAgICAgICAgZm9udC1zaXplOiAxNHB4O1xuICAgICAgICAgIGZvbnQtd2VpZ2h0OiA3MDA7XG4gICAgICAgICAgaGVpZ2h0OiAyOHB4O1xuICAgICAgICAgIHdpZHRoOiAxMzZweDtcbiAgICAgICAgICBwYWRkaW5nOiAwIDhweDtcbiAgICAgICAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjMzQzQjQwO1xuICAgICAgICAgIGNvbG9yOiAjRTZCRUJFO1xuICAgICAgICB9XG4gICAgICAgIC5zaWduX2luIHtcbiAgICAgICAgICBmbG9hdDogbGVmdDtcbiAgICAgICAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XG4gICAgICAgICAgZm9udC1zaXplOiAxNHB4O1xuICAgICAgICAgIGZvbnQtd2VpZ2h0OiA3MDA7XG4gICAgICAgICAgaGVpZ2h0OiAyOHB4O1xuICAgICAgICAgIHdpZHRoOiAxMzZweDtcbiAgICAgICAgICBwYWRkaW5nOiAwIDhweDtcbiAgICAgICAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjMzQzQjQwO1xuICAgICAgICAgIGNvbG9yOiAjRTZCRUJFO1xuICAgICAgICB9XG4gICAgICAgIFxuICAgICAgICAubWVtYmVyc2hpcF9idXR0b24ge1xuICAgICAgICAgIHRleHQtYWxpZ246IGNlbnRlcjtcbiAgICAgICAgICBtYXJnaW4tdG9wOiAxNXB4O1xuICAgICAgICAgIGZvbnQtc2l6ZTogMTRweDtcbiAgICAgICAgICBmb250LXdlaWdodDogNzAwO1xuICAgICAgICAgIGhlaWdodDogMjhweDtcbiAgICAgICAgICBwYWRkaW5nOiAwIDhweDtcbiAgICAgICAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjRjJGMkYyO1xuICAgICAgICAgIGNvbG9yOiAjMzQzQjQwO1xuICAgICAgICAgIHdpZHRoOiAxMDAlO1xuICAgICAgICAgIGRpc3BsYXk6IGJsb2NrO1xuICAgICAgICAgIG1hcmdpbi1ib3R0b206IDEwcHg7XG4gICAgICAgICAgcG9zaXRpb246IHJlbGF0aXZlO1xuICAgICAgICAgIGZsb2F0OiBsZWZ0O1xuICAgICAgICB9XG4gICAgICAgIC5ub25fbWVtYmVyIHtcbiAgICAgICAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjRjJGMkYyO1xuICAgICAgICAgIHdpZHRoOiAxMDAlO1xuICAgICAgICAgIGhlaWdodDogMjhweDtcbiAgICAgICAgICBmb250LXNpemU6IDE0cHg7XG4gICAgICAgICAgZm9udC13ZWlnaHQ6IDcwMDtcbiAgICAgICAgICBjb2xvcjogIzM0M0I0MDtcbiAgICAgICAgICBtYXJnaW4tdG9wOiAxMHB4O1xuICAgICAgICB9XG4gICAgICAgIFxuICAgICAgICBcbiAgICAgICAgLmJhY2t7XG4gICAgICAgICAgYmFja2dyb3VuZC1jb2xvcjogICAjRjRDMkMyO1xuICAgICAgICAgIGhlaWdodDoxMDAlO1xuICAgICAgICAgIHRleHQtYWxpZ246Y2VudGVyO1xuICAgICAgICB9XG4gICAgICAgIC53aGl0ZWJhY2sge1xuICAgICAgICAgIG1hcmdpbjogMCBhdXRvIDEwcHg7XG4gICAgICAgICAgYmFja2dyb3VuZC1jb2xvcjogd2hpdGU7XG4gICAgICAgICAgd2lkdGg6IDcwMHB4O1xuICAgICAgICAgIGhlaWdodDo0MDBweDtcbiAgICAgICAgfVxuXG4gICAgICAgIGB9PC9zdHlsZT5cbiAgICApXG59XG5leHBvcnQgZGVmYXVsdCBMb2dpbl9jc3MiXX0= */\n/*@ sourceURL=/Users/caznm/Desktop/Movie/DB/component/Login_css.js */");
+    id: "415773205"
+  }, ".non_signin-card{padding:40px;width:274px;background-color:#fff;margin:0 auto 10px;border-radius:2px;overflow:hidden;}.non_signin-card h1{font-weight:100;text-align:center;font-size:2.3em;}.name>input{display:block;font-size:16px;margin-bottom:10px;background:#fff;width:270px;height:35px;border:1px solid #d9d9d9;border-top:1px solid #c0c0c0;border-width:0px 0px 3px 0px;border-style:solid;box-sizing:border-box;padding:0 8px;box-shadow:0 2px 5px #0000007c inset;}.non-pwd>input{display:block;font-size:16px;margin-bottom:10px;background:#fff;width:270px;height:35px;border:1px solid #d9d9d9;border-top:1px solid #c0c0c0;border-width:0px 0px 3px 0px;border-style:solid;box-sizing:border-box;padding:0 8px;box-shadow:0 2px 5px #0000007c inset;}.non-ph>input{display:block;font-size:16px;margin-bottom:10px;background:#fff;width:270px;height:35px;border:1px solid #d9d9d9;border-top:1px solid #c0c0c0;border-width:0px 0px 3px 0px;border-style:solid;box-sizing:border-box;padding:0 8px;box-shadow:0 2px 5px #0000007c inset;}.non-birth>input{display:block;font-size:16px;margin-bottom:10px;background:#fff;width:270px;height:35px;border:1px solid #d9d9d9;border-top:1px solid #c0c0c0;border-width:0px 0px 3px 0px;border-style:solid;box-sizing:border-box;padding:0 8px;box-shadow:0 2px 5px #0000007c inset;}.non-signin-card input[type=submit]{width:50%;display:block;margin-bottom:10px;position:relative;float:right;}.non-sign_in{float:right;text-align:center;font-size:14px;font-weight:700;margin-top:20px;width:130px;height:32px;padding:0 8px;background-color:#343B40;color:#E6BEBE;}.non-back{background-color:#F4C2C2;height:100%;text-align:center;}.non-whiteback{margin:0 auto 10px;background-color:white;height:500px;width:1000px;}\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9jYXpubS9EZXNrdG9wL01vdmllL0RCL2NvbXBvbmVudC9Ob25fbWVtYmVyX2Nzcy5qcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFFMkIsQUFHd0IsQUFTRyxBQU1GLEFBZ0JBLEFBZ0JBLEFBZ0JBLEFBZ0JKLEFBT0UsQUFZZSxBQUtSLFVBdkJMLEVBT0ksQ0F0Rk4sQ0FlRyxBQWdCQSxBQWdCQSxBQWdCQSxFQXRERyxHQThGSyxLQXZCSixDQS9FRyxBQWlHVixJQWpGTyxBQWdCQSxBQWdCQSxBQWdCQSxDQXNCSixJQTdFQyxHQXlGRSxLQUtMLENBdkJLLEVBT0YsRUF0RkcsQ0FnQkgsQUFnQkEsQUFnQkEsQUFnQkEsRUF2RGxCLEtBeUZBLEFBS2UsTUF2QkQsQUFPSSxHQXRFSixBQWdCQSxBQWdCQSxBQWdCQSxFQWhFTSxFQXVHcEIsS0F2QkEsR0EvRGMsQUFnQkEsQUFnQkEsQUFnQkEsQ0FzQkEsT0F0RkksSUFpQlMsQUFnQkEsQUFnQkEsQUFnQkEsQ0FzQmIsV0F0RmQsQ0F1RmdCLFlBdEVlLEFBZ0JBLEFBZ0JBLEFBZ0JBLEVBdUJKLHlCQUNYLEVBdkVlLEFBZ0JBLEFBZ0JBLEFBZ0JBLFlBd0IvQixpQkF2RXFCLEFBZ0JBLEFBZ0JBLEFBZ0JBLG1CQS9DRyxBQWdCQSxBQWdCQSxBQWdCQSxzQkEvQ1IsQUFnQkEsQUFnQkEsQUFnQkEsY0EvQ3VCLEFBZ0JBLEFBZ0JBLEFBZ0JBLHFDQS9DdkMsQUFnQkEsQUFnQkEsQUFnQkEiLCJmaWxlIjoiL1VzZXJzL2Nhem5tL0Rlc2t0b3AvTW92aWUvREIvY29tcG9uZW50L05vbl9tZW1iZXJfY3NzLmpzIiwic291cmNlc0NvbnRlbnQiOlsiY29uc3QgTm9uX21lbWJlcl9jc3MgPSgpPT57XG4gICAgcmV0dXJuKFxuICAgICAgICA8c3R5bGUgZ2xvYmFsIGpzeD57YFxuICAgICAgICAubm9uX3NpZ25pbi1jYXJkIHtcbiAgICAgICAgICBwYWRkaW5nOiA0MHB4O1xuICAgICAgICAgIHdpZHRoOiAyNzRweDtcbiAgICAgICAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjZmZmO1xuICAgICAgICAgIG1hcmdpbjogMCBhdXRvIDEwcHg7XG4gICAgICAgICAgYm9yZGVyLXJhZGl1czogMnB4O1xuICAgICAgICAgIG92ZXJmbG93OiBoaWRkZW47XG4gICAgICAgIH1cblxuICAgICAgICAubm9uX3NpZ25pbi1jYXJkIGgxIHtcbiAgICAgICAgICBmb250LXdlaWdodDogMTAwO1xuICAgICAgICAgIHRleHQtYWxpZ246IGNlbnRlcjtcbiAgICAgICAgICBmb250LXNpemU6IDIuM2VtO1xuICAgICAgICB9XG5cbiAgICAgICAgLm5hbWUgPiBpbnB1dCB7XG4gICAgICAgICAgZGlzcGxheTogYmxvY2s7XG4gICAgICAgICAgZm9udC1zaXplOiAxNnB4O1xuICAgICAgICAgIC8qIG1hcmdpbjogMHB4IGF1dG87ICovXG4gICAgICAgICAgbWFyZ2luLWJvdHRvbTogMTBweDtcbiAgICAgICAgICBiYWNrZ3JvdW5kOiAjZmZmO1xuICAgICAgICAgIHdpZHRoOiAyNzBweDtcbiAgICAgICAgICBoZWlnaHQ6IDM1cHg7XG4gICAgICAgICAgYm9yZGVyOiAxcHggc29saWQgI2Q5ZDlkOTtcbiAgICAgICAgICBib3JkZXItdG9wOiAxcHggc29saWQgI2MwYzBjMDtcbiAgICAgICAgICBib3JkZXItd2lkdGg6IDBweCAwcHggM3B4IDBweDtcbiAgICAgICAgICBib3JkZXItc3R5bGU6IHNvbGlkO1xuICAgICAgICAgIGJveC1zaXppbmc6IGJvcmRlci1ib3g7XG4gICAgICAgICAgcGFkZGluZzogMCA4cHg7XG4gICAgICAgICAgYm94LXNoYWRvdzogMCAycHggNXB4ICMwMDAwMDA3YyBpbnNldDtcbiAgICAgICAgfVxuICAgICAgICAubm9uLXB3ZCA+IGlucHV0IHtcbiAgICAgICAgICBkaXNwbGF5OiBibG9jaztcbiAgICAgICAgICBmb250LXNpemU6IDE2cHg7XG4gICAgICAgICAgLyogbWFyZ2luOiAwcHggYXV0bzsgKi9cbiAgICAgICAgICBtYXJnaW4tYm90dG9tOiAxMHB4O1xuICAgICAgICAgIGJhY2tncm91bmQ6ICNmZmY7XG4gICAgICAgICAgd2lkdGg6IDI3MHB4O1xuICAgICAgICAgIGhlaWdodDogMzVweDtcbiAgICAgICAgICBib3JkZXI6IDFweCBzb2xpZCAjZDlkOWQ5O1xuICAgICAgICAgIGJvcmRlci10b3A6IDFweCBzb2xpZCAjYzBjMGMwO1xuICAgICAgICAgIGJvcmRlci13aWR0aDogMHB4IDBweCAzcHggMHB4O1xuICAgICAgICAgIGJvcmRlci1zdHlsZTogc29saWQ7XG4gICAgICAgICAgYm94LXNpemluZzogYm9yZGVyLWJveDtcbiAgICAgICAgICBwYWRkaW5nOiAwIDhweDtcbiAgICAgICAgICBib3gtc2hhZG93OiAwIDJweCA1cHggIzAwMDAwMDdjIGluc2V0O1xuICAgICAgICB9XG4gICAgICAgIC5ub24tcGggPiBpbnB1dCB7XG4gICAgICAgICAgZGlzcGxheTogYmxvY2s7XG4gICAgICAgICAgZm9udC1zaXplOiAxNnB4O1xuICAgICAgICAgIC8qIG1hcmdpbjogMHB4IGF1dG87ICovXG4gICAgICAgICAgbWFyZ2luLWJvdHRvbTogMTBweDtcbiAgICAgICAgICBiYWNrZ3JvdW5kOiAjZmZmO1xuICAgICAgICAgIHdpZHRoOiAyNzBweDtcbiAgICAgICAgICBoZWlnaHQ6IDM1cHg7XG4gICAgICAgICAgYm9yZGVyOiAxcHggc29saWQgI2Q5ZDlkOTtcbiAgICAgICAgICBib3JkZXItdG9wOiAxcHggc29saWQgI2MwYzBjMDtcbiAgICAgICAgICBib3JkZXItd2lkdGg6IDBweCAwcHggM3B4IDBweDtcbiAgICAgICAgICBib3JkZXItc3R5bGU6IHNvbGlkO1xuICAgICAgICAgIGJveC1zaXppbmc6IGJvcmRlci1ib3g7XG4gICAgICAgICAgcGFkZGluZzogMCA4cHg7XG4gICAgICAgICAgYm94LXNoYWRvdzogMCAycHggNXB4ICMwMDAwMDA3YyBpbnNldDtcbiAgICAgICAgfVxuICAgICAgICAubm9uLWJpcnRoID4gaW5wdXQge1xuICAgICAgICAgIGRpc3BsYXk6IGJsb2NrO1xuICAgICAgICAgIGZvbnQtc2l6ZTogMTZweDtcbiAgICAgICAgICAvKiBtYXJnaW46IDBweCBhdXRvOyAqL1xuICAgICAgICAgIG1hcmdpbi1ib3R0b206IDEwcHg7XG4gICAgICAgICAgYmFja2dyb3VuZDogI2ZmZjtcbiAgICAgICAgICB3aWR0aDogMjcwcHg7XG4gICAgICAgICAgaGVpZ2h0OiAzNXB4O1xuICAgICAgICAgIGJvcmRlcjogMXB4IHNvbGlkICNkOWQ5ZDk7XG4gICAgICAgICAgYm9yZGVyLXRvcDogMXB4IHNvbGlkICNjMGMwYzA7XG4gICAgICAgICAgYm9yZGVyLXdpZHRoOiAwcHggMHB4IDNweCAwcHg7XG4gICAgICAgICAgYm9yZGVyLXN0eWxlOiBzb2xpZDtcbiAgICAgICAgICBib3gtc2l6aW5nOiBib3JkZXItYm94O1xuICAgICAgICAgIHBhZGRpbmc6IDAgOHB4O1xuICAgICAgICAgIGJveC1zaGFkb3c6IDAgMnB4IDVweCAjMDAwMDAwN2MgaW5zZXQ7XG4gICAgICAgIH1cbiAgICAgICAgLm5vbi1zaWduaW4tY2FyZCBpbnB1dFt0eXBlPXN1Ym1pdF0ge1xuICAgICAgICAgIHdpZHRoOiA1MCU7XG4gICAgICAgICAgZGlzcGxheTogYmxvY2s7XG4gICAgICAgICAgbWFyZ2luLWJvdHRvbTogMTBweDtcbiAgICAgICAgICBwb3NpdGlvbjogcmVsYXRpdmU7XG4gICAgICAgICAgZmxvYXQ6IHJpZ2h0O1xuICAgICAgICB9XG4gICAgICAgIC5ub24tc2lnbl9pbiB7XG4gICAgICAgICAgZmxvYXQ6IHJpZ2h0O1xuICAgICAgICAgIHRleHQtYWxpZ246IGNlbnRlcjtcbiAgICAgICAgICBmb250LXNpemU6IDE0cHg7XG4gICAgICAgICAgZm9udC13ZWlnaHQ6IDcwMDtcbiAgICAgICAgICBtYXJnaW4tdG9wOiAyMHB4O1xuICAgICAgICAgIHdpZHRoOiAxMzBweDtcbiAgICAgICAgICBoZWlnaHQ6IDMycHg7XG4gICAgICAgICAgcGFkZGluZzogMCA4cHg7XG4gICAgICAgICAgYmFja2dyb3VuZC1jb2xvcjogIzM0M0I0MDtcbiAgICAgICAgICBjb2xvcjogI0U2QkVCRTtcbiAgICAgICAgfVxuICAgICAgICAubm9uLWJhY2t7XG4gICAgICAgICAgYmFja2dyb3VuZC1jb2xvcjogICAjRjRDMkMyO1xuICAgICAgICAgIGhlaWdodDogMTAwJTtcbiAgICAgICAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XG4gICAgICAgIH1cbiAgICAgICAgLm5vbi13aGl0ZWJhY2sge1xuICAgICAgICAgIG1hcmdpbjogMCBhdXRvIDEwcHg7XG4gICAgICAgICAgYmFja2dyb3VuZC1jb2xvcjogd2hpdGU7XG4gICAgICAgICAgaGVpZ2h0OiA1MDBweDtcbiAgICAgICAgICB3aWR0aDogMTAwMHB4O1xuICAgICAgICB9XG5cbiAgICAgICAgXG4gICAgICAgIGB9PC9zdHlsZT5cbiAgICApXG59XG5leHBvcnQgZGVmYXVsdCBOb25fbWVtYmVyX2NzcyJdfQ== */\n/*@ sourceURL=/Users/caznm/Desktop/Movie/DB/component/Non_member_css.js */");
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (Login_css);
+/* harmony default export */ __webpack_exports__["default"] = (Non_member_css);
 
 /***/ }),
 
@@ -1963,6 +1963,19 @@ const Header = () => {
     }
   }
 
+  function getMethodR(e) {
+    const val = e.target.name;
+
+    if (logStat) {
+      router.push({
+        pathname: val
+      });
+    } else {
+      alert('로그인이 필요한 서비스 입니다');
+      router.push('/Login');
+    }
+  }
+
   function mLogout(e) {
     const val = e.target.name;
     alert('로그아웃 되었습니다!');
@@ -2020,7 +2033,7 @@ const Header = () => {
     onClick: getMethod
   }, " \uBA54\uC778")), __jsx("li", null, __jsx("a", {
     name: "/reservation",
-    onClick: getMethod
+    onClick: getMethodR
   }, "\uC601\uD654\uC608\uB9E4")), __jsx("li", null, logStat ? __jsx("a", {
     name: "/index",
     onClick: mLogout
@@ -2040,10 +2053,10 @@ const Header = () => {
 
 /***/ }),
 
-/***/ "./pages/Login.js":
-/*!************************!*\
-  !*** ./pages/Login.js ***!
-  \************************/
+/***/ "./pages/Non_member.js":
+/*!*****************************!*\
+  !*** ./pages/Non_member.js ***!
+  \*****************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -2051,132 +2064,77 @@ const Header = () => {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next/router */ "next/router");
-/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _Header__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Header */ "./pages/Header.js");
-/* harmony import */ var _component_Login_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../component/Login_css */ "./component/Login_css.js");
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! next/head */ "next/head");
-/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(next_head__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! axios */ "axios");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var _Header__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Header */ "./pages/Header.js");
+/* harmony import */ var _component_Non_member_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../component/Non_member_css */ "./component/Non_member_css.js");
+/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! next/head */ "next/head");
+/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(next_head__WEBPACK_IMPORTED_MODULE_3__);
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 
 
-
-
-
-
-const Login = () => {
-  const {
-    0: usrID,
-    1: getID
-  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])('');
-  const {
-    0: usrPW,
-    1: getPW
-  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])('');
-  const router = Object(next_router__WEBPACK_IMPORTED_MODULE_1__["useRouter"])();
-
-  function gotoReg() {
-    router.push('/Join');
-  } // useEffect(() =>{
-  // });
-
-
-  function getid(e) {
-    getID(e.target.value);
-  }
-
-  function getpw(e) {
-    getPW(e.target.value);
-  }
-
-  function login() {
-    axios__WEBPACK_IMPORTED_MODULE_6___default()({
-      method: 'POST',
-      url: '/Login',
-      data: {
-        userID: usrID,
-        userPW: usrPW
-      }
-    }).then(res => {
-      console.log(res.data.bool);
-      const check = res.data.bool;
-
-      if (check) {
-        alert('환영합니다! ' + res.data.userID + '님!');
-        localStorage.setItem('usrID', res.data.userID);
-        console.log(localStorage.getItem('usrID'));
-        router.push({
-          pathname: '/Mypage'
-        });
-      } else {
-        alert('잘못된 로그인 접근입니다.');
-      }
-    });
-  }
-
-  return __jsx("div", null, __jsx(next_head__WEBPACK_IMPORTED_MODULE_5___default.a, null, __jsx("title", null, "TIC-\uB85C\uADF8\uC778")), __jsx(_component_Login_css__WEBPACK_IMPORTED_MODULE_3__["default"], null), __jsx(_Header__WEBPACK_IMPORTED_MODULE_2__["default"], null), __jsx("div", {
-    class: "body_login"
+const Non_member = () => {
+  return __jsx("div", null, __jsx(next_head__WEBPACK_IMPORTED_MODULE_3___default.a, null, __jsx("title", null, "TIC-\uBE44\uD68C\uC6D0\uC608\uB9E4")), __jsx(_Header__WEBPACK_IMPORTED_MODULE_1__["default"], null), __jsx(_component_Non_member_css__WEBPACK_IMPORTED_MODULE_2__["default"], null), __jsx("div", {
+    class: "non-back"
   }, __jsx("div", {
-    class: "back"
+    class: "non-whiteback"
   }, __jsx("div", {
-    class: "whiteback"
-  }, __jsx("div", {
-    class: "login-card"
-  }, __jsx("h1", null, "\uB85C\uADF8\uC778"), __jsx("form", null, __jsx("p", {
-    class: "username"
+    class: "non_signin-card"
+  }, __jsx("h1", null, "\uBE44\uD68C\uC6D0 \uB85C\uADF8\uC778"), __jsx("form", {
+    action: "",
+    method: "post"
+  }, __jsx("p", {
+    class: "name"
   }, __jsx("input", {
     type: "text",
-    name: "user_id",
-    placeholder: "\uC544\uC774\uB514",
-    onChange: getid,
+    name: "user_name",
+    placeholder: "\uC774\uB984",
     required: true
   })), __jsx("p", {
-    class: "pwd"
+    class: "non-ph"
+  }, __jsx("input", {
+    type: "text",
+    name: "user_ph",
+    placeholder: "\uC5F0\uB77D\uCC98",
+    required: true
+  })), __jsx("p", {
+    class: "non-pwd"
   }, __jsx("input", {
     type: "password",
     name: "user_pwd",
-    placeholder: "\uBE44\uBC00\uBC88\uD638",
-    onChange: getpw,
+    placeholder: "\uD734\uB300\uD3F0 \uBC88\uD638",
     required: true
-  })), __jsx("button", {
-    class: "login",
-    type: "button",
-    onClick: login
-  }, " ", "Log in", " "), __jsx("button", {
-    class: "sign_in",
-    type: "button",
-    onClick: gotoReg
-  }, " ", "Sign In", " ")), __jsx("img", {
-    src: "/login_or.png",
+  })), __jsx("p", {
+    class: "non-birth"
+  }, __jsx("input", {
+    type: "text",
+    name: "user_birth",
+    placeholder: "\uC0DD\uB144\uC6D4\uC77C(YYMMDD)",
+    required: true
+  })), __jsx("img", {
+    src: "bar.png",
     width: "100%",
     alt: ""
-  }), __jsx(next_link__WEBPACK_IMPORTED_MODULE_4___default.a, {
-    href: "/Non_member"
-  }, __jsx("button", {
-    class: "non_member",
-    type: "button"
-  }, " ", "\uBE44\uD68C\uC6D0 \uC608\uB9E4\uD558\uAE30", " ")))))));
+  }), __jsx("input", {
+    class: "non-sign_in",
+    type: "submit",
+    value: "Sign In"
+  }))))));
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (Login);
+/* harmony default export */ __webpack_exports__["default"] = (Non_member);
 
 /***/ }),
 
-/***/ 5:
-/*!******************************!*\
-  !*** multi ./pages/Login.js ***!
-  \******************************/
+/***/ 3:
+/*!***********************************!*\
+  !*** multi ./pages/Non_member.js ***!
+  \***********************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/caznm/Desktop/Movie/DB/pages/Login.js */"./pages/Login.js");
+module.exports = __webpack_require__(/*! /Users/caznm/Desktop/Movie/DB/pages/Non_member.js */"./pages/Non_member.js");
 
 
 /***/ }),
@@ -2369,4 +2327,4 @@ module.exports = require("url");
 /***/ })
 
 /******/ });
-//# sourceMappingURL=Login.js.map
+//# sourceMappingURL=Non_member.js.map

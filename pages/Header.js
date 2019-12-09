@@ -54,6 +54,17 @@ const Header = () => {
         }
     }
 
+    function getMethodR (e) {
+        const val = e.target.name;
+        if (logStat) {
+            router.push({ pathname: val });
+        }
+        else {
+            alert('로그인이 필요한 서비스 입니다');
+            router.push('/Login');
+        }
+    }
+
     function mLogout(e) {
         const val = e.target.name;
         alert('로그아웃 되었습니다!');
@@ -104,7 +115,7 @@ const Header = () => {
                                 <a name = "/index" onClick={getMethod}> 메인</a>
                             </li>
                             <li>
-                                <a  name = "/reservation" onClick={getMethod}>영화예매</a>
+                                <a  name = "/reservation" onClick={getMethodR}>영화예매</a>
                             </li>
                             <li>
                                 {logStat ? <a name='/index' onClick={mLogout}>로그아웃</a> : <a name='/Login' onClick={getMethod}>로그인</a>}
