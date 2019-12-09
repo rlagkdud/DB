@@ -32,12 +32,12 @@ const Login = () => {
             const check = res.data.bool;
             
             if(check){
-                alert('환영합니다! '+ res.data.userID +'님!');
+                alert('환영합니다! '+ res.data.userName +'님!');
                 localStorage.setItem('usrID', res.data.userID);
                 localStorage.setItem('name', res.data.userName);
                 localStorage.setItem('vip', res.data.vip);
                 localStorage.setItem('member', true);
-                console.log(localStorage.getItem('usrID'));
+                console.log(localStorage.getItem('name'));
                 router.push({pathname: '/Mypage' });
             }
             else{

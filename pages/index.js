@@ -17,7 +17,7 @@ const index = () => {
 
     useEffect(() => {
 
-        if(localStorage.getItem('userID') !== null){
+        if(localStorage.getItem('usrID') !== null){
             
             setStat(true);
             setName(localStorage.getItem('name'));
@@ -243,7 +243,7 @@ const index = () => {
 
                 <div class="genre">
                     <div class="genre_title">
-                        <h1>GENRE</h1>
+                        <h1>당신을 위한 INFO</h1>
                     </div>
                     <div class="genre_wrap">
                         <div class="genre_img">
@@ -251,28 +251,28 @@ const index = () => {
                           <img src="/genre1.jpeg" height="350px" width="350px" alt="sample57" />
                           <figcaption>
                             { logStat ? <h3>제일 많이보신 장르는요</h3> : <h3>요곳에 마우스를</h3>}
-                            { logStat ? <h5>{genre}</h5> : <h5>올리면 말이야</h5>}
+                            { logStat ? <h5>{genre}</h5> : <h5>올려주시면요</h5>}
                           </figcaption>
                           <a href="#"></a>
                         </figure>
                         <figure class="genre_snip"><img src="/genre2.jpeg" alt="sample59" />
                           <figcaption>
-                            { logStat ? <h3>최근에 보신 영화는요</h3> : <h3>장르가 나타난다</h3>}
-                            { logStat ? <h5>{rescent}</h5> : <h5>이말이야</h5>}
+                            { logStat ? <h3>최근에 보신 영화는요</h3> : <h3>회원님의 정보가</h3>}
+                            { logStat ? <h5>{rescent}</h5> : <h5>나온답니다!</h5>}
                           </figcaption>
                           <a href="#"></a>
                         </figure> <br/>
                         <figure class="genre_snip"><img src="/genre3.jpeg" alt="sample60" />
                           <figcaption>
-                            { logStat ? <h3>최근에 뜨는 영화는요</h3> :<h3>어떤 장르 넣을까</h3>}
-                            { logStat ? <h5>겨울왕국2 / 포드v페라리</h5> : <h5>히히히히히</h5>}
+                            { logStat ? <h3>최근에 뜨는 영화는요</h3> :<h3>보고싶으시면</h3>}
+                            { logStat ? <h5>겨울왕국2 / 포드v페라리</h5> : <h5>가입하셔야겠죠?</h5>}
                           </figcaption>
                           <a href="#"></a>
                         </figure>
                         <figure class="genre_snip"><img src="/genre4.jpeg" alt="sample60" />
                           <figcaption>
-                            { logStat ? <h3>즐거운 시간</h3> : <h3>근데 이것도 장르추천</h3>}
-                            { logStat ? <h5>보내세요~!!</h5> : <h5>불러와야 하는건데 엉엉 할일이 생각나버렸다,,,</h5>}
+                            { logStat ? <h3>즐거운 시간</h3> : <h3>TIC와 함께 </h3>}
+                            { logStat ? <h5>보내세요~!!</h5> : <h5>즐거운 시간 되세요!</h5>}
                           </figcaption>
                           <a href="#"></a>
                         </figure><br/>

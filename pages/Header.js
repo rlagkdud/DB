@@ -9,7 +9,7 @@ const Header = () => {
     const router = useRouter();
     const [userData, getData] = useState(null);
     const [logStat, getStat] = useState(false);
-    var member = false;
+    const [member, getMember] = useState(false);
 
     useEffect(() => {
 
@@ -22,13 +22,12 @@ const Header = () => {
                 localStorage.clear();
             }
             if(localStorage.getItem('member') !== null) {
-                member = localStorage.getItem('member');
+                getMember(localStorage.getItem('member'));
             }
         
         const handleRouteChange = url => {
             console.log('App is changing to: ', url)
         }
-        
         router.events.on('routeChangeStart', handleRouteChange)
         return () => {
             router.events.off('routeChangeStart', handleRouteChange)
