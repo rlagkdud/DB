@@ -57,7 +57,7 @@ app.prepare().then(() => {
         var pw = req.body.userPW;
         
         var db_pwd;
-        var query = "select user_pwd from customer where user_id= ?";
+        var query = "select user_pw from customer where user_id= ?";
     
         var page = "/Login";
         var result_d;
@@ -94,6 +94,26 @@ app.prepare().then(() => {
             }
         }
     });
+
+    server.post('/join_process', async (req, res) => {
+        var name = req.body.userName;
+        var id = req.body.userID;
+        var pwd = req.body.userPW;
+        var phn = req.body.userPN;
+        var bd = req.body.userBD;
+
+        var page = "/Join"
+
+        var query = "INSERT INTO customer (user_id, user_name, user_pw, user_ph, birth_d, vip) VALUES(?, ?, ?, ?, ?, 'Bronze')"
+
+        const connection = await pool.getConnection(async conn => conn)
+        const [result] = await connection.query(query, [id, name, pwd, phn, bd])
+
+        connection.release();
+        const params = { };
+        res.send(params);
+        app.render(req, res, page);
+    })
     
     server.post('/reservation', async (req, res) => {
         var c_region = req.body.region;
@@ -113,15 +133,12 @@ app.prepare().then(() => {
             result_d.push(result[i].start_time)
         }
             
-        console.log(result_d)
         if (result_d.length === 0) {
-            console.log("haha reject1");
             connection.release();
             const params = { bool: false };
             res.send(params);
             app.render(req, res, page, {});
         } else {
-            console.log("success!");
             connection.release();
             const params = { bool: true, times: result_d };
             res.send(params);
@@ -154,16 +171,13 @@ app.prepare().then(() => {
         var success_is = [];
         for (var i=0; i < c_seat.length; i++) {
             success_is[i] = await connection.query(query, [result_id[0].movie_id, c_seat[i]]);
-            console.log(success_is[i])
         }
         if (result_id.length === 0) {
-            console.log("haha reject1");
             connection.release();
             const params = { bool: false };
             res.send(params);
             app.render(req, res, page, {});
         } else {
-            console.log("success!");
             connection.release();
             const params = { bool: true, theater_num: theater_num, times: result_id };
             res.send(params);

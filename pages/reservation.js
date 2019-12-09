@@ -81,7 +81,6 @@ const Reservation = () => {
                 movie: choose_movie
             }
         }).then( (res) => {
-            console.log(res.data.times);
         });
     }
     
@@ -101,9 +100,7 @@ const Reservation = () => {
                 movie: choose_movie
             }
         }).then( (res) => {
-            console.log(res.data.theater_num)
             localStorage.setItem('theater_id', res.data.theater_num)
-            console.log("2: " + localStorage.getItem('theater_id'))
             localStorage.setItem('branch', choose_branch)
             localStorage.setItem('date', content)
             localStorage.setItem('movie', choose_movie)
