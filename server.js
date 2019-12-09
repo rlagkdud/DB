@@ -14,8 +14,8 @@ const mysql = require("mysql2/promise");
 const pool = mysql.createPool({
     host: "localhost",
     user: "root",
-    password: "111111",
-    database: "movie"
+    password: "Cho641164!",
+    database: "solo"
 });
 
 app.prepare().then(() => {
@@ -57,7 +57,7 @@ app.prepare().then(() => {
         var pw = req.body.userPW;
         
         var db_pwd;
-        var query = "select user_pwd from customer where user_id= ?";
+        var query = "select * from user where userID= ?";
     
         var page = "/Login";
         var result_d;
@@ -75,7 +75,7 @@ app.prepare().then(() => {
             app.render(req, res, page, {});
         } else {
             
-            db_pwd = result[0].user_pwd;
+            db_pwd = result[0].userPW;
             console.log("!" + db_pwd);
 
             if (db_pwd === pw) {

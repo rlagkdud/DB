@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 4);
+/******/ 	return __webpack_require__(__webpack_require__.s = 5);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -1968,7 +1968,7 @@ const Header = () => {
     alert('로그아웃 되었습니다!');
     localStorage.clear();
     router.push({
-      pathname: val
+      pathname: '/'
     });
   }
 
@@ -2169,7 +2169,7 @@ const Login = () => {
 
 /***/ }),
 
-/***/ 4:
+/***/ 5:
 /*!******************************!*\
   !*** multi ./pages/Login.js ***!
   \******************************/

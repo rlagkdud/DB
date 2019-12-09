@@ -8,10 +8,6 @@
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ],
-    "/Mypage": [
-      "static/runtime/webpack.js",
-      "static/runtime/main.js"
-    ],
     "/_app": [
       "static/runtime/webpack.js",
       "static/runtime/main.js"
@@ -23,6 +19,10 @@
     "/_polyfills": [
       "static/runtime/polyfills.js",
       "static/runtime/polyfills.js.map"
+    ],
+    "/reservation": [
+      "static/runtime/webpack.js",
+      "static/runtime/main.js"
     ]
   }
 }

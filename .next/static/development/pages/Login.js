@@ -13219,7 +13219,7 @@ var Header = function Header() {
     alert('로그아웃 되었습니다!');
     localStorage.clear();
     router.push({
-      pathname: val
+      pathname: '/'
     });
   }
 
@@ -13420,7 +13420,7 @@ var Login = function Login() {
 
 /***/ }),
 
-/***/ 1:
+/***/ 2:
 /*!********************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2FLogin&absolutePagePath=%2FUsers%2Fcaznm%2FDesktop%2FMovie%2FDB%2Fpages%2FLogin.js ***!
   \********************************************************************************************************************************/
@@ -13443,5 +13443,5 @@ module.exports = dll_ef0ff7c60362f24a921f;
 
 /***/ })
 
-},[[1,"static/runtime/webpack.js"]]]);
+},[[2,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=Login.js.map

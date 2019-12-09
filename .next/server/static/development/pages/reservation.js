@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 5);
+/******/ 	return __webpack_require__(__webpack_require__.s = 7);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -120,10 +120,120 @@ const Header_css = () => {
 
 /***/ }),
 
-/***/ "./component/Mypage_css.js":
-/*!*********************************!*\
-  !*** ./component/Mypage_css.js ***!
-  \*********************************/
+/***/ "./component/example.js":
+/*!******************************!*\
+  !*** ./component/example.js ***!
+  \******************************/
+/*! exports provided: DateAnchor, RegionAnchor, BranchAnchor, MovieAnchor, TimeAnchor, SeatAnchor */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DateAnchor", function() { return DateAnchor; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RegionAnchor", function() { return RegionAnchor; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BranchAnchor", function() { return BranchAnchor; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MovieAnchor", function() { return MovieAnchor; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TimeAnchor", function() { return TimeAnchor; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SeatAnchor", function() { return SeatAnchor; });
+/* harmony import */ var _emotion_styled__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @emotion/styled */ "@emotion/styled");
+/* harmony import */ var _emotion_styled__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_emotion_styled__WEBPACK_IMPORTED_MODULE_0__);
+
+const DateAnchor = _emotion_styled__WEBPACK_IMPORTED_MODULE_0___default.a.button`
+    color: #808088;
+    float:left;
+    border:solid;
+    margin:2px;
+    margin-right:10px;
+    padding-right:2px;
+    padding-left:2px;
+    text-align:center;
+    border-radius:5px;
+    text-decoration: none;
+    background-color: white;
+    color: ${props => props.isDate ? "#f83b71" : ""};
+`;
+const RegionAnchor = _emotion_styled__WEBPACK_IMPORTED_MODULE_0___default.a.div`
+
+    border:solid;
+    width:110px;
+    height: 20px;
+    overflow: hidden;
+    font-size: small;
+    text-align: center;
+    color: #808088;
+    /*margin-left: 200px;*/
+    margin-bottom: 1.5rem;
+
+    &:hover{
+        border:solid #f83b71;
+    }
+    color:${props => props.isRegion ? "#f83b71" : ""}; 
+`;
+const BranchAnchor = _emotion_styled__WEBPACK_IMPORTED_MODULE_0___default.a.div`
+
+    width:80px;
+    text-align: center;
+    color: #808088;
+    float: left;
+    border: solid;
+    font-size: small;
+    margin-left: 20px;
+    width:7rem;
+    margin-bottom:2.3em;
+
+    &:hover{
+        border:solid #f83b71;
+    }
+    color:${props => props.isBranch ? "#f83b71" : ""}; 
+`;
+const MovieAnchor = _emotion_styled__WEBPACK_IMPORTED_MODULE_0___default.a.div`
+
+    border:solid;
+    text-align: center;
+    color: #808088;
+    font-size:small;
+    margin-bottom:2rem;
+    padding-left:4px;
+    padding-right:4px;
+    width:100px;
+
+    &:hover{
+        border:solid #f83b71;
+    }
+    color:${props => props.isMovie ? "#f83b71" : ""}; 
+`;
+const TimeAnchor = _emotion_styled__WEBPACK_IMPORTED_MODULE_0___default.a.button`
+    height: 25px;
+    width:80px;
+    background-color: white;
+    text-align: center;
+    border-style: solid; 
+    &:hover{
+        border:solid #f83b71;
+    }
+    color:${props => props.isTime ? "white" : ""};
+`;
+const SeatAnchor = _emotion_styled__WEBPACK_IMPORTED_MODULE_0___default.a.input`
+    margin:0;
+    width: 20px !important;
+    height: 20px !important;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -o-appearance: none;
+    outline: none;
+    box-shadow: none;
+    vertical-align: middle;
+    background: url("seat1.png") no-repeat;
+    margin: 3px 3px 3px 4px;
+    background:${props => props.isSeat ? url('seat1_checked.png') : ""};
+`;
+
+/***/ }),
+
+/***/ "./component/reservation_css.js":
+/*!**************************************!*\
+  !*** ./component/reservation_css.js ***!
+  \**************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -137,13 +247,40 @@ __webpack_require__.r(__webpack_exports__);
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
 
-const Mypage_css = () => {
+const Reservation_css = () => {
   return __jsx(styled_jsx_style__WEBPACK_IMPORTED_MODULE_0___default.a, {
-    id: "599518023"
-  }, ".upperMypage{height:230px;margin:0 250px;}.upperMypage p{padding-left:20px;display:inline-block;}.upperMypage h5{display:inline-block;}.nameMypage{position:relative;width:100%;display:inline-block;text-align:left;border-bottom:1px solid black;}.nameMypage p b{display:inline-block;}.myRank{display:inline-block;float:right;height:50px;width:50px;margin:10px 5px;}.preperGenre{border-bottom:1px solid black;}.preperGenre button{border-style:none;background:white;float:right;margin:30px 5px 0 0;}.downMypageCol{background:#EFD5D5;}.downMypage{height:300px;text-align:left;margin:0 250px;}.downMypage p{display:inline-block;padding:5px 0;}.sawMovie{text-align:center;}.sawMovie .sawPoster{width:150px;height:200px;margin:0 10px;}.whiteCol{background:white;height:40px;}\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9jYXpubS9EZXNrdG9wL01vdmllL0RCL2NvbXBvbmVudC9NeXBhZ2VfY3NzLmpzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUV1QixBQUdpQixBQUtTLEFBSUksQUFHSCxBQU9HLEFBR0EsQUFPUyxBQUdaLEFBTUEsQUFHTCxBQUtRLEFBSUgsQUFHUCxBQUtNLFlBSkosQ0FyREgsQUF5Q00sSUFpQkwsQ0FyRFUsQUFPVixBQW9CTSxBQWtCckIsQ0FaQSxFQTdCQSxBQVVBLEFBR2UsQUF3QkUsSUFRQSxHQXJEakIsQ0FZeUIsQUE2QlAsQUFpQmxCLENBOUJBLEdBTmdCLEVBVUEsQUFjaEIsSUF6Q0EsQUFpREEsS0FaQSxDQW5CZSxFQVVTLEdBcEJKLE1BV0QsVUFWZSxDQW9CbEMsS0FUQSx3QkFWQSIsImZpbGUiOiIvVXNlcnMvY2F6bm0vRGVza3RvcC9Nb3ZpZS9EQi9jb21wb25lbnQvTXlwYWdlX2Nzcy5qcyIsInNvdXJjZXNDb250ZW50IjpbImNvbnN0IE15cGFnZV9jc3MgPSAoKT0+e1xuICAgIHJldHVybihcbiAgICA8c3R5bGUgZ2xvYmFsIGpzeD57YFxuICAgIC51cHBlck15cGFnZXtcbiAgICBoZWlnaHQ6MjMwcHg7XG4gICAgbWFyZ2luOjAgMjUwcHg7XG4gICAgfVxuICAgIC8qLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0qL1xuICAgIC51cHBlck15cGFnZSBwe1xuICAgICAgICBwYWRkaW5nLWxlZnQ6MjBweDtcbiAgICAgICAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xuICAgIH1cbiAgICAudXBwZXJNeXBhZ2UgaDV7XG4gICAgICAgIGRpc3BsYXk6IGlubGluZS1ibG9jaztcbiAgICB9XG4gICAgLm5hbWVNeXBhZ2V7XG4gICAgICAgIHBvc2l0aW9uOiByZWxhdGl2ZTtcbiAgICAgICAgd2lkdGg6IDEwMCU7XG4gICAgICAgIGRpc3BsYXk6IGlubGluZS1ibG9jaztcbiAgICAgICAgdGV4dC1hbGlnbjogbGVmdDtcbiAgICAgICAgYm9yZGVyLWJvdHRvbTogMXB4IHNvbGlkIGJsYWNrO1xuICAgIH1cbiAgICAubmFtZU15cGFnZSBwIGJ7XG4gICAgICAgIGRpc3BsYXk6IGlubGluZS1ibG9jaztcbiAgICB9XG4gICAgLm15UmFua3tcbiAgICAgICAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xuICAgICAgICBmbG9hdDpyaWdodDtcbiAgICAgICAgaGVpZ2h0OiA1MHB4O1xuICAgICAgICB3aWR0aDogNTBweDtcbiAgICAgICAgbWFyZ2luOjEwcHggNXB4O1xuICAgIH1cbiAgICAucHJlcGVyR2VucmV7XG4gICAgICAgIGJvcmRlci1ib3R0b206IDFweCBzb2xpZCBibGFjaztcbiAgICB9XG4gICAgLnByZXBlckdlbnJlIGJ1dHRvbntcbiAgICAgICAgYm9yZGVyLXN0eWxlOiBub25lO1xuICAgICAgICBiYWNrZ3JvdW5kOiB3aGl0ZTtcbiAgICAgICAgZmxvYXQ6IHJpZ2h0O1xuICAgICAgICBtYXJnaW46MzBweCA1cHggMCAwIDtcbiAgICB9XG4gICAgLmRvd25NeXBhZ2VDb2wge1xuICAgICAgICBiYWNrZ3JvdW5kOiNFRkQ1RDU7XG4gICAgfVxuICAgIC5kb3duTXlwYWdle1xuICAgICAgICBoZWlnaHQ6IDMwMHB4O1xuICAgICAgICB0ZXh0LWFsaWduOiBsZWZ0O1xuICAgICAgICBtYXJnaW46MCAyNTBweDtcbiAgICB9XG4gICAgLmRvd25NeXBhZ2UgcHtcbiAgICAgICAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xuICAgICAgICBwYWRkaW5nOjVweCAwO1xuICAgIH1cbiAgICAuc2F3TW92aWV7XG4gICAgICAgIHRleHQtYWxpZ246IGNlbnRlcjtcbiAgICB9XG4gICAgLnNhd01vdmllIC5zYXdQb3N0ZXJ7XG4gICAgICAgIHdpZHRoOjE1MHB4O1xuICAgICAgICBoZWlnaHQ6IDIwMHB4O1xuICAgICAgICBtYXJnaW46MCAxMHB4O1xuICAgIH1cbiAgICAud2hpdGVDb2x7XG4gICAgICAgIGJhY2tncm91bmQ6IHdoaXRlO1xuICAgICAgICBoZWlnaHQ6NDBweDtcbiAgICB9XG4gICAgXG4gICAgXG4gICAgYH08L3N0eWxlPlxuXG4gICAgKVxufVxuZXhwb3J0IGRlZmF1bHQgTXlwYWdlX2NzcyJdfQ== */\n/*@ sourceURL=/Users/caznm/Desktop/Movie/DB/component/Mypage_css.js */");
+    id: "2943934068"
+  }, "body{margin:0;background:#F4C2C2;}.reserveContainer{height:auto;overflow:hidden;width:800px;display:block;background:white;margin:0px auto;margin-top:0px;padding:0px;padding-bottom:5px;}.below{height:80px;background-color:#f07598;}.reserveContainer h1{color:black;margin:0px;padding:5px;}.make_choice{width:100%;}.choice{float:left;margin-left:7.5%;margin-right:3.5%;display:inline-block;}.region{border:solid;width:110px;height:20px;overflow:hidden;font-size:small;text-align:center;color:#808088;margin-bottom:1.5rem;}.region:hover{border:solid #f83b71;background-color:#f83b71;color:white;}.scroll{height:400px;overflow:auto;display:inline-block;margin-bottom:7px;margin-top:7px;}.hr{width:98%;margin-top:20px;margin-bottom:0;}.store{width:80px;text-align:center;color:#808088;}.store:hover{border:solid #808088;background-color:#808088;color:white;}.ex p{float:left;border:solid;font-size:small;margin-left:20px;width:7rem;}.movie{border:solid;text-align:center;color:#808088;font-size:small;margin-bottom:2rem;padding-left:4px;padding-right:4px;}.movie:hover{border:solid #808088;background-color:#808088;color:white;}.date{width:100%;overflow:hidden;margin:0;padding-top:0;}.date h3{margin-bottom:10px;margin-top:0;padding-left:20px;}.date p{color:#808088;float:left;border:solid;margin:2px;margin-right:10px;padding-right:2px;padding-left:2px;text-align:center;border-radius:5px;}.date p:hover{border:solid #f83b71;background-color:#f83b71;color:white;}.point{margin-left:20px;margin-right:20px;overflow-x:scroll;width:95%;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;}.point::-webkit-scrollbar{display:none;}.next{width:100%;height:90%;}button{background-color:pink;border:solid 0.5px;border-radius:5px;float:right;margin-right:10px;padding-left:3%;padding-right:3%;}.confirm{background-color:pink;}.cancel{background-color:white;}.pink{color:#f83b71;text-align:center;}.blue{color:blue;}\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9jYXpubS9EZXNrdG9wL01vdmllL0RCL2NvbXBvbmVudC9yZXNlcnZhdGlvbl9jc3MuanMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBRTJCLEFBR2lCLEFBSVEsQUFhRCxBQUlDLEFBTUQsQUFHQSxBQU9DLEFBWVEsQUFNUCxBQVdKLEFBTUMsQUFLVSxBQU1ULEFBUUMsQUFTUSxBQUtWLEFBUVEsQUFLSixBQVlNLEFBTUosQUFPSCxBQUdILEFBSVcsQUFTQSxBQUdDLEFBR1QsQUFJSCxTQXhLSyxDQWtFQSxDQXZDbkIsQUFHb0IsQUEwQ0UsQUFXTCxBQXVCRSxBQXdDTCxBQXVCZCxDQXJLbUIsQUFhUyxBQUliLENBZ0JBLEFBa0JHLEFBb0NJLEFBb0R0QixDQXpCYyxBQStDTyxHQTdCQSxFQXZCTCxFQWhFWSxBQTRCQSxBQXVCQSxBQThCQSxDQWlCNUIsQUFHc0IsQUFTdEIsQ0F6SWdCLEFBNEloQixDQTlFb0IsQ0E5Q0osQUFpRkEsQ0FwREcsQ0FSTSxBQWdEYixDQTFHWixBQUlnQixBQTBCSyxDQTBDSCxFQW1CQSxDQXNCRyxBQW9EckIsR0EvSUEsQUFrSHFCLENBN0JKLENBMUZqQixBQXFCb0IsQ0FpRk4sRUFsSEksQUErRUcsQ0FrRUEsQ0FsRnJCLENBS0EsRUFtQm1CLENBNURNLEFBa0IxQixBQTRCQSxBQXVCQSxBQTZCZ0IsRUF2RU0sQ0E2REEsQ0FYckIsQUFLQSxHQTNFb0IsQUFrR04sQ0FuSU8sR0ErRVAsQ0FuQ2QsQUE0QkEsQUF1QkEsQUE4QkEsQ0FvQmUsRUExRE8sRUE2Q0wsR0E5RUMsQ0EzQmxCLEFBd0ZxQixDQWxDckIsQ0EvQ3NCLEVBakNGLEFBaUpDLFNBMURELENBakNwQixJQTZEb0IsRUFsSEYsQUFpQ0EsRUFnSEMsUUExREUsSUFwREksQ0FqQ1QsQUFpSEssR0ErQkQsU0EvSUUsQ0FxRnRCLEtBNEJxQixFQS9FckIsQUE4R0EsV0EvSUEsSUErSEEsQ0FiQSIsImZpbGUiOiIvVXNlcnMvY2F6bm0vRGVza3RvcC9Nb3ZpZS9EQi9jb21wb25lbnQvcmVzZXJ2YXRpb25fY3NzLmpzIiwic291cmNlc0NvbnRlbnQiOlsiY29uc3QgUmVzZXJ2YXRpb25fY3NzID0gKCkgPT4ge1xuICAgIHJldHVybihcbiAgICAgICAgPHN0eWxlIGdsb2JhbCBqc3g+e2BcbiAgICAgICAgYm9keXtcbiAgICAgICAgbWFyZ2luOjA7XG4gICAgICAgIGJhY2tncm91bmQ6ICNGNEMyQzI7XG4gICAgICAgIH1cbiAgICAgICAgLnJlc2VydmVDb250YWluZXJ7XG4gICAgICAgICAgICBoZWlnaHQ6IGF1dG87XG4gICAgICAgICAgICBvdmVyZmxvdzpoaWRkZW47XG4gICAgICAgICAgICB3aWR0aDogODAwcHg7XG4gICAgICAgICAgICBkaXNwbGF5OiBibG9jaztcbiAgICAgICAgICAgIGJhY2tncm91bmQ6IHdoaXRlO1xuICAgICAgICAgICAgbWFyZ2luOiAwcHggYXV0bztcbiAgICAgICAgICAgIG1hcmdpbi10b3A6MHB4O1xuICAgICAgICBcbiAgICAgICAgICAgIHBhZGRpbmc6IDBweDtcbiAgICAgICAgICAgIHBhZGRpbmctYm90dG9tOjVweDtcbiAgICAgICAgfVxuICAgICAgICBcbiAgICAgICAgLmJlbG93e1xuICAgICAgICAgICAgaGVpZ2h0OjgwcHg7XG4gICAgICAgICAgICBiYWNrZ3JvdW5kLWNvbG9yOiNmMDc1OTg7XG4gICAgICAgIH1cbiAgICAgICAgLnJlc2VydmVDb250YWluZXIgaDEge1xuICAgICAgICAgICAgY29sb3I6IGJsYWNrO1xuICAgICAgICAgICAgbWFyZ2luOiAwcHg7XG4gICAgICAgICAgICBwYWRkaW5nOiA1cHg7XG4gICAgICAgIH1cbiAgICAgICAgLm1ha2VfY2hvaWNle1xuICAgICAgICAgICAgLypwYWRkaW5nLWxlZnQ6MjUlIDsqL1xuICAgICAgICAgICAgd2lkdGg6IDEwMCU7XG4gICAgICAgIH1cbiAgICAgICAgLmNob2ljZXtcbiAgICAgICAgICAgIGZsb2F0OiBsZWZ0O1xuICAgICAgICAgICAgbWFyZ2luLWxlZnQ6Ny41JTtcbiAgICAgICAgICAgIG1hcmdpbi1yaWdodDozLjUlO1xuICAgICAgICAgICAgLypib3JkZXI6ZG90dGVkKi9cbiAgICAgICAgICAgIGRpc3BsYXk6IGlubGluZS1ibG9jaztcbiAgICAgICAgfVxuICAgICAgICAucmVnaW9ue1xuICAgICAgICAgICAgYm9yZGVyOnNvbGlkO1xuICAgICAgICAgICAgd2lkdGg6MTEwcHg7XG4gICAgICAgICAgICBoZWlnaHQ6IDIwcHg7XG4gICAgICAgICAgICBvdmVyZmxvdzogaGlkZGVuO1xuICAgICAgICAgICAgZm9udC1zaXplOiBzbWFsbDtcbiAgICAgICAgICAgIHRleHQtYWxpZ246IGNlbnRlcjtcbiAgICAgICAgICAgIGNvbG9yOiAjODA4MDg4O1xuICAgICAgICAgICAgLyptYXJnaW4tbGVmdDogMjAwcHg7Ki9cbiAgICAgICAgICAgIG1hcmdpbi1ib3R0b206IDEuNXJlbTtcblxuICAgICAgICB9XG4gICAgICAgIC5yZWdpb246aG92ZXJ7XG4gICAgICAgICAgICBib3JkZXI6c29saWQgI2Y4M2I3MTtcbiAgICAgICAgICAgIGJhY2tncm91bmQtY29sb3I6I2Y4M2I3MTtcbiAgICAgICAgICAgIGNvbG9yOndoaXRlXG4gICAgICAgIH1cbiAgICAgICAgfVxuICAgICAgICAuc2Nyb2xse1xuICAgICAgICAgICAgaGVpZ2h0OiA0MDBweDtcbiAgICAgICAgICAgIG92ZXJmbG93OiBhdXRvO1xuICAgICAgICAgICAgLyogd2lkdGg6MTAwJTsgKi9cbiAgICAgICAgICAgIC8qbWFyZ2luLWxlZnQ6NSU7Ki9cbiAgICAgICAgICAgIC8qbWFyZ2luLXJpZ2h0OjUlOyovXG4gICAgICAgICAgICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XG4gICAgICAgICAgICBtYXJnaW4tYm90dG9tOjdweDtcbiAgICAgICAgICAgIG1hcmdpbi10b3A6N3B4O1xuICAgICAgICB9XG5cbiAgICAgICAgLmhye1xuICAgICAgICAgICAgd2lkdGg6OTglO1xuICAgICAgICAgICAgbWFyZ2luLXRvcDoyMHB4O1xuICAgICAgICAgICAgbWFyZ2luLWJvdHRvbTowO1xuXG4gICAgICAgIH1cbiAgICAgICAgLnN0b3Jle1xuICAgICAgICAgICAgd2lkdGg6ODBweDtcbiAgICAgICAgICAgIHRleHQtYWxpZ246IGNlbnRlcjtcbiAgICAgICAgICAgIGNvbG9yOiAjODA4MDg4O1xuICAgICAgICB9XG4gICAgICAgIC5zdG9yZTpob3ZlcntcbiAgICAgICAgICAgIGJvcmRlcjpzb2xpZCAjODA4MDg4O1xuICAgICAgICAgICAgYmFja2dyb3VuZC1jb2xvcjojODA4MDg4O1xuICAgICAgICAgICAgY29sb3I6d2hpdGVcbiAgICAgICAgfVxuXG4gICAgICAgIC5leCBwe1xuICAgICAgICAgICAgZmxvYXQ6IGxlZnQ7XG4gICAgICAgICAgICBib3JkZXI6IHNvbGlkO1xuICAgICAgICAgICAgZm9udC1zaXplOiBzbWFsbDtcbiAgICAgICAgICAgIG1hcmdpbi1sZWZ0OiAyMHB4O1xuICAgICAgICAgICAgd2lkdGg6N3JlbTtcbiAgICAgICAgICAgIFxuICAgICAgICB9XG4gICAgICAgIC5tb3ZpZXtcbiAgICAgICAgICAgIGJvcmRlcjpzb2xpZDtcbiAgICAgICAgICAgIHRleHQtYWxpZ246IGNlbnRlcjtcbiAgICAgICAgICAgIGNvbG9yOiAjODA4MDg4O1xuICAgICAgICAgICAgZm9udC1zaXplOnNtYWxsO1xuICAgICAgICAgICAgbWFyZ2luLWJvdHRvbToycmVtO1xuICAgICAgICAgICAgcGFkZGluZy1sZWZ0OjRweDtcbiAgICAgICAgICAgIHBhZGRpbmctcmlnaHQ6NHB4O1xuICAgICAgICB9XG4gICAgICAgIC5tb3ZpZTpob3ZlcntcbiAgICAgICAgICAgIGJvcmRlcjpzb2xpZCAjODA4MDg4O1xuICAgICAgICAgICAgYmFja2dyb3VuZC1jb2xvcjojODA4MDg4O1xuICAgICAgICAgICAgY29sb3I6d2hpdGVcbiAgICAgICAgfVxuICAgICAgICAuZGF0ZXtcbiAgICAgICAgICAgIHdpZHRoOjEwMCU7XG4gICAgICAgICAgICAvKmJvcmRlcjpkb3R0ZWQ7Ki9cbiAgICAgICAgICAgIG92ZXJmbG93OmhpZGRlbjtcbiAgICAgICAgICAgIG1hcmdpbjowO1xuICAgICAgICAgICAgcGFkZGluZy10b3A6MDtcblxuICAgICAgICB9XG4gICAgICAgIC5kYXRlIGgze1xuICAgICAgICAgICAgbWFyZ2luLWJvdHRvbToxMHB4O1xuICAgICAgICAgICAgbWFyZ2luLXRvcDowO1xuICAgICAgICAgICAgcGFkZGluZy1sZWZ0OjIwcHg7XG4gICAgICAgIH1cbiAgICAgICAgLmRhdGUgcHtcbiAgICAgICAgICAgIGNvbG9yOiAjODA4MDg4O1xuICAgICAgICAgICAgZmxvYXQ6bGVmdDtcbiAgICAgICAgICAgIGJvcmRlcjpzb2xpZDtcbiAgICAgICAgICAgIG1hcmdpbjoycHg7XG4gICAgICAgICAgICBtYXJnaW4tcmlnaHQ6MTBweDtcbiAgICAgICAgICAgIHBhZGRpbmctcmlnaHQ6MnB4O1xuICAgICAgICAgICAgcGFkZGluZy1sZWZ0OjJweDtcbiAgICAgICAgICAgIHRleHQtYWxpZ246Y2VudGVyO1xuICAgICAgICAgICAgYm9yZGVyLXJhZGl1czo1cHg7XG5cbiAgICAgICAgfVxuICAgICAgICAuZGF0ZSBwOmhvdmVye1xuICAgICAgICAgICAgYm9yZGVyOnNvbGlkICNmODNiNzE7XG4gICAgICAgICAgICBiYWNrZ3JvdW5kLWNvbG9yOiNmODNiNzE7XG4gICAgICAgICAgICBjb2xvcjp3aGl0ZTtcbiAgICAgICAgfSAgICAgIFxuICAgIFxuICAgICAgICAucG9pbnR7XG4gICAgICAgICAgICBtYXJnaW4tbGVmdDoyMHB4O1xuICAgICAgICAgICAgbWFyZ2luLXJpZ2h0OjIwcHg7XG4gICAgICAgICAgICBvdmVyZmxvdy14OnNjcm9sbDtcbiAgICAgICAgICAgIHdpZHRoOiA5NSU7XG4gICAgICAgICAgICBkaXNwbGF5OiBmbGV4O1xuICAgICAgICB9XG4gICAgICAgIC5wb2ludDo6LXdlYmtpdC1zY3JvbGxiYXJ7XG4gICAgICAgICAgICBkaXNwbGF5OiBub25lO1xuICAgICAgICB9XG4gICAgICAgIC5uZXh0e1xuICAgICAgICAgICAgd2lkdGg6MTAwJTtcbiAgICAgICAgICAgIGhlaWdodDo5MCU7XG4gICAgICAgIH1cbiAgICAgICAgYnV0dG9ue1xuICAgICAgICAgICAgYmFja2dyb3VuZC1jb2xvcjpwaW5rO1xuICAgICAgICAgICAgYm9yZGVyOnNvbGlkIDAuNXB4O1xuICAgICAgICAgICAgYm9yZGVyLXJhZGl1czo1cHg7XG4gICAgICAgICAgICBmbG9hdDpyaWdodDtcbiAgICAgICAgICAgIG1hcmdpbi1yaWdodDoxMHB4O1xuICAgICAgICAgICAgcGFkZGluZy1sZWZ0OjMlO1xuICAgICAgICAgICAgcGFkZGluZy1yaWdodDozJTtcbiAgICAgICAgfVxuICAgICAgICAuY29uZmlybXtcbiAgICAgICAgICAgIGJhY2tncm91bmQtY29sb3I6cGluaztcbiAgICAgICAgfVxuICAgICAgICAuY2FuY2Vse1xuICAgICAgICAgICAgYmFja2dyb3VuZC1jb2xvcjp3aGl0ZTtcbiAgICAgICAgfVxuICAgICAgICAucGlua3tcbiAgICAgICAgICAgIGNvbG9yOiNmODNiNzE7XG4gICAgICAgICAgICB0ZXh0LWFsaWduOmNlbnRlcjtcbiAgICAgICAgfVxuICAgICAgICAuYmx1ZXtcbiAgICAgICAgICAgIGNvbG9yOmJsdWU7XG4gICAgICAgIH1cblxuXG5cblxuICAgICAgICBgfTwvc3R5bGU+XG4gICAgKVxufVxuZXhwb3J0IGRlZmF1bHQgUmVzZXJ2YXRpb25fY3NzIl19 */\n/*@ sourceURL=/Users/caznm/Desktop/Movie/DB/component/reservation_css.js */");
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (Mypage_css);
+/* harmony default export */ __webpack_exports__["default"] = (Reservation_css);
+
+/***/ }),
+
+/***/ "./component/seat_reserve_css.js":
+/*!***************************************!*\
+  !*** ./component/seat_reserve_css.js ***!
+  \***************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var styled_jsx_style__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! styled-jsx/style */ "styled-jsx/style");
+/* harmony import */ var styled_jsx_style__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(styled_jsx_style__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+
+
+var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
+
+const Seat_reserve_css = () => {
+  return __jsx(styled_jsx_style__WEBPACK_IMPORTED_MODULE_0___default.a, {
+    id: "1136900968"
+  }, "body{margin:0;background:#F4C2C2;}.reserve_checkContainer{background:white;height:620px;width:800px;display:block;margin:0 auto;padding:0;}.reserve{width:500px;height:470px;margin:0 20px 0 40px;padding:0;}.reserve h2{padding-left:20px;font-size:20px;}.reserve_checkContainer h1{color:black;margin:0;padding:15px;}.line{width:720px;border-bottom:0.5px;text-align:left;border-bottom:none;margin-top:0;color:black;}.reserve_checkContainer p{padding-left:20px;margin-top:0;}.movie_playtime{position:relative;margin-left:20px;}.movie_playtime Button{height:25px;width:80px;background-color:#f83b71;text-align:center;border-style:none;}.movie_memnum{padding:20px 0 20px 20px;width:470px;height:20px;display:inline-block;}.movie_memnum h3{display:inline;}.movie_memnum p{display:inline;}.movie_memnum select{display:inline;}.reserve_check{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;}.check{border-left:0.5px solid rgb(109,103,103);height:480px;width:200px;margin:5px;}.check h3{padding:4px;}.seat_map{width:500px;background:rgb(139,147,153);height:330px;}.screen{margin-top:20px;height:20px;width:100%;background:rgb(82,81,81);display:inline-block;text-align:center;}.screen p i{margin:0;font-size:10px;}.screen p{padding:0;}.check h3{margin-top:0;}.seatA{margin:50px 0 0 0px;width:100%;text-align:center;display:inline-block;}.seatA p{padding:0;width:20px;height:20px;display:inline-block;margin:0 30px 0 0;vertical-align:middle;}.seatB_G{margin:3px 0px;width:100%;text-align:center;display:inline-block;}.seatB_G p{padding:0;width:20px;height:20px;display:inline-block;margin:0 30px 0 0;vertical-align:middle;}input[type='checkbox']{margin:0;width:20px !important;height:20px !important;-webkit-appearance:none;-moz-appearance:none;-o-appearance:none;outline:none;box-shadow:none;vertical-align:middle;background:url(\"seat1.png\") no-repeat;margin:3px 3px 3px 4px;}.seat_map input[value='3'],input[value='12']{margin:3px 15px 3px 4px;}input[type='checkbox']:checked{-webkit-appearance:none;-moz-appearance:none;-o-appearance:none;box-shadow:none;background:url(\"seat1_checked.png\") no-repeat;}.check_poster{float:left;height:100px;width:70px;margin:0 20px;}.see_info{width:170px;padding-top:40px;padding-left:20px;text-align:left;display:inline-block;}.see_info p{display:inline-block;font-size:15px;padding-left:0;-webkit-text-decoration-style:solid;text-decoration-style:solid;}.see_info h5{display:inline-block;padding-left:10px;padding-right:10px;margin:0;}.see_price{width:170px;padding-top:10px;padding-left:20px;text-align:left;display:inline-block;}.see_price h2{display:inline-block;font-size:15px;padding-left:0;}.see_price h5{display:inline-block;padding-left:10px;padding-right:10px;margin:0;}.see_price p{display:inline-block;padding-left:10px;padding-right:10px;margin:0;}.buy_btn{display:inline-block;width:200px;padding-top:5px;text-align:right;}.buy_btn .btn1{background-color:white;border:1px solid gray;text-align:center;height:30px;width:60px;}.buy_btn .btn2{background-color:#fd5987;border-style:none;text-align:center;height:30px;width:60px;}.empty{background:#f07598;height:70px;width:100%;}.img_checkBox{padding-top:10px;text-align:right;}.img_checkBox img{padding:0 5px;vertical-align:middle;}.img_checkBox p{display:inline;padding:0;vertical-align:middle;}.totalprice{margin:10px 0 10px 120px;}\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9jYXpubS9EZXNrdG9wL01vdmllL0RCL2NvbXBvbmVudC9zZWF0X3Jlc2VydmVfY3NzLmpzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUUyQixBQUdpQixBQUtRLEFBUUQsQUFNTSxBQUtOLEFBS0EsQUFRTyxBQUlBLEFBSU4sQUFPWSxBQU1WLEFBR0EsQUFHQSxBQUdELEFBTThCLEFBTWhDLEFBR0MsQUFLRyxBQVFQLEFBSUMsQUFHRyxBQUdRLEFBTVgsQUFRSyxBQU1MLEFBUUQsQUFhZ0IsQUFJQSxBQVNkLEFBUUUsQUFPUyxBQU1BLEFBTVQsQUFPUyxBQUtBLEFBTUEsQUFNRCxBQU1FLEFBT0csQUFPTixBQU1ILEFBS0gsQUFJRSxBQUtVLFNBelBWLEFBK0ZBLEFBc0NPLENBbEMxQixBQVljLEFBY0EsQ0FrQ0UsQ0FsSkEsQUFXSixBQUtXLEFBZ0JULEFBa0NkLEFBR2tDLEFBcUZkLEFBbUJBLENBcEZwQixDQTJJMEIsQ0F2TDFCLEFBR0EsQUFHQSxBQXVEYyxBQThIRCxDQTlKRSxDQWxGSCxBQXVPUyxDQXpOSCxBQWtCRixBQUlHLENBNkxILENBN0hGLENBaEZFLEFBdUZELEFBY0EsQUFnREcsQUFNRyxBQWFILEFBS0csQUFNQSxBQU1OLEVBcEtjLEFBMEtKLENBeEh6QixBQWtEQSxBQUl5QixBQVVYLENBbEpVLEFBc0NULEFBMktNLEFBdUJLLEFBSTFCLENBbElxQixFQXRIckIsQUFzRmUsQ0FnRk8sQUFtQkEsQ0FyTFgsQ0FnQ1gsQUFvRXFCLEFBNEJNLEFBaUdiLENBek1NLENBVnBCLEFBNkZ5QixBQWNBLEFBb0ZOLENBekxuQixBQW9OQSxDQXBNQSxBQXVIaUIsQ0FjQyxBQW1CQSxBQWdEbEIsQ0E3TGUsRUFvQ2UsQUE0RlIsQUFrQkEsQUFNQSxDQTFITixDQVZBLENBbEVGLEFBa09kLENBVHNCLENBdkdHLENBOEJGLEFBa0VELENBMU1ULENBMEpPLEFBbUJBLEFBMkRwQixDQXhOdUIsQUFnQkQsQ0FPRSxBQXFEQyxBQXVEekIsQUFrRHFCLEVBcENXLEFBbUJoQyxFQS9HQSxDQVZlLEFBd0NPLEFBY0EsQUFPTSxFQS9IZixBQVFiLEVBc0tZLEFBa0JBLEFBTUEsR0FtQkksRUF2RFMsQUFtQkEsQUE2QlQsQ0FoSVMsQUE4REwsQ0E5QnBCLENBMUVzQixBQTJCUixBQTBJZCxDQXJMZ0IsQUF1SmhCLEFBa0JBLEFBTUEsR0F0TVMsQUE4Q1QsQUFxREEsRUFPMEIsQUFjQSxDQWlHWCxDQS9KZixDQXdKZSxFQS9JZixDQTREeUIsRUE5SHpCLEFBdUJlLEFBeUhtQyxJQXpHbEQsQUEwSEEsQUFtQkEsQUFxQ0EsQ0F4SXNCLENBaUl0QixNQTFMQSxFQWtGQSxBQWNBLEtBT3VCLElBN0N2QixZQXFGQSxHQXZDaUIsUUFrQmpCLEtBakJvQixnQkFDTSxzQkFDZ0Isc0NBQ2YsdUJBQzNCIiwiZmlsZSI6Ii9Vc2Vycy9jYXpubS9EZXNrdG9wL01vdmllL0RCL2NvbXBvbmVudC9zZWF0X3Jlc2VydmVfY3NzLmpzIiwic291cmNlc0NvbnRlbnQiOlsiY29uc3QgU2VhdF9yZXNlcnZlX2NzcyA9ICgpID0+IHtcbiAgICByZXR1cm4oXG4gICAgICAgIDxzdHlsZSBnbG9iYWwganN4PntgXG4gICAgICAgIGJvZHl7XG4gICAgICAgIG1hcmdpbjowO1xuICAgICAgICBiYWNrZ3JvdW5kOiAjRjRDMkMyO1xuICAgICAgICBcbiAgICAgICAgfVxuICAgICAgICAucmVzZXJ2ZV9jaGVja0NvbnRhaW5lcntcbiAgICAgICAgYmFja2dyb3VuZDp3aGl0ZTtcbiAgICAgICAgaGVpZ2h0OjYyMHB4O1xuICAgICAgICB3aWR0aDo4MDBweDtcbiAgICAgICAgZGlzcGxheTogYmxvY2s7XG4gICAgICAgIG1hcmdpbjowIGF1dG87XG4gICAgICAgIHBhZGRpbmc6MDtcbiAgICAgICAgfVxuICAgICAgICAucmVzZXJ2ZXtcbiAgICAgICAgICAgIHdpZHRoOjUwMHB4O1xuICAgICAgICAgICAgaGVpZ2h0OjQ3MHB4O1xuICAgICAgICAgICAgbWFyZ2luOjAgMjBweCAwIDQwcHg7XG4gICAgICAgICAgICBwYWRkaW5nOjA7XG4gICAgICAgIH1cbiAgICAgICAgLnJlc2VydmUgaDJ7XG4gICAgICAgICAgICBwYWRkaW5nLWxlZnQ6MjBweDtcbiAgICAgICAgICAgIGZvbnQtc2l6ZToyMHB4O1xuICAgICAgICB9XG5cbiAgICAgICAgLnJlc2VydmVfY2hlY2tDb250YWluZXIgaDF7XG4gICAgICAgICAgICBjb2xvcjpibGFjaztcbiAgICAgICAgICAgIG1hcmdpbjowO1xuICAgICAgICAgICAgcGFkZGluZzoxNXB4O1xuICAgICAgICB9XG4gICAgICAgIC5saW5le1xuICAgICAgICAgICAgd2lkdGg6NzIwcHg7XG4gICAgICAgICAgICBib3JkZXItYm90dG9tOjAuNXB4O1xuICAgICAgICAgICAgdGV4dC1hbGlnbjogbGVmdDtcbiAgICAgICAgICAgIGJvcmRlci1ib3R0b206IG5vbmU7XG4gICAgICAgICAgICBtYXJnaW4tdG9wOjA7XG4gICAgICAgICAgICBjb2xvcjpibGFjaztcbiAgICAgICAgfVxuICAgICAgICAucmVzZXJ2ZV9jaGVja0NvbnRhaW5lciBwe1xuICAgICAgICAgICAgcGFkZGluZy1sZWZ0OiAyMHB4O1xuICAgICAgICAgICAgbWFyZ2luLXRvcDowO1xuICAgICAgICB9XG4gICAgICAgIC5tb3ZpZV9wbGF5dGltZXtcbiAgICAgICAgICAgIHBvc2l0aW9uOiByZWxhdGl2ZTtcbiAgICAgICAgICAgbWFyZ2luLWxlZnQ6MjBweDsgXG4gICAgICAgIH1cbiAgICAgICAgLm1vdmllX3BsYXl0aW1lIEJ1dHRvbntcbiAgICAgICAgICAgIGhlaWdodDogMjVweDtcbiAgICAgICAgICAgIHdpZHRoOjgwcHg7XG4gICAgICAgICAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjZjgzYjcxO1xuICAgICAgICAgICAgdGV4dC1hbGlnbjogY2VudGVyO1xuICAgICAgICAgICAgYm9yZGVyLXN0eWxlOiBub25lO1xuICAgICAgICB9XG4gICAgICAgIC5tb3ZpZV9tZW1udW17XG4gICAgICAgICAgICBwYWRkaW5nOjIwcHggMCAyMHB4IDIwcHg7XG4gICAgICAgICAgICB3aWR0aDo0NzBweDtcbiAgICAgICAgICAgIGhlaWdodDoyMHB4O1xuICAgICAgICAgICAgZGlzcGxheTppbmxpbmUtYmxvY2s7XG4gICAgICAgIH1cbiAgICAgICAgLm1vdmllX21lbW51bSBoM3tcbiAgICAgICAgICAgIGRpc3BsYXk6aW5saW5lO1xuICAgICAgICB9XG4gICAgICAgIC5tb3ZpZV9tZW1udW0gcHtcbiAgICAgICAgICAgIGRpc3BsYXk6aW5saW5lO1xuICAgICAgICB9XG4gICAgICAgIC5tb3ZpZV9tZW1udW0gc2VsZWN0e1xuICAgICAgICAgICAgZGlzcGxheTppbmxpbmU7XG4gICAgICAgIH1cbiAgICAgICAgLnJlc2VydmVfY2hlY2t7XG4gICAgICAgICAgICBkaXNwbGF5OiBmbGV4O1xuICAgICAgICB9XG4gICAgICAgIC5jaGVja3tcbiAgICAgICAgICAgIC8qIGJvcmRlci1zdHlsZTpzb2xpZDsgKi9cbiAgICAgICAgICAgIC8qIGJvcmRlci1sZWZ0OiAxcHg7XG4gICAgICAgICAgICBib3JkZXItbGVmdDogYmxhY2s7ICovXG4gICAgICAgICAgICBib3JkZXItbGVmdDogMC41cHggc29saWQgcmdiKDEwOSwgMTAzLCAxMDMpO1xuICAgICAgICAgICAgaGVpZ2h0OjQ4MHB4O1xuICAgICAgICAgICAgd2lkdGg6MjAwcHg7XG4gICAgICAgICAgICBtYXJnaW46NXB4O1xuICAgICAgICB9XG4gICAgICAgIC5jaGVjayBoM3tcbiAgICAgICAgICAgIHBhZGRpbmc6NHB4O1xuICAgICAgICB9XG4gICAgICAgIC5zZWF0X21hcHtcbiAgICAgICAgICAgIHdpZHRoOiA1MDBweDtcbiAgICAgICAgICAgIGJhY2tncm91bmQ6IHJnYigxMzksIDE0NywgMTUzKTtcbiAgICAgICAgICAgIGhlaWdodDozMzBweDtcbiAgICAgICAgfVxuICAgICAgICAuc2NyZWVue1xuICAgICAgICAgICAgbWFyZ2luLXRvcDoyMHB4O1xuICAgICAgICAgICAgaGVpZ2h0OjIwcHg7XG4gICAgICAgICAgICB3aWR0aDogMTAwJTtcbiAgICAgICAgICAgIGJhY2tncm91bmQ6cmdiKDgyLCA4MSwgODEpO1xuICAgICAgICAgICAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xuICAgICAgICAgICAgdGV4dC1hbGlnbjogY2VudGVyO1xuICAgICAgICB9XG4gICAgICAgIC5zY3JlZW4gcCBpe1xuICAgICAgICAgICAgbWFyZ2luOjA7XG4gICAgICAgICAgICBmb250LXNpemU6IDEwcHg7XG4gICAgICAgIH0gXG4gICAgICAgIC5zY3JlZW4gcCB7XG4gICAgICAgICAgICBwYWRkaW5nOjA7XG4gICAgICAgIH0gXG4gICAgICAgIC5jaGVjayBoM3tcbiAgICAgICAgICAgIG1hcmdpbi10b3A6MDtcbiAgICAgICAgfVxuICAgICAgICAuc2VhdEF7XG4gICAgICAgICAgICBtYXJnaW46IDUwcHggMCAwIDBweDtcbiAgICAgICAgICAgIHdpZHRoOjEwMCU7XG4gICAgICAgICAgICB0ZXh0LWFsaWduOmNlbnRlcjtcbiAgICAgICAgICAgIGRpc3BsYXk6IGlubGluZS1ibG9jaztcbiAgICAgICAgfVxuICAgICAgICAuc2VhdEEgcHtcbiAgICAgICAgICAgIHBhZGRpbmc6MDtcbiAgICAgICAgICAgIHdpZHRoOjIwcHg7XG4gICAgICAgICAgICBoZWlnaHQ6MjBweDtcbiAgICAgICAgICAgIGRpc3BsYXk6IGlubGluZS1ibG9jaztcbiAgICAgICAgICAgIG1hcmdpbjogMCAzMHB4IDAgMDtcbiAgICAgICAgICAgIHZlcnRpY2FsLWFsaWduOiBtaWRkbGU7XG4gICAgICAgIH1cbiAgICAgICAgLnNlYXRCX0d7XG4gICAgICAgICAgICBtYXJnaW46M3B4IDBweDtcbiAgICAgICAgICAgIHdpZHRoOjEwMCU7XG4gICAgICAgICAgICB0ZXh0LWFsaWduOmNlbnRlcjtcbiAgICAgICAgICAgIGRpc3BsYXk6IGlubGluZS1ibG9jaztcbiAgICAgICAgfVxuICAgICAgICAuc2VhdEJfRyBwe1xuICAgICAgICAgICAgcGFkZGluZzowO1xuICAgICAgICAgICAgd2lkdGg6MjBweDtcbiAgICAgICAgICAgIGhlaWdodDoyMHB4O1xuICAgICAgICAgICAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xuICAgICAgICAgICAgbWFyZ2luOiAwIDMwcHggMCAwO1xuICAgICAgICAgICAgdmVydGljYWwtYWxpZ246IG1pZGRsZTtcbiAgICAgICAgfVxuICAgICAgICBpbnB1dFt0eXBlPSdjaGVja2JveCdde1xuICAgICAgICAgICAgbWFyZ2luOjA7XG4gICAgICAgICAgICB3aWR0aDogMjBweCAhaW1wb3J0YW50O1xuICAgICAgICAgICAgaGVpZ2h0OiAyMHB4ICFpbXBvcnRhbnQ7XG4gICAgICAgICAgICAtd2Via2l0LWFwcGVhcmFuY2U6IG5vbmU7XG4gICAgICAgICAgICAtbW96LWFwcGVhcmFuY2U6IG5vbmU7XG4gICAgICAgICAgICAtby1hcHBlYXJhbmNlOiBub25lO1xuICAgICAgICAgICAgb3V0bGluZTogbm9uZTtcbiAgICAgICAgICAgIGJveC1zaGFkb3c6IG5vbmU7XG4gICAgICAgICAgICB2ZXJ0aWNhbC1hbGlnbjogbWlkZGxlO1xuICAgICAgICAgICAgYmFja2dyb3VuZDogdXJsKFwic2VhdDEucG5nXCIpIG5vLXJlcGVhdDtcbiAgICAgICAgICAgIG1hcmdpbjogM3B4IDNweCAzcHggNHB4O1xuICAgICAgICB9XG4gICAgICAgIC5zZWF0X21hcCBpbnB1dFt2YWx1ZT0nMyddLCBpbnB1dFt2YWx1ZT0nMTInXXtcbiAgICAgICAgICAgIG1hcmdpbjogM3B4IDE1cHggM3B4IDRweDtcbiAgICAgICAgfVxuXG4gICAgICAgIGlucHV0W3R5cGU9J2NoZWNrYm94J106Y2hlY2tlZCB7XG4gICAgICAgICAgICAtd2Via2l0LWFwcGVhcmFuY2U6IG5vbmU7XG4gICAgICAgICAgICAtbW96LWFwcGVhcmFuY2U6IG5vbmU7XG4gICAgICAgICAgICAtby1hcHBlYXJhbmNlOiBub25lO1xuICAgICAgICAgICAgYm94LXNoYWRvdzogbm9uZTtcbiAgICAgICAgICAgIC8qIGJhY2tncm91bmQtY29sb3I6IGFxdWE7ICovXG4gICAgICAgICAgICBiYWNrZ3JvdW5kOiB1cmwoXCJzZWF0MV9jaGVja2VkLnBuZ1wiKSBuby1yZXBlYXQ7XG5cbiAgICAgICAgfVxuICAgICAgICAuY2hlY2tfcG9zdGVye1xuICAgICAgICAgICAgZmxvYXQ6bGVmdDtcbiAgICAgICAgICAgIGhlaWdodDoxMDBweDtcbiAgICAgICAgICAgIHdpZHRoOjcwcHg7XG4gICAgICAgICAgICBtYXJnaW46MCAyMHB4O1xuICAgICAgICB9XG4gICAgICAgIC8qIC5jaGVja19uYW1le1xuICAgICAgICB9ICovXG4gICAgICAgIC5zZWVfaW5mb3tcbiAgICAgICAgICAgIHdpZHRoOiAxNzBweDtcbiAgICAgICAgICAgIHBhZGRpbmctdG9wOjQwcHg7XG4gICAgICAgICAgICBwYWRkaW5nLWxlZnQ6IDIwcHg7XG4gICAgICAgICAgICB0ZXh0LWFsaWduOiBsZWZ0O1xuICAgICAgICAgICAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xuICAgICAgICB9XG4gICAgICAgIC5zZWVfaW5mbyBwe1xuICAgICAgICAgICAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xuICAgICAgICAgICAgZm9udC1zaXplOjE1cHg7IFxuICAgICAgICAgICAgcGFkZGluZy1sZWZ0OjA7XG4gICAgICAgICAgICB0ZXh0LWRlY29yYXRpb24tc3R5bGU6IHNvbGlkO1xuICAgICAgICB9XG4gICAgICAgIC5zZWVfaW5mbyBoNXtcbiAgICAgICAgICAgIGRpc3BsYXk6IGlubGluZS1ibG9jaztcbiAgICAgICAgICAgIHBhZGRpbmctbGVmdDoxMHB4O1xuICAgICAgICAgICAgcGFkZGluZy1yaWdodDoxMHB4O1xuICAgICAgICAgICAgbWFyZ2luOjA7XG4gICAgICAgIH1cbiAgICAgICAgLnNlZV9wcmljZXtcbiAgICAgICAgICAgIHdpZHRoOiAxNzBweDtcbiAgICAgICAgICAgIHBhZGRpbmctdG9wOjEwcHg7XG4gICAgICAgICAgICBwYWRkaW5nLWxlZnQ6IDIwcHg7XG4gICAgICAgICAgICB0ZXh0LWFsaWduOiBsZWZ0O1xuICAgICAgICAgICAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xuICAgICAgICB9XG4gICAgICAgIC5zZWVfcHJpY2UgaDJ7XG4gICAgICAgICAgICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XG4gICAgICAgICAgICBmb250LXNpemU6MTVweDsgXG4gICAgICAgICAgICBwYWRkaW5nLWxlZnQ6MDtcbiAgICAgICAgfVxuICAgICAgICAuc2VlX3ByaWNlIGg1e1xuICAgICAgICAgICAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xuICAgICAgICAgICAgcGFkZGluZy1sZWZ0OjEwcHg7XG4gICAgICAgICAgICBwYWRkaW5nLXJpZ2h0OjEwcHg7XG4gICAgICAgICAgICBtYXJnaW46MDtcbiAgICAgICAgfVxuICAgICAgICAuc2VlX3ByaWNlIHB7XG4gICAgICAgICAgICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XG4gICAgICAgICAgICBwYWRkaW5nLWxlZnQ6MTBweDtcbiAgICAgICAgICAgIHBhZGRpbmctcmlnaHQ6MTBweDtcbiAgICAgICAgICAgIG1hcmdpbjowO1xuICAgICAgICB9XG4gICAgICAgIC5idXlfYnRue1xuICAgICAgICAgICAgZGlzcGxheTppbmxpbmUtYmxvY2s7XG4gICAgICAgICAgICB3aWR0aDoyMDBweDtcbiAgICAgICAgICAgIHBhZGRpbmctdG9wOjVweDtcbiAgICAgICAgICAgIHRleHQtYWxpZ246IHJpZ2h0O1xuICAgICAgICB9XG4gICAgICAgIC5idXlfYnRuIC5idG4xe1xuICAgICAgICAgICAgYmFja2dyb3VuZC1jb2xvcjp3aGl0ZTtcbiAgICAgICAgICAgIGJvcmRlcjoxcHggc29saWQgZ3JheTtcbiAgICAgICAgICAgIHRleHQtYWxpZ246IGNlbnRlcjsgXG4gICAgICAgICAgICBoZWlnaHQ6IDMwcHg7XG4gICAgICAgICAgICB3aWR0aDogNjBweDtcbiAgICAgICAgfVxuICAgICAgICAuYnV5X2J0biAuYnRuMntcbiAgICAgICAgICAgIGJhY2tncm91bmQtY29sb3I6ICNmZDU5ODc7XG4gICAgICAgICAgICBib3JkZXItc3R5bGU6bm9uZTtcbiAgICAgICAgICAgIHRleHQtYWxpZ246IGNlbnRlcjsgXG4gICAgICAgICAgICBoZWlnaHQ6IDMwcHg7XG4gICAgICAgICAgICB3aWR0aDogNjBweDtcbiAgICAgICAgfVxuICAgICAgICAuZW1wdHl7XG4gICAgICAgICAgICBiYWNrZ3JvdW5kOiAjZjA3NTk4O1xuICAgICAgICAgICAgaGVpZ2h0OiA3MHB4O1xuICAgICAgICAgICAgd2lkdGg6MTAwJTtcblxuICAgICAgICB9XG4gICAgICAgIC5pbWdfY2hlY2tCb3h7XG4gICAgICAgICAgICBwYWRkaW5nLXRvcDoxMHB4O1xuICAgICAgICAgICAgdGV4dC1hbGlnbjogcmlnaHQ7XG4gICAgICAgICAgICAvKiB2ZXJ0aWNhbC1hbGlnbjogYXV0bzsgKi9cbiAgICAgICAgfVxuICAgICAgICAuaW1nX2NoZWNrQm94IGltZ3tcbiAgICAgICAgICAgIHBhZGRpbmc6MCA1cHg7XG4gICAgICAgICAgICB2ZXJ0aWNhbC1hbGlnbjogbWlkZGxlO1xuICAgICAgICB9XG4gICAgICAgIC5pbWdfY2hlY2tCb3ggcHtcbiAgICAgICAgICAgIGRpc3BsYXk6IGlubGluZTtcbiAgICAgICAgICAgIHBhZGRpbmc6MDtcbiAgICAgICAgICAgIHZlcnRpY2FsLWFsaWduOiBtaWRkbGU7XG4gICAgICAgIH1cbiAgICAgICAgLnRvdGFscHJpY2V7XG4gICAgICAgICAgICBtYXJnaW46IDEwcHggMCAxMHB4IDEyMHB4O1xuICAgICAgICB9XG5cblxuXG5cbiAgICAgICAgYH08L3N0eWxlPlxuICAgIClcbn1cbmV4cG9ydCBkZWZhdWx0IFNlYXRfcmVzZXJ2ZV9jc3MiXX0= */\n/*@ sourceURL=/Users/caznm/Desktop/Movie/DB/component/seat_reserve_css.js */");
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Seat_reserve_css);
 
 /***/ }),
 
@@ -1968,7 +2105,7 @@ const Header = () => {
     alert('로그아웃 되었습니다!');
     localStorage.clear();
     router.push({
-      pathname: val
+      pathname: '/'
     });
   }
 
@@ -2040,10 +2177,10 @@ const Header = () => {
 
 /***/ }),
 
-/***/ "./pages/Mypage.js":
-/*!*************************!*\
-  !*** ./pages/Mypage.js ***!
-  \*************************/
+/***/ "./pages/reservation.js":
+/*!******************************!*\
+  !*** ./pages/reservation.js ***!
+  \******************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -2052,11 +2189,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _Header__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Header */ "./pages/Header.js");
-/* harmony import */ var _component_Mypage_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../component/Mypage_css */ "./component/Mypage_css.js");
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! next/head */ "next/head");
-/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(next_head__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! next/router */ "next/router");
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _component_reservation_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../component/reservation_css */ "./component/reservation_css.js");
+/* harmony import */ var _component_seat_reserve_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../component/seat_reserve_css */ "./component/seat_reserve_css.js");
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! next/head */ "next/head");
+/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(next_head__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! axios */ "axios");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var _component_example__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../component/example */ "./component/example.js");
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
@@ -2065,65 +2208,1491 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 
-const Mypage = () => {
+
+
+ //오늘 날짜 ~ 2일뒤까지
+
+var today = new Date();
+var load_date = [];
+
+for (var i = 0; i < 3; i++) {
+  load_date.push(today.getMonth() + 1 + '/' + today.getDate());
+  today.setDate(today.getDate() + 1);
+}
+
+const DateOption = ({
+  number,
+  onClick,
+  content,
+  children
+}) => __jsx(_component_example__WEBPACK_IMPORTED_MODULE_8__["DateAnchor"], {
+  onClick: () => onClick(number),
+  isDate: number === content
+}, children);
+
+const RegionOption = ({
+  number,
+  onClick,
+  choose_region,
+  children
+}) => __jsx(_component_example__WEBPACK_IMPORTED_MODULE_8__["RegionAnchor"], {
+  onClick: () => onClick(number),
+  isRegion: number === choose_region
+}, children);
+
+const BranchOption = ({
+  number,
+  onClick,
+  choose_branch,
+  children
+}) => __jsx(_component_example__WEBPACK_IMPORTED_MODULE_8__["BranchAnchor"], {
+  onClick: () => onClick(number),
+  isBranch: number === choose_branch
+}, children);
+
+const MovieOption = ({
+  number,
+  onClick,
+  choose_movie,
+  children
+}) => __jsx(_component_example__WEBPACK_IMPORTED_MODULE_8__["MovieAnchor"], {
+  onClick: () => onClick(number),
+  isMovie: number === choose_movie
+}, children);
+
+const TimeOption = ({
+  number,
+  onClick,
+  choose_time,
+  children
+}) => __jsx(_component_example__WEBPACK_IMPORTED_MODULE_8__["TimeAnchor"], {
+  onClick: () => onClick(number),
+  isTime: number === choose_time
+}, children);
+
+const Reservation = () => {
+  const router = Object(next_router__WEBPACK_IMPORTED_MODULE_2__["useRouter"])();
   const {
-    0: userName,
-    1: setName
-  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])('');
-  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
-    setName(localStorage.getItem('usrID'));
-  }, []);
-  return __jsx("div", null, __jsx(next_head__WEBPACK_IMPORTED_MODULE_4___default.a, null, __jsx("title", null, "TIC-\uB9C8\uC774\uD398\uC774\uC9C0")), __jsx(_component_Mypage_css__WEBPACK_IMPORTED_MODULE_2__["default"], null), __jsx(_Header__WEBPACK_IMPORTED_MODULE_1__["default"], null), __jsx("div", {
-    class: "upperMypage"
-  }, __jsx("h2", null, "\uB9C8\uC774 \uD398\uC774\uC9C0"), __jsx("div", {
-    class: "nameMypage"
-  }, __jsx("img", {
-    class: "myRank",
-    src: "/redvelvet2.jpg"
-  }), __jsx("p", null, __jsx("b", null, userName), " \uB2D8 \uD658\uC601\uD569\uB2C8\uB2E4!")), __jsx("div", {
-    class: "preperGenre"
-  }, __jsx("p", null, "\uC120\uD638\uC7A5\uB974 ", __jsx("h5", null, "#ADVENTURE #DRAMA"), " "), __jsx("button", {
-    type: "button",
-    onclick: "location.href= ''"
-  }, "\uD68C\uC6D0\uC815\uBCF4\uC218\uC815"))), __jsx("div", {
-    class: "downMypageCol"
+    0: content,
+    1: setContent
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(-1);
+  const {
+    0: region,
+    1: setRegion
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(0);
+  const {
+    0: choose_region,
+    1: setChooseRegion
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])('서울');
+  const {
+    0: choose_branch,
+    1: setChooseBranch
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(0);
+  const {
+    0: choose_movie,
+    1: setChooseMovie
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(0);
+  const {
+    0: choose_time,
+    1: setChooseTime
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(0);
+  const {
+    0: check,
+    1: setCheck
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false);
+  const {
+    0: seat,
+    1: setSeat
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])([]);
+
+  function checkHandler() {
+    if (check == false) {
+      setContent(-1);
+      setChooseRegion(0);
+      setChooseBranch(0);
+      setChooseMovie(0);
+      setChooseTime(0);
+    }
+  }
+
+  function checkHandler2() {
+    setChooseTime(0);
+    setSeat([]);
+  }
+
+  function get_branch() {
+    axios__WEBPACK_IMPORTED_MODULE_7___default()({
+      method: 'POST',
+      url: '/reservation',
+      data: {
+        region: choose_region,
+        branch: choose_branch,
+        movie: choose_movie
+      }
+    }).then(res => {
+      console.log(res.data.times);
+    });
+  }
+
+  function get_reservation() {
+    var seats = [];
+
+    for (var i = 0; i < seat.length; i++) {
+      seats.push(seat[i] + seat[i + 1]);
+      i++;
+    }
+
+    axios__WEBPACK_IMPORTED_MODULE_7___default()({
+      method: 'POST',
+      url: '/reservation_process',
+      data: {
+        time: choose_time,
+        seats: seats,
+        branch: choose_branch,
+        movie: choose_movie
+      }
+    }).then(res => {
+      console.log(res.data.theater_num);
+      localStorage.setItem('theater_id', res.data.theater_num);
+      console.log("2: " + localStorage.getItem('theater_id'));
+      localStorage.setItem('branch', choose_branch);
+      localStorage.setItem('date', content);
+      localStorage.setItem('movie', choose_movie);
+      localStorage.setItem('time', choose_time);
+      localStorage.setItem('seat', seats);
+      router.push({
+        pathname: '/PriceCheck'
+      });
+    });
+  }
+
+  const seoul = __jsx("div", {
+    class: "scroll"
   }, __jsx("div", {
-    class: "downMypage"
-  }, __jsx("p", null, __jsx("b", null, "\uC608\uB9E4/\uAD6C\uB9E4 \uB0B4\uC5ED")), __jsx("p", null, "\uB098\uC758 \uD55C\uC904\uD3C9"), __jsx("div", {
-    class: "sawMovie"
-  }, __jsx("img", {
-    class: "sawPoster",
-    src: "/redvelvet3.jpg"
-  }), __jsx("img", {
-    class: "sawPoster",
-    src: "/redvelvet3.jpg"
-  }), __jsx("img", {
-    class: "sawPoster",
-    src: "/redvelvet3.jpg"
-  }), __jsx("img", {
-    class: "sawPoster",
-    src: "/redvelvet3.jpg"
-  }), __jsx("img", {
-    class: "sawPoster",
-    src: "/redvelvet3.jpg"
-  })))), __jsx("div", {
-    class: "whiteCol"
+    class: "ex"
+  }, __jsx(BranchOption, {
+    onClick: setChooseBranch,
+    number: '가산디지털',
+    choose_branch: choose_branch
+  }, "\uAC00\uC0B0\uB514\uC9C0\uD138"), __jsx(BranchOption, {
+    onClick: setChooseBranch,
+    number: '가양',
+    choose_branch: choose_branch
+  }, "\uAC00\uC591")), __jsx("div", {
+    class: "ex"
+  }, __jsx(BranchOption, {
+    onClick: setChooseBranch,
+    number: '강동',
+    choose_branch: choose_branch
+  }, "\uAC15\uB3D9"), __jsx(BranchOption, {
+    onClick: setChooseBranch,
+    number: '건대입구',
+    choose_branch: choose_branch
+  }, "\uAC74\uB300\uC785\uAD6C")), __jsx("div", {
+    class: "ex"
+  }, __jsx(BranchOption, {
+    onClick: setChooseBranch,
+    number: '김포공항',
+    choose_branch: choose_branch
+  }, "\uAE40\uD3EC\uACF5\uD56D"), __jsx(BranchOption, {
+    onClick: setChooseBranch,
+    number: '노원',
+    choose_branch: choose_branch
+  }, "\uB178\uC6D0")), __jsx("div", {
+    class: "ex"
+  }, __jsx(BranchOption, {
+    onClick: setChooseBranch,
+    number: '녹산',
+    choose_branch: choose_branch
+  }, "\uB179\uC0B0"), __jsx(BranchOption, {
+    onClick: setChooseBranch,
+    number: '브로드웨이(신사)',
+    choose_branch: choose_branch
+  }, "\uBE0C\uB85C\uB4DC\uC6E8\uC774(\uC2E0\uC0AC)")), __jsx("div", {
+    class: "ex"
+  }, __jsx(BranchOption, {
+    onClick: setChooseBranch,
+    number: '서울대입구',
+    choose_branch: choose_branch
+  }, "\uC11C\uC6B8\uB300\uC785\uAD6C"), __jsx(BranchOption, {
+    onClick: setChooseBranch,
+    number: '수락산',
+    choose_branch: choose_branch
+  }, "\uC218\uB77D\uC0B0")), __jsx("div", {
+    class: "ex"
+  }, __jsx(BranchOption, {
+    onClick: setChooseBranch,
+    number: '수유',
+    choose_branch: choose_branch
+  }, "\uC218\uC720"), __jsx(BranchOption, {
+    onClick: setChooseBranch,
+    number: '신도림',
+    choose_branch: choose_branch
+  }, "\uC2E0\uB3C4\uB9BC")), __jsx("div", {
+    class: "ex"
+  }, __jsx(BranchOption, {
+    onClick: setChooseBranch,
+    number: '신림',
+    choose_branch: choose_branch
+  }, "\uC2E0\uB9BC"), __jsx(BranchOption, {
+    onClick: setChooseBranch,
+    number: '에비뉴엘(명동)',
+    choose_branch: choose_branch
+  }, "\uC5D0\uBE44\uB274\uC5D8(\uBA85\uB3D9)")), __jsx("div", {
+    class: "ex"
+  }, __jsx(BranchOption, {
+    onClick: setChooseBranch,
+    number: '영등포',
+    choose_branch: choose_branch
+  }, "\uC601\uB4F1\uD3EC"), __jsx(BranchOption, {
+    onClick: setChooseBranch,
+    number: '용산',
+    choose_branch: choose_branch
+  }, "\uC6A9\uC0B0")), __jsx("div", {
+    class: "ex"
+  }, __jsx(BranchOption, {
+    onClick: setChooseBranch,
+    number: '월드타워',
+    choose_branch: choose_branch
+  }, "\uC6D4\uB4DC\uD0C0\uC6CC"), __jsx(BranchOption, {
+    onClick: setChooseBranch,
+    number: '은평(롯데몰)',
+    choose_branch: choose_branch
+  }, "\uC740\uD3C9(\uB86F\uB370\uBAB0)")), __jsx("div", {
+    class: "ex"
+  }, __jsx(BranchOption, {
+    onClick: setChooseBranch,
+    number: '장안',
+    choose_branch: choose_branch
+  }, "\uC7A5\uC548"), __jsx(BranchOption, {
+    onClick: setChooseBranch,
+    number: '청량리',
+    choose_branch: choose_branch
+  }, "\uCCAD\uB7C9\uB9AC")), __jsx("div", {
+    class: "ex"
+  }, __jsx(BranchOption, {
+    onClick: setChooseBranch,
+    number: '합정',
+    choose_branch: choose_branch
+  }, "\uD569\uC815"), __jsx(BranchOption, {
+    onClick: setChooseBranch,
+    number: '홍대입구',
+    choose_branch: choose_branch
+  }, "\uD64D\uB300\uC785\uAD6C")), __jsx("div", {
+    class: "ex"
+  }, __jsx(BranchOption, {
+    onClick: setChooseBranch,
+    number: '황학',
+    choose_branch: choose_branch
+  }, "\uD669\uD559")));
+
+  const gyeonggi = __jsx("div", {
+    class: "scroll"
+  }, __jsx("div", {
+    class: "ex"
+  }, __jsx(BranchOption, {
+    onClick: setChooseBranch,
+    number: '검단',
+    choose_branch: choose_branch
+  }, "\uAC80\uB2E8"), __jsx(BranchOption, {
+    onClick: setChooseBranch,
+    number: '광교아울렛',
+    choose_branch: choose_branch
+  }, "\uAD11\uAD50\uC544\uC6B8\uB81B")), __jsx("div", {
+    class: "ex"
+  }, __jsx(BranchOption, {
+    onClick: setChooseBranch,
+    number: '광주터미널',
+    choose_branch: choose_branch
+  }, "\uAD11\uC8FC\uD130\uBBF8\uB110"), __jsx(BranchOption, {
+    onClick: setChooseBranch,
+    number: '구리아울렛',
+    choose_branch: choose_branch
+  }, "\uAD6C\uB9AC\uC544\uC6B8\uB81B")), __jsx("div", {
+    class: "ex"
+  }, __jsx(BranchOption, {
+    onClick: setChooseBranch,
+    number: '병점',
+    choose_branch: choose_branch
+  }, "\uBCD1\uC810"), __jsx(BranchOption, {
+    onClick: setChooseBranch,
+    number: '부천(신중동역)',
+    choose_branch: choose_branch
+  }, "\uBD80\uCC9C(\uC2E0\uC911\uB3D9\uC5ED)")), __jsx("div", {
+    class: "ex"
+  }, __jsx(BranchOption, {
+    onClick: setChooseBranch,
+    number: '부평역사',
+    choose_branch: choose_branch
+  }, "\uBD80\uD3C9\uC5ED\uC0AC"), __jsx(BranchOption, {
+    onClick: setChooseBranch,
+    number: '산본피트인',
+    choose_branch: choose_branch
+  }, "\uC0B0\uBCF8\uD53C\uD2B8\uC778")), __jsx("div", {
+    class: "ex"
+  }, __jsx(BranchOption, {
+    onClick: setChooseBranch,
+    number: '성남중앙(신흥역)',
+    choose_branch: choose_branch
+  }, "\uC131\uB0A8\uC911\uC559(\uC2E0\uD765\uC5ED)"), __jsx(BranchOption, {
+    onClick: setChooseBranch,
+    number: '센트럴락',
+    choose_branch: choose_branch
+  }, "\uC13C\uD2B8\uB7F4\uB77D")), __jsx("div", {
+    class: "ex"
+  }, __jsx(BranchOption, {
+    onClick: setChooseBranch,
+    number: '수지',
+    choose_branch: choose_branch
+  }, "\uC218\uC9C0"), __jsx(BranchOption, {
+    onClick: setChooseBranch,
+    number: '시화',
+    choose_branch: choose_branch
+  }, "\uC2DC\uD654")), __jsx("div", {
+    class: "ex"
+  }, __jsx(BranchOption, {
+    onClick: setChooseBranch,
+    number: '안성',
+    choose_branch: choose_branch
+  }, "\uC548\uC131"), __jsx(BranchOption, {
+    onClick: setChooseBranch,
+    number: '안양(안양역)',
+    choose_branch: choose_branch
+  }, "\uC548\uC591(\uC548\uC591\uC5ED)")), __jsx("div", {
+    class: "ex"
+  }, __jsx(BranchOption, {
+    onClick: setChooseBranch,
+    number: '안양일번가',
+    choose_branch: choose_branch
+  }, "\uC548\uC591\uC77C\uBC88\uAC00"), __jsx(BranchOption, {
+    onClick: setChooseBranch,
+    number: '양주고읍',
+    choose_branch: choose_branch
+  }, "\uC591\uC8FC\uACE0\uC74D")), __jsx("div", {
+    class: "ex"
+  }, __jsx(BranchOption, {
+    onClick: setChooseBranch,
+    number: '용인기흥',
+    choose_branch: choose_branch
+  }, "\uC6A9\uC778\uAE30\uD765"), __jsx(BranchOption, {
+    onClick: setChooseBranch,
+    number: '용인역북',
+    choose_branch: choose_branch
+  }, "\uC6A9\uC778\uC5ED\uBD81")), __jsx("div", {
+    class: "ex"
+  }, __jsx(BranchOption, {
+    onClick: setChooseBranch,
+    number: '인덕원',
+    choose_branch: choose_branch
+  }, "\uC778\uB355\uC6D0"), __jsx(BranchOption, {
+    onClick: setChooseBranch,
+    number: '인천아시아드',
+    choose_branch: choose_branch
+  }, "\uC778\uCC9C\uC544\uC2DC\uC544\uB4DC")), __jsx("div", {
+    class: "ex"
+  }, __jsx(BranchOption, {
+    onClick: setChooseBranch,
+    number: '진접',
+    choose_branch: choose_branch
+  }, "\uC9C4\uC811"), __jsx(BranchOption, {
+    onClick: setChooseBranch,
+    number: '파주아울렛',
+    choose_branch: choose_branch
+  }, "\uD30C\uC8FC\uC544\uC6B8\uB81B")), __jsx("div", {
+    class: "ex"
+  }, __jsx(BranchOption, {
+    onClick: setChooseBranch,
+    number: '파주운정',
+    choose_branch: choose_branch
+  }, "\uD30C\uC8FC\uC6B4\uC815"), __jsx(BranchOption, {
+    onClick: setChooseBranch,
+    number: '평촌(범계역)',
+    choose_branch: choose_branch
+  }, "\uD3C9\uCD0C(\uBC94\uACC4\uC5ED)")));
+
+  const daejeon = __jsx("div", {
+    class: "scroll"
+  }, __jsx("div", {
+    class: "ex"
+  }, __jsx(BranchOption, {
+    onClick: setChooseBranch,
+    number: '대전(백화점)',
+    choose_branch: choose_branch
+  }, "\uB300\uC804(\uBC31\uD654\uC810)"), __jsx(BranchOption, {
+    onClick: setChooseBranch,
+    number: '대전둔산(월평동)',
+    choose_branch: choose_branch
+  }, "\uB300\uC804\uB454\uC0B0(\uC6D4\uD3C9\uB3D9)")), __jsx("div", {
+    class: "ex"
+  }, __jsx(BranchOption, {
+    onClick: setChooseBranch,
+    number: '대전센트럴',
+    choose_branch: choose_branch
+  }, "\uB300\uC804\uC13C\uD2B8\uB7F4"), __jsx(BranchOption, {
+    onClick: setChooseBranch,
+    number: '서산',
+    choose_branch: choose_branch
+  }, "\uC11C\uC0B0")), __jsx("div", {
+    class: "ex"
+  }, __jsx(BranchOption, {
+    onClick: setChooseBranch,
+    number: '서청주(아울렛)',
+    choose_branch: choose_branch
+  }, "\uC11C\uCCAD\uC8FC(\uC544\uC6B8\uB81B)"), __jsx(BranchOption, {
+    onClick: setChooseBranch,
+    number: '아산터미널',
+    choose_branch: choose_branch
+  }, "\uC544\uC0B0\uD130\uBBF8\uB110")), __jsx("div", {
+    class: "ex"
+  }, __jsx(BranchOption, {
+    onClick: setChooseBranch,
+    number: '청주(성안길)',
+    choose_branch: choose_branch
+  }, "\uCCAD\uC8FC(\uC131\uC548\uAE38)"), __jsx(BranchOption, {
+    onClick: setChooseBranch,
+    number: '청주용암',
+    choose_branch: choose_branch
+  }, "\uCCAD\uC8FC\uC6A9\uC554")), __jsx("div", {
+    class: "ex"
+  }, __jsx(BranchOption, {
+    onClick: setChooseBranch,
+    number: '충주',
+    choose_branch: choose_branch
+  }, "\uCDA9\uC8FC")));
+
+  const gwangju = __jsx("div", {
+    class: "scroll"
+  }, __jsx("div", {
+    class: "ex"
+  }, __jsx(BranchOption, {
+    onClick: setChooseBranch,
+    number: '광주(백화점)',
+    choose_branch: choose_branch
+  }, "\uAD11\uC8FC(\uBC31\uD654\uC810)"), __jsx(BranchOption, {
+    onClick: setChooseBranch,
+    number: '광주광산',
+    choose_branch: choose_branch
+  }, "\uAD11\uC8FC\uAD11\uC0B0")), __jsx("div", {
+    class: "ex"
+  }, __jsx(BranchOption, {
+    onClick: setChooseBranch,
+    number: '군산나운',
+    choose_branch: choose_branch
+  }, "\uAD70\uC0B0\uB098\uC6B4"), __jsx(BranchOption, {
+    onClick: setChooseBranch,
+    number: '군산몰',
+    choose_branch: choose_branch
+  }, "\uAD70\uC0B0\uBAB0")), __jsx("div", {
+    class: "ex"
+  }, __jsx(BranchOption, {
+    onClick: setChooseBranch,
+    number: '수완(아울렛)',
+    choose_branch: choose_branch
+  }, "\uC218\uC644(\uC544\uC6B8\uB81B)"), __jsx(BranchOption, {
+    onClick: setChooseBranch,
+    number: '익산모현',
+    choose_branch: choose_branch
+  }, "\uC775\uC0B0\uBAA8\uD604")), __jsx("div", {
+    class: "ex"
+  }, __jsx(BranchOption, {
+    onClick: setChooseBranch,
+    number: '전주(백화점)',
+    choose_branch: choose_branch
+  }, "\uC804\uC8FC(\uBC31\uD654\uC810)"), __jsx(BranchOption, {
+    onClick: setChooseBranch,
+    number: '전주평화',
+    choose_branch: choose_branch
+  }, "\uC804\uC8FC\uD3C9\uD654")), __jsx("div", {
+    class: "ex"
+  }, __jsx(BranchOption, {
+    onClick: setChooseBranch,
+    number: '충장로',
+    choose_branch: choose_branch
+  }, "\uCDA9\uC7A5\uB85C")));
+
+  const daegu = __jsx("div", {
+    class: "scroll"
+  }, __jsx("div", {
+    class: "ex"
+  }, __jsx(BranchOption, {
+    onClick: setChooseBranch,
+    number: '경산',
+    choose_branch: choose_branch
+  }, "\uACBD\uC0B0"), __jsx(BranchOption, {
+    onClick: setChooseBranch,
+    number: '경주',
+    choose_branch: choose_branch
+  }, "\uACBD\uC8FC")), __jsx("div", {
+    class: "ex"
+  }, __jsx(BranchOption, {
+    onClick: setChooseBranch,
+    number: '구미 프라임 1번가',
+    choose_branch: choose_branch
+  }, "\uAD6C\uBBF8 \uD504\uB77C\uC784 1\uBC88\uAC00"), __jsx(BranchOption, {
+    onClick: setChooseBranch,
+    number: '구미공단',
+    choose_branch: choose_branch
+  }, "\uAD6C\uBBF8\uACF5\uB2E8")), __jsx("div", {
+    class: "ex"
+  }, __jsx(BranchOption, {
+    onClick: setChooseBranch,
+    number: '대구광장',
+    choose_branch: choose_branch
+  }, "\uB300\uAD6C\uAD11\uC7A5"), __jsx(BranchOption, {
+    onClick: setChooseBranch,
+    number: '대구율하',
+    choose_branch: choose_branch
+  }, "\uB300\uAD6C\uC728\uD558")), __jsx("div", {
+    class: "ex"
+  }, __jsx(BranchOption, {
+    onClick: setChooseBranch,
+    number: '대구현풍',
+    choose_branch: choose_branch
+  }, "\uB300\uAD6C\uD604\uD48D"), __jsx(BranchOption, {
+    onClick: setChooseBranch,
+    number: '동성로',
+    choose_branch: choose_branch
+  }, "\uB3D9\uC131\uB85C")), __jsx("div", {
+    class: "ex"
+  }, __jsx(BranchOption, {
+    onClick: setChooseBranch,
+    number: '상인',
+    choose_branch: choose_branch
+  }, "\uC0C1\uC778"), __jsx(BranchOption, {
+    onClick: setChooseBranch,
+    number: '성서',
+    choose_branch: choose_branch
+  }, "\uC131\uC11C")), __jsx("div", {
+    class: "ex"
+  }, __jsx(BranchOption, {
+    onClick: setChooseBranch,
+    number: '영주',
+    choose_branch: choose_branch
+  }, "\uC601\uC8FC"), __jsx(BranchOption, {
+    onClick: setChooseBranch,
+    number: '포항',
+    choose_branch: choose_branch
+  }, "\uD3EC\uD56D")), __jsx("div", {
+    class: "ex"
+  }, __jsx(BranchOption, {
+    onClick: setChooseBranch,
+    number: '프리미엄구미센트럴',
+    choose_branch: choose_branch
+  }, "\uD504\uB9AC\uBBF8\uC5C4\uAD6C\uBBF8\uC13C\uD2B8\uB7F4"), __jsx(BranchOption, {
+    onClick: setChooseBranch,
+    number: '프리미엄만경',
+    choose_branch: choose_branch
+  }, "\uD504\uB9AC\uBBF8\uC5C4\uB9CC\uACBD")), __jsx("div", {
+    class: "ex"
+  }, __jsx(BranchOption, {
+    onClick: setChooseBranch,
+    number: '프리미엄안동',
+    choose_branch: choose_branch
+  }, "\uD504\uB9AC\uBBF8\uC5C4\uC548\uB3D9"), __jsx(BranchOption, {
+    onClick: setChooseBranch,
+    number: '프리미엄칠곡',
+    choose_branch: choose_branch
+  }, "\uD504\uB9AC\uBBF8\uC5C4\uCE60\uACE1")));
+
+  const busan = __jsx("div", {
+    class: "scroll"
+  }, __jsx("div", {
+    class: "ex"
+  }, __jsx(BranchOption, {
+    onClick: setChooseBranch,
+    number: '광복',
+    choose_branch: choose_branch
+  }, "\uAD11\uBCF5"), __jsx(BranchOption, {
+    onClick: setChooseBranch,
+    number: '김해부원',
+    choose_branch: choose_branch
+  }, "\uAE40\uD574\uBD80\uC6D0")), __jsx("div", {
+    class: "ex"
+  }, __jsx(BranchOption, {
+    onClick: setChooseBranch,
+    number: '김해아울렛(장유)',
+    choose_branch: choose_branch
+  }, "\uAE40\uD574\uC544\uC6B8\uB81B(\uC7A5\uC720)"), __jsx(BranchOption, {
+    onClick: setChooseBranch,
+    number: '대영',
+    choose_branch: choose_branch
+  }, "\uB300\uC601")), __jsx("div", {
+    class: "ex"
+  }, __jsx(BranchOption, {
+    onClick: setChooseBranch,
+    number: '동래',
+    choose_branch: choose_branch
+  }, "\uB3D9\uB798"), __jsx(BranchOption, {
+    onClick: setChooseBranch,
+    number: '동부산아울렛',
+    choose_branch: choose_branch
+  }, "\uB3D9\uBD80\uC0B0\uC544\uC6B8\uB81B")), __jsx("div", {
+    class: "ex"
+  }, __jsx(BranchOption, {
+    onClick: setChooseBranch,
+    number: '마산터미널',
+    choose_branch: choose_branch
+  }, "\uB9C8\uC0B0\uD130\uBBF8\uB110"), __jsx(BranchOption, {
+    onClick: setChooseBranch,
+    number: '부산본점',
+    choose_branch: choose_branch
+  }, "\uBD80\uC0B0\uBCF8\uC810")), __jsx("div", {
+    class: "ex"
+  }, __jsx(BranchOption, {
+    onClick: setChooseBranch,
+    number: '사상',
+    choose_branch: choose_branch
+  }, "\uC0AC\uC0C1"), __jsx(BranchOption, {
+    onClick: setChooseBranch,
+    number: '서면',
+    choose_branch: choose_branch
+  }, "\uC11C\uBA74")), __jsx("div", {
+    class: "ex"
+  }, __jsx(BranchOption, {
+    onClick: setChooseBranch,
+    number: '센텀시티',
+    choose_branch: choose_branch
+  }, "\uC13C\uD140\uC2DC\uD2F0"), __jsx(BranchOption, {
+    onClick: setChooseBranch,
+    number: '엠비씨네',
+    choose_branch: choose_branch
+  }, "\uC5E0\uBE44\uC528\uB124")), __jsx("div", {
+    class: "ex"
+  }, __jsx(BranchOption, {
+    onClick: setChooseBranch,
+    number: '오투(부산대)',
+    choose_branch: choose_branch
+  }, "\uC624\uD22C(\uBD80\uC0B0\uB300)"), __jsx(BranchOption, {
+    onClick: setChooseBranch,
+    number: '울산(백화점)',
+    choose_branch: choose_branch
+  }, "\uC6B8\uC0B0(\uBC31\uD654\uC810)")), __jsx("div", {
+    class: "ex"
+  }, __jsx(BranchOption, {
+    onClick: setChooseBranch,
+    number: '울산성남',
+    choose_branch: choose_branch
+  }, "\uC6B8\uC0B0\uC131\uB0A8"), __jsx(BranchOption, {
+    onClick: setChooseBranch,
+    number: '진주혁신',
+    choose_branch: choose_branch
+  }, "\uC9C4\uC8FC\uD601\uC2E0")), __jsx("div", {
+    class: "ex"
+  }, __jsx(BranchOption, {
+    onClick: setChooseBranch,
+    number: '잔해',
+    choose_branch: choose_branch
+  }, "\uC794\uD574"), __jsx(BranchOption, {
+    onClick: setChooseBranch,
+    number: '창원',
+    choose_branch: choose_branch
+  }, "\uCC3D\uC6D0")), __jsx("div", {
+    class: "ex"
+  }, __jsx(BranchOption, {
+    onClick: setChooseBranch,
+    number: '통영',
+    choose_branch: choose_branch
+  }, "\uD1B5\uC601"), __jsx(BranchOption, {
+    onClick: setChooseBranch,
+    number: '프리미엄경남대',
+    choose_branch: choose_branch
+  }, "\uD504\uB9AC\uBBF8\uC5C4\uACBD\uB0A8\uB300")), __jsx("div", {
+    class: "ex"
+  }, __jsx(BranchOption, {
+    onClick: setChooseBranch,
+    number: '프리미엄진주',
+    choose_branch: choose_branch
+  }, "\uD504\uB9AC\uBBF8\uC5C4\uC9C4\uC8FC"), __jsx(BranchOption, {
+    onClick: setChooseBranch,
+    number: '프리미엄해운대',
+    choose_branch: choose_branch
+  }, "\uD504\uB9AC\uBBF8\uC5C4\uD574\uC6B4\uB300")));
+
+  const gangwon = __jsx("div", {
+    class: "scroll"
+  }, __jsx("div", {
+    class: "ex"
+  }, __jsx(BranchOption, {
+    onClick: setChooseBranch,
+    number: '남원주',
+    choose_branch: choose_branch
+  }, "\uB0A8\uC6D0\uC8FC"), __jsx(BranchOption, {
+    onClick: setChooseBranch,
+    number: '동해',
+    choose_branch: choose_branch
+  }, "\uB3D9\uD574")), __jsx("div", {
+    class: "ex"
+  }, __jsx(BranchOption, {
+    onClick: setChooseBranch,
+    number: '원주무실',
+    choose_branch: choose_branch
+  }, "\uC6D0\uC8FC\uBB34\uC2E4")));
+
+  const jeju = __jsx("div", {
+    class: "scroll"
+  }, __jsx("div", {
+    class: "ex"
+  }, __jsx(BranchOption, {
+    onClick: setChooseBranch,
+    number: '서귀포',
+    choose_branch: choose_branch
+  }, "\uC11C\uADC0\uD3EC"), __jsx(BranchOption, {
+    onClick: setChooseBranch,
+    number: '제주삼화지구',
+    choose_branch: choose_branch
+  }, "\uC81C\uC8FC\uC0BC\uD654\uC9C0\uAD6C")), __jsx("div", {
+    class: "ex"
+  }, __jsx(BranchOption, {
+    onClick: setChooseBranch,
+    number: '제주아라',
+    choose_branch: choose_branch
+  }, "\uC81C\uC8FC\uC544\uB77C")));
+
+  const movies = __jsx("div", {
+    class: "scroll"
+  }, __jsx(MovieOption, {
+    onClick: setChooseMovie,
+    number: '시동',
+    choose_movie: choose_movie
+  }, "\uC2DC\uB3D9"), __jsx(MovieOption, {
+    onClick: setChooseMovie,
+    number: '겨울왕국2(자막)',
+    choose_movie: choose_movie
+  }, "\uACA8\uC6B8\uC655\uAD6D2(\uC790\uB9C9)"), __jsx(MovieOption, {
+    onClick: setChooseMovie,
+    number: '겨울왕국2(더빙)',
+    choose_movie: choose_movie
+  }, "\uACA8\uC6B8\uC655\uAD6D2(\uB354\uBE59)"), __jsx(MovieOption, {
+    onClick: setChooseMovie,
+    number: '포드V페라리(자막)',
+    choose_movie: choose_movie
+  }, "\uD3EC\uB4DCV\uD398\uB77C\uB9AC(\uC790\uB9C9)"), __jsx(MovieOption, {
+    onClick: setChooseMovie,
+    number: '나이브스 아웃(자막)',
+    choose_movie: choose_movie
+  }, "\uB098\uC774\uBE0C\uC2A4 \uC544\uC6C3(\uC790\uB9C9)"), __jsx(MovieOption, {
+    onClick: setChooseMovie,
+    number: '감쪽같은 그녀',
+    choose_movie: choose_movie
+  }, "\uAC10\uCABD\uAC19\uC740 \uADF8\uB140"), __jsx(MovieOption, {
+    onClick: setChooseMovie,
+    number: '라스트 크리스마스(자막)',
+    choose_movie: choose_movie
+  }, "\uB77C\uC2A4\uD2B8 \uD06C\uB9AC\uC2A4\uB9C8\uC2A4(\uC790\uB9C9)"), __jsx(MovieOption, {
+    onClick: setChooseMovie,
+    number: '아내를 죽였다',
+    choose_movie: choose_movie
+  }, "\uC544\uB0B4\uB97C \uC8FD\uC600\uB2E4"), __jsx(MovieOption, {
+    onClick: setChooseMovie,
+    number: '블랙머니',
+    choose_movie: choose_movie
+  }, "\uBE14\uB799\uBA38\uB2C8"), __jsx(MovieOption, {
+    onClick: setChooseMovie,
+    number: '쥬만지:넥스트레벨(자막)',
+    choose_movie: choose_movie
+  }, "\uC96C\uB9CC\uC9C0:\uB125\uC2A4\uD2B8\uB808\uBCA8(\uC790\uB9C9)"), __jsx(MovieOption, {
+    onClick: setChooseMovie,
+    number: '프란시스코 교황:맨 오브 히스 워드(자막)',
+    choose_movie: choose_movie
+  }, "\uD504\uB780\uC2DC\uC2A4\uCF54 \uAD50\uD669:\uB9E8 \uC624\uBE0C \uD788\uC2A4 \uC6CC\uB4DC(\uC790\uB9C9)'"), __jsx(MovieOption, {
+    onClick: setChooseMovie,
+    number: '나를 찾아줘',
+    choose_movie: choose_movie
+  }, "\uB098\uB97C \uCC3E\uC544\uC918"));
+
+  const region_list = [seoul, gyeonggi, daejeon, gwangju, daegu, busan, gangwon, jeju];
+
+  const reservation = __jsx("div", null, __jsx(_component_reservation_css__WEBPACK_IMPORTED_MODULE_3__["default"], null), __jsx("div", {
+    class: "reserveContainer"
+  }, __jsx("h1", {
+    class: "bigTitle"
+  }, "\uC608\uB9E4"), __jsx("div", {
+    class: "date"
+  }, __jsx("h3", null, "\uB0A0\uC9DC"), __jsx("div", {
+    class: "point"
+  }, __jsx(DateOption, {
+    onClick: setContent,
+    number: load_date[0],
+    content: content
+  }, load_date[0]), __jsx(DateOption, {
+    onClick: setContent,
+    number: load_date[1],
+    content: content
+  }, load_date[1]), __jsx(DateOption, {
+    onClick: setContent,
+    number: load_date[2],
+    content: content
+  }, load_date[2]))), __jsx("hr", {
+    class: "hr"
+  }), __jsx("br", null), __jsx("div", {
+    class: "make_choice"
+  }, __jsx("div", {
+    class: "choice"
+  }, __jsx(RegionOption, {
+    onClick: setChooseRegion,
+    number: '서울',
+    choose_region: choose_region
+  }, " ", __jsx("div", {
+    onClick: () => setRegion(0)
+  }, "\uC11C\uC6B8")), __jsx(RegionOption, {
+    onClick: setChooseRegion,
+    number: '경기/인천',
+    choose_region: choose_region
+  }, " ", __jsx("div", {
+    onClick: () => setRegion(1)
+  }, "\uACBD\uAE30/\uC778\uCC9C")), __jsx(RegionOption, {
+    onClick: setChooseRegion,
+    number: '충청/대전',
+    choose_region: choose_region
+  }, " ", __jsx("div", {
+    onClick: () => setRegion(2)
+  }, "\uCDA9\uCCAD/\uB300\uC804")), __jsx(RegionOption, {
+    onClick: setChooseRegion,
+    number: '전라/광주',
+    choose_region: choose_region
+  }, " ", __jsx("div", {
+    onClick: () => setRegion(3)
+  }, "\uC804\uB77C/\uAD11\uC8FC")), __jsx(RegionOption, {
+    onClick: setChooseRegion,
+    number: '경북/대구',
+    choose_region: choose_region
+  }, " ", __jsx("div", {
+    onClick: () => setRegion(4)
+  }, "\uACBD\uBD81/\uB300\uAD6C")), __jsx(RegionOption, {
+    onClick: setChooseRegion,
+    number: '경남/부산/울산',
+    choose_region: choose_region
+  }, " ", __jsx("div", {
+    onClick: () => setRegion(5)
+  }, "\uACBD\uB0A8/\uBD80\uC0B0/\uC6B8\uC0B0")), __jsx(RegionOption, {
+    onClick: setChooseRegion,
+    number: '강원',
+    choose_region: choose_region
+  }, " ", __jsx("div", {
+    onClick: () => setRegion(6)
+  }, "\uAC15\uC6D0")), __jsx(RegionOption, {
+    onClick: setChooseRegion,
+    number: '제주',
+    choose_region: choose_region
+  }, " ", __jsx("div", {
+    onClick: () => setRegion(7)
+  }, "\uC81C\uC8FC"))), __jsx("div", {
+    class: "choice"
+  }, region_list[region]), __jsx("div", {
+    class: "choice"
+  }, movies)), __jsx("div", {
+    class: "next"
+  }, __jsx("button", {
+    class: "confirm",
+    onClick: get_branch
+  }, __jsx("div", {
+    onClick: () => setCheck(true)
+  }, "\uD655\uC778")), __jsx("button", {
+    class: "cancel",
+    onClick: () => checkHandler()
+  }, "\uCDE8\uC18C"))), __jsx("div", {
+    class: "below"
   }));
+
+  const seat_reserve = __jsx("div", null, __jsx(_component_seat_reserve_css__WEBPACK_IMPORTED_MODULE_4__["default"], null), __jsx("div", {
+    class: "reserve_checkContainer"
+  }, __jsx("h1", null, "\uC601\uD654 \uC608\uB9E4"), __jsx("hr", {
+    class: "line"
+  }), __jsx("div", {
+    class: "reserve_check"
+  }, __jsx("div", {
+    class: "reserve"
+  }, __jsx("h2", null, "\uC0C1\uC601\uC2DC\uAC04"), __jsx("div", {
+    class: "movie_playtime"
+  }, __jsx(TimeOption, {
+    onClick: setChooseTime,
+    number: '10:00',
+    choose_time: choose_time
+  }, "10:00"), __jsx(TimeOption, {
+    onClick: setChooseTime,
+    number: '12:00',
+    choose_time: choose_time
+  }, "12:00"), __jsx(TimeOption, {
+    onClick: setChooseTime,
+    number: '13:00',
+    choose_time: choose_time
+  }, "13:00"), __jsx(TimeOption, {
+    onClick: setChooseTime,
+    number: '14:00',
+    choose_time: choose_time
+  }, "14:00"), __jsx(TimeOption, {
+    onClick: setChooseTime,
+    number: '16:00',
+    choose_time: choose_time
+  }, "16:00")), __jsx("div", {
+    class: "movie_memnum"
+  }, __jsx("h3", null, "\uC778\uC6D0/\uC88C\uC11D"), __jsx("p", null, "\uC131\uC778"), __jsx("select", {
+    name: "adult_num"
+  }, __jsx("option", {
+    value: "0\uBA85",
+    selected: "selected"
+  }, "0\uBA85"), __jsx("option", {
+    value: "1\uBA85"
+  }, "1\uBA85"), __jsx("option", {
+    value: "2\uBA85"
+  }, "2\uBA85"), __jsx("option", {
+    value: "3\uBA85"
+  }, "3\uBA85"), __jsx("option", {
+    value: "4\uBA85"
+  }, "4\uBA85")), __jsx("p", null, "\uCCAD\uC18C\uB144"), __jsx("select", {
+    name: "kid_num"
+  }, __jsx("option", {
+    value: "0\uBA85",
+    selected: "selected"
+  }, "0\uBA85"), __jsx("option", {
+    value: "1\uBA85"
+  }, "1\uBA85"), __jsx("option", {
+    value: "2\uBA85"
+  }, "2\uBA85"), __jsx("option", {
+    value: "3\uBA85"
+  }, "3\uBA85"), __jsx("option", {
+    value: "4\uBA85"
+  }, "4\uBA85")), __jsx("p", null, "\uC2DC\uB2C8\uC5B4"), __jsx("select", {
+    onClick: e => set,
+    name: "senior_num"
+  }, __jsx("option", {
+    value: 0,
+    selected: "selected"
+  }, "0\uBA85"), __jsx("option", {
+    value: 1
+  }, "1\uBA85"), __jsx("option", {
+    value: 2
+  }, "2\uBA85"), __jsx("option", {
+    value: 3
+  }, "3\uBA85"), __jsx("option", {
+    value: 4
+  }, "4\uBA85"))), __jsx("div", {
+    class: "seat_map"
+  }, __jsx("div", {
+    class: "screen"
+  }, __jsx("p", null, __jsx("i", null, "screen"))), __jsx("div", {
+    class: "seatA"
+  }, __jsx("p", null, __jsx("u", null, "A")), __jsx("input", {
+    onClick: () => setSeat(seat + ["A1"]),
+    type: "checkbox",
+    name: "seat",
+    value: '1'
+  }), __jsx("input", {
+    onClick: () => setSeat(seat + ["A2"]),
+    type: "checkbox",
+    name: "seat",
+    value: '2'
+  }), __jsx("input", {
+    onClick: () => setSeat(seat + ["A3"]),
+    class: "thirdTwelve",
+    type: "checkbox",
+    name: "seat",
+    value: '3'
+  }), __jsx("input", {
+    onClick: () => setSeat(seat + ["A4"]),
+    type: "checkbox",
+    name: "seat",
+    value: '4'
+  }), __jsx("input", {
+    onClick: () => setSeat(seat + ["A5"]),
+    type: "checkbox",
+    name: "seat",
+    value: '5'
+  }), __jsx("input", {
+    onClick: () => setSeat(seat + ["A6"]),
+    type: "checkbox",
+    name: "seat",
+    value: '6'
+  }), __jsx("input", {
+    onClick: () => setSeat(seat + ["A7"]),
+    type: "checkbox",
+    name: "seat",
+    value: '7'
+  }), __jsx("input", {
+    onClick: () => setSeat(seat + ["A8"]),
+    type: "checkbox",
+    name: "seat",
+    value: '8'
+  }), __jsx("input", {
+    onClick: () => setSeat(seat + ["A9"]),
+    type: "checkbox",
+    name: "seat",
+    value: '9'
+  }), __jsx("input", {
+    onClick: () => setSeat(seat + ["A10"]),
+    type: "checkbox",
+    name: "seat",
+    value: '10'
+  }), __jsx("input", {
+    onClick: () => setSeat(seat + ["A11"]),
+    type: "checkbox",
+    name: "seat",
+    value: '11'
+  }), __jsx("input", {
+    onClick: () => setSeat(seat + ["A12"]),
+    class: "thirdTwelve",
+    type: "checkbox",
+    name: "seat",
+    value: '12'
+  }), __jsx("input", {
+    onClick: () => setSeat(seat + ["A13"]),
+    type: "checkbox",
+    name: "seat",
+    value: '13'
+  }), __jsx("input", {
+    onClick: () => setSeat(seat + ["A14"]),
+    type: "checkbox",
+    name: "seat",
+    value: '14'
+  }), __jsx("input", {
+    onClick: () => setSeat(seat + ["A15"]),
+    type: "checkbox",
+    name: "seat",
+    value: '15'
+  })), __jsx("div", {
+    class: "seatB_G"
+  }, __jsx("p", null, __jsx("u", null, "B")), __jsx("input", {
+    type: "checkbox",
+    name: "seat",
+    value: "1"
+  }), __jsx("input", {
+    type: "checkbox",
+    name: "seat",
+    value: "2"
+  }), __jsx("input", {
+    class: "thirdTwelve",
+    type: "checkbox",
+    name: "seat",
+    value: "3"
+  }), __jsx("input", {
+    type: "checkbox",
+    name: "seat",
+    value: "4"
+  }), __jsx("input", {
+    type: "checkbox",
+    name: "seat",
+    value: "5"
+  }), __jsx("input", {
+    type: "checkbox",
+    name: "seat",
+    value: "6"
+  }), __jsx("input", {
+    type: "checkbox",
+    name: "seat",
+    value: "7"
+  }), __jsx("input", {
+    type: "checkbox",
+    name: "seat",
+    value: "8"
+  }), __jsx("input", {
+    type: "checkbox",
+    name: "seat",
+    value: "9"
+  }), __jsx("input", {
+    type: "checkbox",
+    name: "seat",
+    value: "10"
+  }), __jsx("input", {
+    type: "checkbox",
+    name: "seat",
+    value: "11"
+  }), __jsx("input", {
+    class: "thirdTwelve",
+    type: "checkbox",
+    name: "seat",
+    value: "12"
+  }), __jsx("input", {
+    type: "checkbox",
+    name: "seat",
+    value: "13"
+  }), __jsx("input", {
+    type: "checkbox",
+    name: "seat",
+    value: "14"
+  }), __jsx("input", {
+    type: "checkbox",
+    name: "seat",
+    value: "15"
+  })), __jsx("div", {
+    class: "seatB_G"
+  }, __jsx("p", null, __jsx("u", null, "C")), __jsx("input", {
+    type: "checkbox",
+    name: "seat",
+    value: "1"
+  }), __jsx("input", {
+    type: "checkbox",
+    name: "seat",
+    value: "2"
+  }), __jsx("input", {
+    class: "thirdTwelve",
+    type: "checkbox",
+    name: "seat",
+    value: "3"
+  }), __jsx("input", {
+    type: "checkbox",
+    name: "seat",
+    value: "4"
+  }), __jsx("input", {
+    type: "checkbox",
+    name: "seat",
+    value: "5"
+  }), __jsx("input", {
+    type: "checkbox",
+    name: "seat",
+    value: "6"
+  }), __jsx("input", {
+    type: "checkbox",
+    name: "seat",
+    value: "7"
+  }), __jsx("input", {
+    type: "checkbox",
+    name: "seat",
+    value: "8"
+  }), __jsx("input", {
+    type: "checkbox",
+    name: "seat",
+    value: "9"
+  }), __jsx("input", {
+    type: "checkbox",
+    name: "seat",
+    value: "10"
+  }), __jsx("input", {
+    type: "checkbox",
+    name: "seat",
+    value: "11"
+  }), __jsx("input", {
+    class: "thirdTwelve",
+    type: "checkbox",
+    name: "seat",
+    value: "12"
+  }), __jsx("input", {
+    type: "checkbox",
+    name: "seat",
+    value: "13"
+  }), __jsx("input", {
+    type: "checkbox",
+    name: "seat",
+    value: "14"
+  }), __jsx("input", {
+    type: "checkbox",
+    name: "seat",
+    value: "15"
+  })), __jsx("div", {
+    class: "seatB_G"
+  }, __jsx("p", null, __jsx("u", null, "D")), __jsx("input", {
+    type: "checkbox",
+    name: "seat",
+    value: "1"
+  }), __jsx("input", {
+    type: "checkbox",
+    name: "seat",
+    value: "2"
+  }), __jsx("input", {
+    class: "thirdTwelve",
+    type: "checkbox",
+    name: "seat",
+    value: "3"
+  }), __jsx("input", {
+    type: "checkbox",
+    name: "seat",
+    value: "4"
+  }), __jsx("input", {
+    type: "checkbox",
+    name: "seat",
+    value: "5"
+  }), __jsx("input", {
+    type: "checkbox",
+    name: "seat",
+    value: "6"
+  }), __jsx("input", {
+    type: "checkbox",
+    name: "seat",
+    value: "7"
+  }), __jsx("input", {
+    type: "checkbox",
+    name: "seat",
+    value: "8"
+  }), __jsx("input", {
+    type: "checkbox",
+    name: "seat",
+    value: "9"
+  }), __jsx("input", {
+    type: "checkbox",
+    name: "seat",
+    value: "10"
+  }), __jsx("input", {
+    type: "checkbox",
+    name: "seat",
+    value: "11"
+  }), __jsx("input", {
+    class: "thirdTwelve",
+    type: "checkbox",
+    name: "seat",
+    value: "12"
+  }), __jsx("input", {
+    type: "checkbox",
+    name: "seat",
+    value: "13"
+  }), __jsx("input", {
+    type: "checkbox",
+    name: "seat",
+    value: "14"
+  }), __jsx("input", {
+    type: "checkbox",
+    name: "seat",
+    value: "15"
+  })), __jsx("div", {
+    class: "seatB_G"
+  }, __jsx("p", null, __jsx("u", null, "E")), __jsx("input", {
+    type: "checkbox",
+    name: "seat",
+    value: "1"
+  }), __jsx("input", {
+    class: "thirdTwelve",
+    type: "checkbox",
+    name: "seat",
+    value: "2"
+  }), __jsx("input", {
+    type: "checkbox",
+    name: "seat",
+    value: "3"
+  }), __jsx("input", {
+    type: "checkbox",
+    name: "seat",
+    value: "4"
+  }), __jsx("input", {
+    type: "checkbox",
+    name: "seat",
+    value: "5"
+  }), __jsx("input", {
+    type: "checkbox",
+    name: "seat",
+    value: "6"
+  }), __jsx("input", {
+    type: "checkbox",
+    name: "seat",
+    value: "7"
+  }), __jsx("input", {
+    type: "checkbox",
+    name: "seat",
+    value: "8"
+  }), __jsx("input", {
+    type: "checkbox",
+    name: "seat",
+    value: "9"
+  }), __jsx("input", {
+    type: "checkbox",
+    name: "seat",
+    value: "10"
+  }), __jsx("input", {
+    type: "checkbox",
+    name: "seat",
+    value: "11"
+  }), __jsx("input", {
+    class: "thirdTwelve",
+    type: "checkbox",
+    name: "seat",
+    value: "12"
+  }), __jsx("input", {
+    type: "checkbox",
+    name: "seat",
+    value: "13"
+  }), __jsx("input", {
+    type: "checkbox",
+    name: "seat",
+    value: "14"
+  }), __jsx("input", {
+    type: "checkbox",
+    name: "seat",
+    value: "15"
+  })), __jsx("div", {
+    class: "seatB_G"
+  }, __jsx("p", null, __jsx("u", null, "F")), __jsx("input", {
+    type: "checkbox",
+    name: "seat",
+    value: "1"
+  }), __jsx("input", {
+    type: "checkbox",
+    name: "seat",
+    value: "2"
+  }), __jsx("input", {
+    class: "thirdTwelve",
+    type: "checkbox",
+    name: "seat",
+    value: "3"
+  }), __jsx("input", {
+    type: "checkbox",
+    name: "seat",
+    value: "4"
+  }), __jsx("input", {
+    type: "checkbox",
+    name: "seat",
+    value: "5"
+  }), __jsx("input", {
+    type: "checkbox",
+    name: "seat",
+    value: "6"
+  }), __jsx("input", {
+    type: "checkbox",
+    name: "seat",
+    value: "7"
+  }), __jsx("input", {
+    type: "checkbox",
+    name: "seat",
+    value: "8"
+  }), __jsx("input", {
+    type: "checkbox",
+    name: "seat",
+    value: "9"
+  }), __jsx("input", {
+    type: "checkbox",
+    name: "seat",
+    value: "10"
+  }), __jsx("input", {
+    type: "checkbox",
+    name: "seat",
+    value: "11"
+  }), __jsx("input", {
+    class: "thirdTwelve",
+    type: "checkbox",
+    name: "seat",
+    value: "12"
+  }), __jsx("input", {
+    type: "checkbox",
+    name: "seat",
+    value: "13"
+  }), __jsx("input", {
+    type: "checkbox",
+    name: "seat",
+    value: "14"
+  }), __jsx("input", {
+    type: "checkbox",
+    name: "seat",
+    value: "15"
+  })), __jsx("div", {
+    class: "seatB_G"
+  }, __jsx("p", null, __jsx("u", null, "G")), __jsx("input", {
+    type: "checkbox",
+    name: "seat",
+    value: "1"
+  }), __jsx("input", {
+    type: "checkbox",
+    name: "seat",
+    value: "2"
+  }), __jsx("input", {
+    class: "thirdTwelve",
+    type: "checkbox",
+    name: "seat",
+    value: "3"
+  }), __jsx("input", {
+    type: "checkbox",
+    name: "seat",
+    value: "4"
+  }), __jsx("input", {
+    type: "checkbox",
+    name: "seat",
+    value: "5"
+  }), __jsx("input", {
+    type: "checkbox",
+    name: "seat",
+    value: "6"
+  }), __jsx("input", {
+    type: "checkbox",
+    name: "seat",
+    value: "7"
+  }), __jsx("input", {
+    type: "checkbox",
+    name: "seat",
+    value: "8"
+  }), __jsx("input", {
+    type: "checkbox",
+    name: "seat",
+    value: "9"
+  }), __jsx("input", {
+    type: "checkbox",
+    name: "seat",
+    value: "10"
+  }), __jsx("input", {
+    type: "checkbox",
+    name: "seat",
+    value: "11"
+  }), __jsx("input", {
+    class: "thirdTwelve",
+    type: "checkbox",
+    name: "seat",
+    value: "12"
+  }), __jsx("input", {
+    type: "checkbox",
+    name: "seat",
+    value: "13"
+  }), __jsx("input", {
+    type: "checkbox",
+    name: "seat",
+    value: "14"
+  }), __jsx("input", {
+    type: "checkbox",
+    name: "seat",
+    value: "15"
+  }))), __jsx("div", {
+    class: "img_checkBox"
+  }, __jsx("img", {
+    src: "seat1.png"
+  }), __jsx("p", null, "\uC120\uD0DD \uAC00\uB2A5"), __jsx("img", {
+    src: "seat1.png"
+  }), __jsx("p", null, "\uC120\uD0DD \uAC00\uB2A5"))), __jsx("div", {
+    class: "check"
+  }, __jsx("h3", null, "\uC608\uB9E4 \uC815\uBCF4"), __jsx("img", {
+    class: "check_poster",
+    src: "redvelvet.jpg"
+  }), __jsx("div", {
+    class: "check_name"
+  }, __jsx("h5", null, choose_movie), __jsx("h5", null, "3D")), __jsx("div", {
+    class: "see_info"
+  }, __jsx("p", null, "\uC0C1\uC601\uC77C", __jsx("h5", null, content)), __jsx("br", null), __jsx("p", null, "\uC0C1\uC601\uC2DC\uAC04", __jsx("h5", null, choose_time)), __jsx("br", null), __jsx("p", null, "\uC0C1\uC601\uAD00", __jsx("h5", null, choose_branch)), __jsx("br", null), __jsx("p", null, "\uC88C\uC11D", __jsx("h5", null, seat)), __jsx("br", null)), __jsx("div", {
+    class: "see_price"
+  }, __jsx("h2", null, "\uCD1D \uACB0\uC81C\uAE08\uC561"), __jsx("br", null), __jsx("p", null, "\uC601\uD654\uC608\uB9E4", __jsx("h5", null, "20000")), __jsx("br", null), __jsx("p", null, "\uB4F1\uAE09 \uD560\uC778", __jsx("h5", null, "2000")), __jsx("br", null), __jsx("h4", {
+    class: "totalprice"
+  }, "18000")), __jsx("div", {
+    class: "buy_btn"
+  }, __jsx("button", {
+    class: "btn1",
+    type: "button",
+    onClick: () => checkHandler2()
+  }, "\uCDE8\uC18C"), __jsx("button", {
+    class: "btn2",
+    type: "button",
+    onClick: get_reservation
+  }, "\uACB0\uC81C"))))), __jsx("div", {
+    class: "empty"
+  }));
+
+  return __jsx("div", null, __jsx(next_head__WEBPACK_IMPORTED_MODULE_6___default.a, null, __jsx("title", null, "TIC-\uC601\uD654\uC608\uB9E4")), __jsx(_Header__WEBPACK_IMPORTED_MODULE_1__["default"], null), check ? seat_reserve : reservation);
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (Mypage);
+/* harmony default export */ __webpack_exports__["default"] = (Reservation);
 
 /***/ }),
 
-/***/ 5:
-/*!*******************************!*\
-  !*** multi ./pages/Mypage.js ***!
-  \*******************************/
+/***/ 7:
+/*!************************************!*\
+  !*** multi ./pages/reservation.js ***!
+  \************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/caznm/Desktop/Movie/DB/pages/Mypage.js */"./pages/Mypage.js");
+module.exports = __webpack_require__(/*! /Users/caznm/Desktop/Movie/DB/pages/reservation.js */"./pages/reservation.js");
 
+
+/***/ }),
+
+/***/ "@emotion/styled":
+/*!**********************************!*\
+  !*** external "@emotion/styled" ***!
+  \**********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("@emotion/styled");
 
 /***/ }),
 
@@ -2315,4 +3884,4 @@ module.exports = require("url");
 /***/ })
 
 /******/ });
-//# sourceMappingURL=Mypage.js.map
+//# sourceMappingURL=reservation.js.map

@@ -58,7 +58,7 @@ const Header = () => {
         const val = e.target.name;
         alert('로그아웃 되었습니다!');
         localStorage.clear();
-        router.push({ pathname: val });
+        router.push({ pathname: '/' });
     }
     
     return (
