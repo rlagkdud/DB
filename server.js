@@ -57,7 +57,7 @@ app.prepare().then(() => {
         var pw = req.body.userPW;
         
         var db_pwd;
-        var query = "select user_pw from customer where user_id= ?";
+        var query = "select * from customer where user_id= ?";
     
         var page = "/Login";
         var result_d;
@@ -67,6 +67,8 @@ app.prepare().then(() => {
 
         result_d = result;
 
+        console.log(result_d);
+
         if (result_d.length === 0) {
             console.log("haha reject1");
             connection.release();
@@ -75,13 +77,13 @@ app.prepare().then(() => {
             app.render(req, res, page, {});
         } else {
             
-            db_pwd = result[0].user_pwd;
+            db_pwd = result_d[0].user_pw;
             console.log("!" + db_pwd);
 
             if (db_pwd === pw) {
                 console.log("hello admin");
                 connection.release();
-                const params = { bool: true, userID: req.body.userID };
+                const params = { bool: true, userID: result_d[0].user_name };
                 res.send(params);
                 app.render(req, res, page);
             } else {
