@@ -226,6 +226,7 @@ const Seat_reserve_css = () => {
         .buy_btn .btn2{
             background-color: #fd5987;
             border-style:none;
+            margin-top: 100px;
             text-align: center; 
             height: 30px;
             width: 60px;

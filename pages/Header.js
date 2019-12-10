@@ -10,12 +10,16 @@ const Header = () => {
     const [userData, getData] = useState(null);
     const [logStat, getStat] = useState(false);
     const [member, getMember] = useState('');
+    const [admin, getAdmin] = useState(false);
 
     useEffect(() => {
 
             getData(localStorage.getItem('usrID'));
             if(localStorage.getItem('usrID') !== null) {
                 getStat(true);
+                if(localStorage.getItem('usrID') === 'admin'){
+                    getAdmin(true);
+                }
             }
             else{
                 getStat(false);
@@ -123,6 +127,9 @@ const Header = () => {
                             </li> }
                             <li>
                                 <a name='/Mypage' onClick={getMethodM}> 마이페이지 </a>
+                            </li>
+                            <li>
+                                {admin ? <Link name='gotoAdmin' href="http://localhost:3000"> 관리자페이지 </Link> :<></>}
                             </li>
                         </ul>
                     </nav>

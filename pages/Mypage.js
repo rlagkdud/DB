@@ -7,10 +7,12 @@ import Head from "next/head";
 const Mypage = () => {
 
     const [userName, setName] = useState('');
+    const [vip, getRank] = useState('Bronze');
 
     useEffect(() =>{
 
         setName(localStorage.getItem('name'));
+        getRank(localStorage.getItem('vip'))
     }, [])
 
 
@@ -31,7 +33,7 @@ const Mypage = () => {
                 </div>
                 <div class="preperGenre">
                     <p>
-                        선호장르 <h5>#ADVENTURE #DRAMA</h5>{" "}
+                        회원등급! <h5>{vip}</h5>{" "}
                     </p>
                     <button type="button" onclick="location.href= ''">
                         회원정보수정
@@ -43,7 +45,6 @@ const Mypage = () => {
                     <p>
                         <b>예매/구매 내역</b>
                     </p>
-                    <p>나의 한줄평</p>
                     <div class="sawMovie">
                         <img class="sawPoster" src="/redvelvet3.jpg" />
                         <img class="sawPoster" src="/redvelvet3.jpg" />

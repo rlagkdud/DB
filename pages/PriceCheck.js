@@ -18,22 +18,14 @@ const PriceCheck=()=>{
     },[])
 
     const router = useRouter();
-    const branch = localStorage.getItem('branch')
-    localStorage.removeItem('branch')
-    const theater = localStorage.getItem('theater_id')
-    localStorage.removeItem('theater_id')
-    const dates = localStorage.getItem('date')
-    localStorage.removeItem('date')
-    const movie = localStorage.getItem('movie')
-    localStorage.removeItem('movie')
-    const times = localStorage.getItem('time')
-    localStorage.removeItem('time')
-    const seats = localStorage.getItem('seat')
-    localStorage.removeItem('seat')
+    var branch = localStorage.getItem('branch')
+    var theater = localStorage.getItem('theater_id')
+    var dates = localStorage.getItem('date')
+    var movie = localStorage.getItem('movie')
+    var times = localStorage.getItem('time')
+    var seats = localStorage.getItem('seat')
     var price = localStorage.getItem('price')
-    localStorage.removeItem('price')
     var eng_title = localStorage.getItem('eng_title')
-    localStorage.removeItem('eng_title')
 
     var per = 0.0;
     var discount = 0;
@@ -62,6 +54,14 @@ const PriceCheck=()=>{
     get_rank();
     
     function order_complete() {
+        localStorage.removeItem('branch')
+        localStorage.removeItem('theater_id')
+        localStorage.removeItem('date')
+        localStorage.removeItem('movie')
+        localStorage.removeItem('time')
+        localStorage.removeItem('seat')
+        localStorage.removeItem('price')
+        localStorage.removeItem('eng_title')
         if (member === 'yes') {
             Axios({
                 method: 'POST',

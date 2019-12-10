@@ -14,7 +14,7 @@ const mysql = require("mysql2/promise");
 const pool = mysql.createPool({
     host: "localhost",
     user: "root",
-    password: "111111",
+    password: "Cho641164!",
     database: "movie"
 });
 
@@ -228,6 +228,7 @@ app.prepare().then(() => {
         const [result] = await connection.query(query, [c_movie, c_time, c_branch]);
         result_id = result;
 
+        console.log(result_id[0])
         var movie_id = result_id[0].movie_id
 
         query = "select theater_id from movie where movie_id=?"
@@ -270,7 +271,10 @@ app.prepare().then(() => {
 
         query = "INSERT INTO ticketing_info (movie_genre, user_id, count, total_discount, total_price, movie_id, branch_id) VALUES(?, ?, ?, ?, ?, ?, ?)"
         await connection.query(query, [genre, userID, count, discount, total_price, movie_id, branch])
-
+        
+        query = 'update settlement set day_price = day_price + ? where movie_id =?'
+        await connection.query(query, [total_price, movie_id]);
+        
         connection.release();
         const params = { bool: true };
         res.send(params);
@@ -290,6 +294,8 @@ app.prepare().then(() => {
 
         query = "INSERT INTO n_ticketing_info (count, total_price, movie_id, branch_id, phone_num) VALUES(?, ?, ?, ?, ?)"
         await connection.query(query, [count, total_price, movie_id, branch, userPN])
+        query = 'update settlement set day_price = day_price + ? where movie_id =?'
+        await connection.query(query, [total_price, movie_id]);
 
         connection.release();
         const params = { bool: true };

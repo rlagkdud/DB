@@ -54,11 +54,11 @@ const PriceCheck_css = ()=>{
             margin:0;
         }
         .checkPrice{
-            padding-left:20px;
+            padding-left:35px;
             border-left:1px solid black;
             vertical-align: top;
             height:160px;
-            width: 210px;
+            width: 320px;
             display: inline-block;
             margin:20px 0 20px 150px;
         }
@@ -67,7 +67,7 @@ const PriceCheck_css = ()=>{
         }
         .checkPrice h5{
             font-size: 20px;
-            margin-top:70px;
+            margin-top:20px;
             margin-bottom:0;
             vertical-align: bottom;
             text-align: right;

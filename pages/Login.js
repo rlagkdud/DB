@@ -32,7 +32,12 @@ const Login = () => {
             const check = res.data.bool;
             
             if(check){
-                alert('환영합니다! '+ res.data.userName +'님!');
+                if(res.data.userID === 'admin'){
+                    alert('관리자 기능이 활성화 되었습니다')
+                }
+                else{
+                    alert('환영합니다! '+ res.data.userName +'님!');
+                }
                 localStorage.setItem('usrID', res.data.userID);
                 localStorage.setItem('name', res.data.userName);
                 localStorage.setItem('vip', res.data.vip);

@@ -779,12 +779,7 @@ const Reservation = () => {
                             <p>상영관<h5>{choose_branch}</h5></p><br/>
                             <p>좌석<h5>{seat}</h5></p><br/>
                         </div>
-                        <div class='see_price'>
-                            <h2>총 결제금액</h2><br/>
-                            <p>영화예매<h5>20000</h5></p><br/>
-                            <p>등급 할인<h5>2000</h5></p><br/>
-                            <h4 class="totalprice">18000</h4>
-                        </div>
+                        
                         <div class='buy_btn'>
                             <button class = 'btn1' type="button" onClick={()=>checkHandler2()}>취소</button>
                             <Link href="/PriceCheck"><button class = 'btn2' type="button" onClick={get_reservation}>결제</button></Link>
